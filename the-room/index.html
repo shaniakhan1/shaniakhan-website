@@ -10,444 +10,140 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
     <style>
       *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
       :root {
-        --black: #0a0a0a;
-        --off-black: #111111;
-        --charcoal: #1c1c1c;
-        --gold: #c9a96e;
-        --gold-light: #e8d5b0;
-        --cream: #f5f0e8;
-        --white: #ffffff;
-        --muted: #666;
-        --serif: 'Cormorant Garamond', Georgia, serif;
+        --black: #0a0a0a; --off-black: #111; --charcoal: #1c1c1c;
+        --gold: #c9a96e; --gold-light: #e8d5b0; --cream: #f5f0e8;
+        --muted: #666; --serif: 'Cormorant Garamond', Georgia, serif;
         --sans: 'DM Sans', system-ui, sans-serif;
       }
-
       html, body { height: 100%; }
+      body { background: var(--black); color: var(--cream); font-family: var(--sans); font-weight: 300; line-height: 1.7; -webkit-font-smoothing: antialiased; }
 
-      body {
-        background: var(--black);
-        color: var(--cream);
-        font-family: var(--sans);
-        font-weight: 300;
-        line-height: 1.7;
-        -webkit-font-smoothing: antialiased;
-      }
-
-      /* ── LOCK SCREEN ── */
-      #lock-screen {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 2rem;
-        background: radial-gradient(ellipse at center, #1a1208 0%, var(--black) 70%);
-      }
-      .lock-logo {
-        font-family: var(--serif);
-        font-size: 1rem;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        color: var(--gold);
-        margin-bottom: 3rem;
-      }
-      .lock-title {
-        font-family: var(--serif);
-        font-size: clamp(2rem, 6vw, 3.5rem);
-        font-weight: 300;
-        color: var(--white);
-        text-align: center;
-        line-height: 1.15;
-        margin-bottom: 0.75rem;
-      }
+      /* LOCK */
+      #lock-screen { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem; background: radial-gradient(ellipse at center, #1a1208 0%, var(--black) 70%); }
+      .lock-logo { font-family: var(--serif); font-size: 1rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 3rem; }
+      .lock-title { font-family: var(--serif); font-size: clamp(2rem, 6vw, 3.5rem); font-weight: 300; color: #fff; text-align: center; line-height: 1.15; margin-bottom: 0.75rem; }
       .lock-title em { font-style: italic; color: var(--gold); }
-      .lock-subtitle {
-        font-size: 0.9rem;
-        color: rgba(245,240,232,0.5);
-        text-align: center;
-        margin-bottom: 2.5rem;
-      }
-      .lock-form {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        width: 100%;
-        max-width: 340px;
-      }
-      .lock-input {
-        background: rgba(255,255,255,0.05);
-        border: 1px solid rgba(201,169,110,0.25);
-        border-radius: 2px;
-        padding: 0.9rem 1.2rem;
-        font-family: var(--sans);
-        font-size: 1rem;
-        color: var(--cream);
-        outline: none;
-        transition: border-color 0.2s;
-        letter-spacing: 0.1em;
-        text-align: center;
-      }
+      .lock-sub { font-size: 0.9rem; color: rgba(245,240,232,0.5); text-align: center; margin-bottom: 2.5rem; }
+      .lock-form { display: flex; flex-direction: column; gap: 1rem; width: 100%; max-width: 340px; }
+      .lock-input { background: rgba(255,255,255,0.05); border: 1px solid rgba(201,169,110,0.25); border-radius: 2px; padding: 0.9rem 1.2rem; font-family: var(--sans); font-size: 1rem; color: var(--cream); outline: none; transition: border-color 0.2s; letter-spacing: 0.1em; text-align: center; }
       .lock-input::placeholder { color: rgba(245,240,232,0.3); letter-spacing: 0.05em; }
       .lock-input:focus { border-color: var(--gold); }
-      .lock-btn {
-        background: var(--gold);
-        color: var(--black);
-        border: none;
-        border-radius: 2px;
-        padding: 0.9rem;
-        font-family: var(--sans);
-        font-size: 0.8rem;
-        font-weight: 500;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-        cursor: pointer;
-        transition: background 0.2s, transform 0.15s;
-      }
+      .lock-btn { background: var(--gold); color: var(--black); border: none; border-radius: 2px; padding: 0.9rem; font-family: var(--sans); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; cursor: pointer; transition: background 0.2s, transform 0.15s; }
       .lock-btn:hover { background: var(--gold-light); transform: translateY(-1px); }
-      .lock-btn:active { transform: scale(0.98); }
-      .lock-error {
-        font-size: 0.82rem;
-        color: #e07070;
-        text-align: center;
-        display: none;
-      }
+      .lock-error { font-size: 0.82rem; color: #e07070; text-align: center; display: none; }
       .lock-error.visible { display: block; }
 
-      /* ── MAIN APP ── */
+      /* APP */
       #app { display: none; }
       #app.unlocked { display: block; }
 
-      /* ── NAV ── */
-      nav {
-        position: sticky; top: 0; z-index: 100;
-        display: flex; align-items: center; justify-content: space-between;
-        padding: 1.1rem 2rem;
-        background: rgba(10,10,10,0.92);
-        backdrop-filter: blur(12px);
-        border-bottom: 1px solid rgba(201,169,110,0.15);
-      }
-      .nav-brand {
-        font-family: var(--serif);
-        font-size: 1.05rem;
-        color: var(--gold);
-        letter-spacing: 0.05em;
-      }
-      .nav-brand span { font-weight: 300; color: rgba(245,240,232,0.5); font-size: 0.85rem; margin-left: 0.5rem; }
-      .nav-tabs {
-        display: flex; gap: 0.25rem;
-      }
-      .nav-tab {
-        font-family: var(--sans);
-        font-size: 0.75rem;
-        font-weight: 400;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: rgba(245,240,232,0.5);
-        padding: 0.5rem 1rem;
-        border-radius: 2px;
-        cursor: pointer;
-        border: none;
-        background: transparent;
-        transition: color 0.2s, background 0.2s;
-      }
+      /* NAV */
+      nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 2rem; background: rgba(10,10,10,0.94); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(201,169,110,0.15); gap: 1rem; flex-wrap: wrap; }
+      .nav-brand { font-family: var(--serif); font-size: 1.05rem; color: var(--gold); letter-spacing: 0.05em; white-space: nowrap; }
+      .nav-brand span { font-weight: 300; color: rgba(245,240,232,0.4); font-size: 0.82rem; margin-left: 0.5rem; }
+      .nav-tabs { display: flex; gap: 0.15rem; flex-wrap: wrap; }
+      .nav-tab { font-family: var(--sans); font-size: 0.72rem; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(245,240,232,0.5); padding: 0.45rem 0.85rem; border-radius: 2px; cursor: pointer; border: none; background: transparent; transition: color 0.2s, background 0.2s; }
       .nav-tab:hover { color: var(--gold); }
-      .nav-tab.active {
-        color: var(--gold);
-        background: rgba(201,169,110,0.1);
-      }
+      .nav-tab.active { color: var(--gold); background: rgba(201,169,110,0.1); }
 
-      /* ── LAYOUT ── */
+      /* WELCOME HEADER */
+      .welcome-header { padding: 3rem 2rem 2rem; max-width: 900px; margin: 0 auto; border-bottom: 1px solid rgba(201,169,110,0.1); }
+      .welcome-eyebrow { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+      .welcome-title { font-family: var(--serif); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 300; color: #fff; line-height: 1.2; margin-bottom: 0.5rem; }
+      .welcome-title em { font-style: italic; color: var(--gold); }
+      .welcome-msg { font-size: 0.92rem; color: rgba(245,240,232,0.6); line-height: 1.8; max-width: 600px; margin-top: 0.75rem; }
+
+      /* PAGES */
       .page { display: none; padding: 3rem 2rem; max-width: 900px; margin: 0 auto; }
       .page.active { display: block; }
+      .section-label { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem; }
+      .section-title { font-family: var(--serif); font-size: 1.6rem; font-weight: 300; color: #fff; margin-bottom: 0.5rem; }
+      .divider { width: 40px; height: 1px; background: var(--gold); opacity: 0.4; margin: 1.25rem 0 1.75rem; }
+      .page-intro { font-size: 0.9rem; color: rgba(245,240,232,0.55); margin-bottom: 2rem; line-height: 1.75; }
 
-      /* ── WELCOME HEADER ── */
-      .welcome-header {
-        padding: 3rem 2rem 2rem;
-        max-width: 900px;
-        margin: 0 auto;
-        border-bottom: 1px solid rgba(201,169,110,0.1);
-        margin-bottom: 0;
-      }
-      .welcome-eyebrow {
-        font-size: 0.7rem;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        color: var(--gold);
-        margin-bottom: 0.75rem;
-      }
-      .welcome-title {
-        font-family: var(--serif);
-        font-size: clamp(1.8rem, 4vw, 2.8rem);
-        font-weight: 300;
-        color: var(--white);
-        line-height: 1.2;
-        margin-bottom: 0.75rem;
-      }
-      .welcome-title em { font-style: italic; color: var(--gold); }
-      .welcome-sub {
-        font-size: 0.9rem;
-        color: rgba(245,240,232,0.55);
-      }
-
-      /* ── SECTION TITLE ── */
-      .section-label {
-        font-size: 0.68rem;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        color: var(--gold);
-        margin-bottom: 1.5rem;
-      }
-      .section-title {
-        font-family: var(--serif);
-        font-size: 1.6rem;
-        font-weight: 300;
-        color: var(--white);
-        margin-bottom: 0.5rem;
-      }
-      .divider { width: 40px; height: 1px; background: var(--gold); opacity: 0.4; margin: 1.5rem 0; }
-
-      /* ── AUDIO DROPS ── */
+      /* AUDIO */
       .audio-grid { display: flex; flex-direction: column; gap: 1rem; }
-      .audio-card {
-        background: var(--charcoal);
-        border: 1px solid rgba(201,169,110,0.12);
-        border-radius: 2px;
-        padding: 1.5rem;
-        display: flex;
-        align-items: center;
-        gap: 1.5rem;
-      }
-      .audio-card.new { border-color: rgba(201,169,110,0.4); }
-      .audio-play-btn {
-        width: 48px; height: 48px;
-        border-radius: 50%;
-        background: var(--gold);
-        border: none;
-        cursor: pointer;
-        display: flex; align-items: center; justify-content: center;
-        flex-shrink: 0;
-        transition: background 0.2s, transform 0.15s;
-      }
+      .audio-card { background: var(--charcoal); border: 1px solid rgba(201,169,110,0.12); border-radius: 2px; padding: 1.5rem; }
+      .audio-card.live { border-color: rgba(201,169,110,0.4); }
+      .audio-card.locked { opacity: 0.45; }
+      .audio-card-top { display: flex; align-items: center; gap: 1.25rem; }
+      .audio-play-btn { width: 46px; height: 46px; border-radius: 50%; background: var(--gold); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.2s, transform 0.15s; }
       .audio-play-btn:hover { background: var(--gold-light); transform: scale(1.05); }
+      .audio-play-btn:disabled { background: rgba(201,169,110,0.25); cursor: default; transform: none; }
       .audio-play-btn svg { margin-left: 3px; }
       .audio-info { flex: 1; min-width: 0; }
-      .audio-week {
-        font-size: 0.65rem;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        color: var(--gold);
-        margin-bottom: 0.3rem;
-      }
-      .audio-title {
-        font-family: var(--serif);
-        font-size: 1.1rem;
-        font-weight: 400;
-        color: var(--white);
-        margin-bottom: 0.2rem;
-      }
+      .audio-week { font-size: 0.63rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem; }
+      .audio-title { font-family: var(--serif); font-size: 1.1rem; font-weight: 400; color: #fff; margin-bottom: 0.2rem; }
       .audio-meta { font-size: 0.78rem; color: var(--muted); }
-      .audio-new-badge {
-        font-size: 0.62rem;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-        color: var(--black);
-        background: var(--gold);
-        padding: 0.2rem 0.6rem;
-        border-radius: 2px;
-        flex-shrink: 0;
-      }
-      .audio-player-container {
-        margin-top: 1rem;
-        display: none;
-      }
-      .audio-player-container.open { display: block; }
-      .audio-player-container audio {
-        width: 100%;
-        accent-color: var(--gold);
-      }
-      .audio-placeholder {
-        background: rgba(201,169,110,0.05);
-        border: 1px dashed rgba(201,169,110,0.2);
-        border-radius: 2px;
-        padding: 2rem;
-        text-align: center;
-        color: rgba(245,240,232,0.3);
-        font-size: 0.88rem;
-        font-style: italic;
-      }
+      .new-badge { font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--black); background: var(--gold); padding: 0.18rem 0.55rem; border-radius: 2px; flex-shrink: 0; }
+      .locked-badge { font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(245,240,232,0.3); border: 1px solid rgba(245,240,232,0.15); padding: 0.18rem 0.55rem; border-radius: 2px; flex-shrink: 0; }
+      .audio-player-wrap { margin-top: 1rem; display: none; }
+      .audio-player-wrap.open { display: block; }
+      .audio-player-wrap audio { width: 100%; accent-color: var(--gold); }
 
-      /* ── COMMUNITY ── */
-      .community-intro {
-        font-size: 0.92rem;
-        color: rgba(245,240,232,0.6);
-        margin-bottom: 2rem;
-        line-height: 1.7;
-      }
-      .post-form {
-        background: var(--charcoal);
-        border: 1px solid rgba(201,169,110,0.15);
-        border-radius: 2px;
-        padding: 1.5rem;
-        margin-bottom: 2rem;
-      }
-      .post-form-label {
-        font-size: 0.72rem;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-        color: var(--gold);
-        margin-bottom: 0.75rem;
-        display: block;
-      }
-      .post-name-input, .post-textarea {
-        width: 100%;
-        background: rgba(255,255,255,0.04);
-        border: 1px solid rgba(201,169,110,0.2);
-        border-radius: 2px;
-        padding: 0.75rem 1rem;
-        font-family: var(--sans);
-        font-size: 0.92rem;
-        color: var(--cream);
-        outline: none;
-        resize: vertical;
-        transition: border-color 0.2s;
-        margin-bottom: 0.75rem;
-      }
+      /* COMMUNITY */
+      .post-form { background: var(--charcoal); border: 1px solid rgba(201,169,110,0.15); border-radius: 2px; padding: 1.5rem; margin-bottom: 2rem; }
+      .post-form-label { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; display: block; }
+      .post-name-input, .post-textarea { width: 100%; background: rgba(255,255,255,0.04); border: 1px solid rgba(201,169,110,0.2); border-radius: 2px; padding: 0.75rem 1rem; font-family: var(--sans); font-size: 0.92rem; color: var(--cream); outline: none; resize: vertical; transition: border-color 0.2s; margin-bottom: 0.75rem; }
       .post-name-input { resize: none; }
       .post-name-input::placeholder, .post-textarea::placeholder { color: rgba(245,240,232,0.25); }
       .post-name-input:focus, .post-textarea:focus { border-color: var(--gold); }
-      .post-textarea { min-height: 100px; }
-      .post-submit {
-        background: var(--gold);
-        color: var(--black);
-        border: none;
-        border-radius: 2px;
-        padding: 0.7rem 1.5rem;
-        font-family: var(--sans);
-        font-size: 0.75rem;
-        font-weight: 500;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        cursor: pointer;
-        transition: background 0.2s, transform 0.15s;
-      }
+      .post-textarea { min-height: 90px; }
+      .post-submit { background: var(--gold); color: var(--black); border: none; border-radius: 2px; padding: 0.65rem 1.4rem; font-family: var(--sans); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; transition: background 0.2s, transform 0.15s; }
       .post-submit:hover { background: var(--gold-light); transform: translateY(-1px); }
       .posts-list { display: flex; flex-direction: column; gap: 1rem; }
-      .post-card {
-        background: var(--charcoal);
-        border: 1px solid rgba(201,169,110,0.1);
-        border-radius: 2px;
-        padding: 1.25rem 1.5rem;
-      }
-      .post-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem; }
-      .post-author {
-        font-family: var(--serif);
-        font-size: 1rem;
-        font-weight: 400;
-        color: var(--gold);
-      }
-      .post-date { font-size: 0.72rem; color: var(--muted); }
-      .post-body { font-size: 0.92rem; color: rgba(245,240,232,0.8); line-height: 1.7; }
-      .posts-empty {
-        text-align: center;
-        padding: 3rem;
-        color: rgba(245,240,232,0.3);
-        font-style: italic;
-        font-family: var(--serif);
-        font-size: 1rem;
-      }
+      .post-card { background: var(--charcoal); border: 1px solid rgba(201,169,110,0.1); border-radius: 2px; padding: 1.25rem 1.5rem; }
+      .post-card.pinned { border-color: rgba(201,169,110,0.35); }
+      .post-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.6rem; gap: 1rem; }
+      .post-author { font-family: var(--serif); font-size: 1rem; font-weight: 400; color: var(--gold); }
+      .post-date { font-size: 0.7rem; color: var(--muted); white-space: nowrap; }
+      .post-body { font-size: 0.9rem; color: rgba(245,240,232,0.8); line-height: 1.75; }
+      .pin-label { font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
 
-      /* ── RECORDINGS ── */
-      .recordings-grid { display: flex; flex-direction: column; gap: 1rem; }
-      .recording-card {
-        background: var(--charcoal);
-        border: 1px solid rgba(201,169,110,0.12);
-        border-radius: 2px;
-        padding: 1.25rem 1.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1rem;
-      }
-      .recording-info {}
-      .recording-week {
-        font-size: 0.65rem;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        color: var(--gold);
-        margin-bottom: 0.3rem;
-      }
-      .recording-title {
-        font-family: var(--serif);
-        font-size: 1.05rem;
-        color: var(--white);
-        margin-bottom: 0.2rem;
-      }
-      .recording-meta { font-size: 0.78rem; color: var(--muted); }
-      .recording-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        font-family: var(--sans);
-        font-size: 0.75rem;
-        font-weight: 500;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: var(--gold);
-        text-decoration: none;
-        border: 1px solid rgba(201,169,110,0.3);
-        border-radius: 2px;
-        padding: 0.5rem 1rem;
-        flex-shrink: 0;
-        transition: border-color 0.2s, background 0.2s;
-      }
-      .recording-btn:hover { border-color: var(--gold); background: rgba(201,169,110,0.07); }
-      .recording-locked {
-        font-size: 0.75rem;
-        color: rgba(245,240,232,0.25);
-        font-style: italic;
-        flex-shrink: 0;
-      }
+      /* RECORDINGS */
+      .recordings-list { display: flex; flex-direction: column; gap: 1rem; }
+      .rec-card { background: var(--charcoal); border: 1px solid rgba(201,169,110,0.12); border-radius: 2px; padding: 1.25rem 1.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+      .rec-card.locked-rec { opacity: 0.45; }
+      .rec-week { font-size: 0.63rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem; }
+      .rec-title { font-family: var(--serif); font-size: 1.05rem; color: #fff; margin-bottom: 0.2rem; }
+      .rec-meta { font-size: 0.78rem; color: var(--muted); }
+      .rec-btn { display: inline-flex; align-items: center; gap: 0.4rem; font-family: var(--sans); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); text-decoration: none; border: 1px solid rgba(201,169,110,0.3); border-radius: 2px; padding: 0.45rem 0.9rem; flex-shrink: 0; transition: border-color 0.2s, background 0.2s; }
+      .rec-btn:hover { border-color: var(--gold); background: rgba(201,169,110,0.07); }
 
-      /* ── RESOURCES ── */
-      .resources-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; }
-      .resource-card {
-        background: var(--charcoal);
-        border: 1px solid rgba(201,169,110,0.12);
-        border-radius: 2px;
-        padding: 1.5rem;
-        text-decoration: none;
-        transition: border-color 0.2s, transform 0.15s;
-        display: block;
-      }
-      .resource-card:hover { border-color: rgba(201,169,110,0.4); transform: translateY(-2px); }
-      .resource-icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
-      .resource-type {
-        font-size: 0.62rem;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        color: var(--gold);
-        margin-bottom: 0.4rem;
-      }
-      .resource-title {
-        font-family: var(--serif);
-        font-size: 1rem;
-        color: var(--white);
-        line-height: 1.4;
-      }
-      .resource-desc { font-size: 0.8rem; color: var(--muted); margin-top: 0.4rem; }
+      /* RESOURCES */
+      .resource-section { margin-bottom: 3rem; }
+      .resource-header { display: flex; align-items: flex-start; gap: 1.25rem; background: var(--charcoal); border: 1px solid rgba(201,169,110,0.15); border-radius: 2px; padding: 1.5rem; margin-bottom: 0; }
+      .resource-header.locked-res { opacity: 0.4; }
+      .resource-icon { font-size: 1.6rem; flex-shrink: 0; margin-top: 0.1rem; }
+      .resource-type { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.35rem; }
+      .resource-title { font-family: var(--serif); font-size: 1.1rem; color: #fff; margin-bottom: 0.3rem; }
+      .resource-desc { font-size: 0.82rem; color: var(--muted); }
+      .resource-content { background: rgba(255,255,255,0.02); border: 1px solid rgba(201,169,110,0.08); border-top: none; border-radius: 0 0 2px 2px; padding: 2rem; display: none; }
+      .resource-content.open { display: block; }
+      .resource-toggle { margin-top: 0.75rem; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); cursor: pointer; border: none; background: transparent; font-family: var(--sans); padding: 0; }
+      .resource-toggle:hover { text-decoration: underline; }
+      .resource-content h3 { font-family: var(--serif); font-size: 1.2rem; font-weight: 400; color: #fff; margin: 1.5rem 0 0.75rem; }
+      .resource-content h3:first-child { margin-top: 0; }
+      .resource-content h4 { font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin: 1.25rem 0 0.5rem; }
+      .resource-content p { font-size: 0.9rem; color: rgba(245,240,232,0.75); line-height: 1.8; margin-bottom: 0.75rem; }
+      .resource-content ol, .resource-content ul { padding-left: 1.5rem; margin-bottom: 0.75rem; }
+      .resource-content li { font-size: 0.9rem; color: rgba(245,240,232,0.75); line-height: 1.8; margin-bottom: 0.4rem; }
+      .resource-content .question { background: rgba(201,169,110,0.06); border-left: 2px solid var(--gold); padding: 0.75rem 1rem; margin-bottom: 0.75rem; font-size: 0.9rem; color: rgba(245,240,232,0.8); line-height: 1.7; }
+      .resource-content .answer-space { background: rgba(255,255,255,0.03); border: 1px dashed rgba(201,169,110,0.2); border-radius: 2px; padding: 0.75rem 1rem; margin-bottom: 1rem; min-height: 60px; font-size: 0.85rem; color: rgba(245,240,232,0.3); font-style: italic; }
+      .soft60-bonus { margin-top: 2.5rem; padding: 1.5rem; background: rgba(201,169,110,0.06); border: 1px solid rgba(201,169,110,0.2); border-radius: 2px; }
+      .soft60-bonus .resource-type { margin-bottom: 0.35rem; }
+      .soft60-bonus .resource-title { font-family: var(--serif); font-size: 1.1rem; color: #fff; margin-bottom: 0.5rem; }
+      .soft60-bonus p { font-size: 0.85rem; color: rgba(245,240,232,0.6); line-height: 1.7; }
+      .soft60-bonus a { color: var(--gold); }
 
-      /* ── RESPONSIVE ── */
       @media (max-width: 640px) {
         nav { padding: 1rem 1.25rem; }
-        .nav-tabs { gap: 0; }
-        .nav-tab { padding: 0.5rem 0.6rem; font-size: 0.68rem; }
+        .nav-tab { padding: 0.4rem 0.6rem; font-size: 0.65rem; }
         .nav-brand span { display: none; }
         .page { padding: 2rem 1.25rem; }
         .welcome-header { padding: 2rem 1.25rem 1.5rem; }
-        .audio-card { flex-wrap: wrap; }
-        .recording-card { flex-direction: column; align-items: flex-start; }
+        .rec-card { flex-direction: column; align-items: flex-start; }
       }
     </style>
   </head>
@@ -457,39 +153,30 @@
     <div id="lock-screen">
       <p class="lock-logo">Shania Khan</p>
       <h1 class="lock-title">Welcome to<br><em>The Room</em></h1>
-      <p class="lock-subtitle">Soft Power Mastermind · Members Only</p>
+      <p class="lock-sub">Soft Power Mastermind · Members Only</p>
       <form class="lock-form" onsubmit="checkPassword(event)">
-        <input
-          type="password"
-          id="password-input"
-          class="lock-input"
-          placeholder="Enter your password"
-          autocomplete="current-password"
-        />
+        <input type="password" id="password-input" class="lock-input" placeholder="Enter your password" autocomplete="current-password" />
         <button type="submit" class="lock-btn">Enter The Room</button>
         <p class="lock-error" id="lock-error">That password is not right. Check your welcome email.</p>
       </form>
     </div>
 
-    <!-- MAIN APP -->
+    <!-- APP -->
     <div id="app">
-
-      <!-- NAV -->
       <nav>
         <div class="nav-brand">The Room <span>Soft Power Mastermind</span></div>
         <div class="nav-tabs">
-          <button class="nav-tab active" onclick="showPage('audio', this)">Audio</button>
-          <button class="nav-tab" onclick="showPage('community', this)">Community</button>
-          <button class="nav-tab" onclick="showPage('recordings', this)">Recordings</button>
-          <button class="nav-tab" onclick="showPage('resources', this)">Resources</button>
+          <button class="nav-tab active" onclick="showPage('audio',this)">Audio</button>
+          <button class="nav-tab" onclick="showPage('community',this)">Community</button>
+          <button class="nav-tab" onclick="showPage('recordings',this)">Recordings</button>
+          <button class="nav-tab" onclick="showPage('resources',this)">Resources</button>
         </div>
       </nav>
 
-      <!-- WELCOME HEADER -->
       <div class="welcome-header">
-        <p class="welcome-eyebrow">June 30 — July 28, 2026</p>
+        <p class="welcome-eyebrow">June 30 – July 28, 2026</p>
         <h2 class="welcome-title">You are in <em>The Room.</em></h2>
-        <p class="welcome-sub">Welcome. Everything you need for the next four weeks lives here.</p>
+        <p class="welcome-msg">Welcome. Everything you need for the next four weeks lives here. New audio drops two days before each call. Recordings appear within 24 hours after each session. Resources unlock week by week.</p>
       </div>
 
       <!-- AUDIO PAGE -->
@@ -497,15 +184,8 @@
         <p class="section-label">Weekly Audio Calibrations</p>
         <h2 class="section-title">Shania's Drops</h2>
         <div class="divider"></div>
-        <p style="font-size:0.9rem; color:rgba(245,240,232,0.55); margin-bottom:2rem;">A new audio drops each week before your live call. Listen before you join. These are not recordings — they are calibrations to bring you into the right state.</p>
-
-        <div class="audio-grid" id="audio-grid">
-          <!-- Audio drops will appear here. Placeholder shown until Week 1 starts. -->
-          <div class="audio-placeholder">
-            Your first audio drop will appear here on June 28 — two days before the first call.<br><br>
-            <span style="color:var(--gold);">Check back soon.</span>
-          </div>
-        </div>
+        <p class="page-intro">Listen to your weekly audio before each Monday call. These are not recordings — they are calibrations to bring you into the right state before we work together live.</p>
+        <div class="audio-grid" id="audio-grid"></div>
       </div>
 
       <!-- COMMUNITY PAGE -->
@@ -513,20 +193,14 @@
         <p class="section-label">The Cohort</p>
         <h2 class="section-title">The Room Community</h2>
         <div class="divider"></div>
-        <p class="community-intro">This is your private space. Post reflections, wins, questions, or anything you want to share with the women in this room. Only the 20 of you can see this.</p>
-
+        <p class="page-intro">This is your private space. Post reflections, wins, questions, or anything you want to share with the women in this room. Only the 20 of you can see this.</p>
         <div class="post-form">
           <label class="post-form-label">Share something with the room</label>
           <input type="text" class="post-name-input" id="post-name" placeholder="Your first name" maxlength="40" />
-          <textarea class="post-textarea" id="post-text" placeholder="What is alive for you right now?" maxlength="1000"></textarea>
+          <textarea class="post-textarea" id="post-text" placeholder="What is alive for you right now?" maxlength="1200"></textarea>
           <button class="post-submit" onclick="submitPost()">Post to The Room</button>
         </div>
-
-        <div class="posts-list" id="posts-list">
-          <div class="posts-empty" id="posts-empty">
-            Be the first to post. The room is waiting for you.
-          </div>
-        </div>
+        <div class="posts-list" id="posts-list"></div>
       </div>
 
       <!-- RECORDINGS PAGE -->
@@ -534,42 +208,8 @@
         <p class="section-label">Session Replays</p>
         <h2 class="section-title">Call Recordings</h2>
         <div class="divider"></div>
-        <p style="font-size:0.9rem; color:rgba(245,240,232,0.55); margin-bottom:2rem;">Recordings are added within 24 hours of each live call. All four weeks will be here by the end of the cohort.</p>
-
-        <div class="recordings-grid">
-          <div class="recording-card">
-            <div class="recording-info">
-              <div class="recording-week">Week 1 · June 30</div>
-              <div class="recording-title">Regulation as Strategy</div>
-              <div class="recording-meta">Recording available after the call</div>
-            </div>
-            <span class="recording-locked">Not yet</span>
-          </div>
-          <div class="recording-card">
-            <div class="recording-info">
-              <div class="recording-week">Week 2 · July 7</div>
-              <div class="recording-title">The Internal Update</div>
-              <div class="recording-meta">Recording available after the call</div>
-            </div>
-            <span class="recording-locked">Not yet</span>
-          </div>
-          <div class="recording-card">
-            <div class="recording-info">
-              <div class="recording-week">Week 3 · July 14</div>
-              <div class="recording-title">Visibility Without Performance</div>
-              <div class="recording-meta">Recording available after the call</div>
-            </div>
-            <span class="recording-locked">Not yet</span>
-          </div>
-          <div class="recording-card">
-            <div class="recording-info">
-              <div class="recording-week">Week 4 · July 21</div>
-              <div class="recording-title">The Integration</div>
-              <div class="recording-meta">Recording available after the call</div>
-            </div>
-            <span class="recording-locked">Not yet</span>
-          </div>
-        </div>
+        <p class="page-intro">Recordings are added within 24 hours of each live call. All four weeks will be here by the end of the cohort.</p>
+        <div class="recordings-list" id="recordings-list"></div>
       </div>
 
       <!-- RESOURCES PAGE -->
@@ -577,148 +217,350 @@
         <p class="section-label">Materials</p>
         <h2 class="section-title">Resources</h2>
         <div class="divider"></div>
-        <p style="font-size:0.9rem; color:rgba(245,240,232,0.55); margin-bottom:2rem;">Everything Shania shares with the group lives here. Added throughout the four weeks.</p>
-
-        <div class="resources-grid">
-          <div class="resource-card" style="cursor:default; opacity:0.4;">
-            <div class="resource-icon">📄</div>
-            <div class="resource-type">Framework</div>
-            <div class="resource-title">Soft Power Operating System Audit</div>
-            <div class="resource-desc">Added Week 1</div>
-          </div>
-          <div class="resource-card" style="cursor:default; opacity:0.4;">
-            <div class="resource-icon">🎧</div>
-            <div class="resource-type">Audio</div>
-            <div class="resource-title">Nervous System Reset — 10 min</div>
-            <div class="resource-desc">Added Week 2</div>
-          </div>
-          <div class="resource-card" style="cursor:default; opacity:0.4;">
-            <div class="resource-icon">📋</div>
-            <div class="resource-type">Worksheet</div>
-            <div class="resource-title">The Expansion Map</div>
-            <div class="resource-desc">Added Week 3</div>
-          </div>
-          <div class="resource-card" style="cursor:default; opacity:0.4;">
-            <div class="resource-icon">✦</div>
-            <div class="resource-type">Guide</div>
-            <div class="resource-title">Integration Protocol</div>
-            <div class="resource-desc">Added Week 4</div>
-          </div>
-        </div>
-
-        <div style="margin-top:3rem; padding:1.5rem; background:rgba(201,169,110,0.06); border:1px solid rgba(201,169,110,0.15); border-radius:2px;">
-          <p style="font-size:0.7rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); margin-bottom:0.5rem;">Your Bonus</p>
-          <p style="font-family:var(--serif); font-size:1.1rem; color:var(--white); margin-bottom:0.4rem;">6 Months of Soft60 App Access</p>
-          <p style="font-size:0.85rem; color:rgba(245,240,232,0.55);">Your Soft60 access will be activated within 24 hours of joining. Download the app at <a href="https://soft60.app" target="_blank" style="color:var(--gold);">soft60.app</a> and use the email you registered with.</p>
+        <p class="page-intro">Everything Shania shares with the group lives here. Resources unlock week by week throughout the cohort.</p>
+        <div id="resources-list"></div>
+        <div class="soft60-bonus">
+          <div class="resource-type">Your Bonus</div>
+          <div class="resource-title">6 Months of Soft60 App Access</div>
+          <p>Your Soft60 access will be activated within 24 hours of joining. Download the app at <a href="https://soft60.app" target="_blank">soft60.app</a> and use the email address you registered with. If you have not received your access within 48 hours, email <a href="mailto:hello@shaniakhan.com" style="color:var(--gold)">hello@shaniakhan.com</a>.</p>
         </div>
       </div>
-
-    </div><!-- end #app -->
+    </div>
 
     <script>
-      // ── PASSWORD ──
-      // Change this password before sharing with your cohort
-      const ROOM_PASSWORD = "softpower2026";
-      const SESSION_KEY = "the-room-unlocked";
+    // ─────────────────────────────────────────────
+    // PASSWORD
+    // ─────────────────────────────────────────────
+    const ROOM_PASSWORD = "softpower2026"; // Change before sharing
+    const SESSION_KEY = "the-room-v1";
 
-      function checkPassword(e) {
-        e.preventDefault();
-        const val = document.getElementById('password-input').value.trim();
-        const err = document.getElementById('lock-error');
-        if (val.toLowerCase() === ROOM_PASSWORD.toLowerCase()) {
-          sessionStorage.setItem(SESSION_KEY, '1');
-          unlock();
-        } else {
-          err.classList.add('visible');
-          document.getElementById('password-input').value = '';
-          document.getElementById('password-input').focus();
-        }
+    function checkPassword(e) {
+      e.preventDefault();
+      const val = document.getElementById('password-input').value.trim();
+      if (val.toLowerCase() === ROOM_PASSWORD.toLowerCase()) {
+        sessionStorage.setItem(SESSION_KEY, '1');
+        unlock();
+      } else {
+        document.getElementById('lock-error').classList.add('visible');
+        document.getElementById('password-input').value = '';
+        document.getElementById('password-input').focus();
       }
+    }
+    function unlock() {
+      document.getElementById('lock-screen').style.display = 'none';
+      document.getElementById('app').classList.add('unlocked');
+      init();
+    }
+    if (sessionStorage.getItem(SESSION_KEY) === '1') unlock();
 
-      function unlock() {
-        document.getElementById('lock-screen').style.display = 'none';
-        document.getElementById('app').classList.add('unlocked');
-      }
+    // ─────────────────────────────────────────────
+    // SCHEDULE — all dates in CDT (UTC-5)
+    // Content becomes visible automatically on these dates
+    // ─────────────────────────────────────────────
+    const SCHEDULE = {
+      audio: [
+        { week: 1, liveDate: "2026-06-28T00:00:00-05:00", title: "Arriving", theme: "Week 1 · June 30 Call Prep", duration: "10 min", src: null }, // Replace src with audio URL when ready
+        { week: 2, liveDate: "2026-07-05T00:00:00-05:00", title: "The Update", theme: "Week 2 · July 7 Call Prep", duration: "10 min", src: null },
+        { week: 3, liveDate: "2026-07-12T00:00:00-05:00", title: "The Real You", theme: "Week 3 · July 14 Call Prep", duration: "10 min", src: null },
+        { week: 4, liveDate: "2026-07-19T00:00:00-05:00", title: "The Woman You Are Becoming", theme: "Week 4 · July 21 Call Prep", duration: "10 min", src: null },
+      ],
+      recordings: [
+        { week: 1, liveDate: "2026-07-01T00:00:00-05:00", title: "Regulation as Strategy", date: "June 30", src: null },
+        { week: 2, liveDate: "2026-07-08T00:00:00-05:00", title: "The Internal Update", date: "July 7", src: null },
+        { week: 3, liveDate: "2026-07-15T00:00:00-05:00", title: "Visibility Without Performance", date: "July 14", src: null },
+        { week: 4, liveDate: "2026-07-22T00:00:00-05:00", title: "The Integration", date: "July 21", src: null },
+      ],
+      resources: [
+        { week: 1, liveDate: "2026-06-30T00:00:00-05:00", icon: "📄", type: "Framework", title: "Soft Power Operating System Audit", desc: "Identify which files are running your business right now.", contentId: "res-audit" },
+        { week: 2, liveDate: "2026-07-07T00:00:00-05:00", icon: "🧘", type: "Protocol", title: "Nervous System Reset — 10 Minutes", desc: "Use before any important decision, call, or piece of content.", contentId: "res-reset" },
+        { week: 3, liveDate: "2026-07-14T00:00:00-05:00", icon: "🗺", type: "Worksheet", title: "The Expansion Map", desc: "Map exactly where you are contracting and what expansion looks like.", contentId: "res-map" },
+        { week: 4, liveDate: "2026-07-21T00:00:00-05:00", icon: "✦", type: "Guide", title: "The Integration Protocol", desc: "Your post-mastermind operating manual.", contentId: "res-protocol" },
+      ]
+    };
 
-      // Auto-unlock if already authenticated this session
-      if (sessionStorage.getItem(SESSION_KEY) === '1') unlock();
+    function isLive(dateStr) {
+      return new Date() >= new Date(dateStr);
+    }
 
-      // ── TABS ──
-      function showPage(id, btn) {
-        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-        document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
-        document.getElementById('page-' + id).classList.add('active');
-        btn.classList.add('active');
-      }
-
-      // ── COMMUNITY POSTS ──
-      // Posts are stored in localStorage so they persist across sessions on the same device.
-      // For a shared community, Shania would need to upgrade to a backend.
-      // For now this works per-device and is a great starting point.
-      const POSTS_KEY = 'the-room-posts';
-
-      function getPosts() {
-        try { return JSON.parse(localStorage.getItem(POSTS_KEY)) || []; } catch { return []; }
-      }
-
-      function savePosts(posts) {
-        localStorage.setItem(POSTS_KEY, JSON.stringify(posts));
-      }
-
-      function renderPosts() {
-        const posts = getPosts();
-        const list = document.getElementById('posts-list');
-        const empty = document.getElementById('posts-empty');
-        if (posts.length === 0) {
-          empty.style.display = 'block';
-          return;
-        }
-        empty.style.display = 'none';
-        // Clear existing post cards (keep empty msg)
-        list.querySelectorAll('.post-card').forEach(c => c.remove());
-        // Render newest first
-        [...posts].reverse().forEach(post => {
-          const card = document.createElement('div');
-          card.className = 'post-card';
-          card.innerHTML = `
-            <div class="post-header">
-              <span class="post-author">${escapeHtml(post.name)}</span>
-              <span class="post-date">${post.date}</span>
+    // ─────────────────────────────────────────────
+    // AUDIO
+    // ─────────────────────────────────────────────
+    function renderAudio() {
+      const grid = document.getElementById('audio-grid');
+      grid.innerHTML = '';
+      const now = new Date();
+      let anyLive = false;
+      SCHEDULE.audio.forEach((item, i) => {
+        const live = isLive(item.liveDate);
+        if (live) anyLive = true;
+        const isNewest = live && (i === SCHEDULE.audio.length - 1 || !isLive(SCHEDULE.audio[i+1].liveDate));
+        const card = document.createElement('div');
+        card.className = 'audio-card' + (live ? ' live' : ' locked');
+        card.innerHTML = `
+          <div class="audio-card-top">
+            <button class="audio-play-btn" ${!live || !item.src ? 'disabled' : ''} onclick="toggleAudio(${i})" aria-label="Play ${item.title}">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M4 2.5L13 8L4 13.5V2.5Z" fill="${live && item.src ? '#0a0a0a' : 'rgba(245,240,232,0.3)'}"/>
+              </svg>
+            </button>
+            <div class="audio-info">
+              <div class="audio-week">${item.theme}</div>
+              <div class="audio-title">${item.title}</div>
+              <div class="audio-meta">${live ? item.duration : 'Unlocks ' + formatDate(item.liveDate)}</div>
             </div>
-            <p class="post-body">${escapeHtml(post.text).replace(/\n/g,'<br>')}</p>
-          `;
-          list.appendChild(card);
-        });
+            ${isNewest ? '<span class="new-badge">New</span>' : ''}
+            ${!live ? '<span class="locked-badge">Upcoming</span>' : ''}
+          </div>
+          ${live && item.src ? `<div class="audio-player-wrap" id="audio-player-${i}"><audio controls src="${item.src}" preload="none"></audio></div>` : ''}
+        `;
+        grid.appendChild(card);
+      });
+      if (!anyLive) {
+        const placeholder = document.createElement('div');
+        placeholder.style.cssText = 'background:rgba(201,169,110,0.04);border:1px dashed rgba(201,169,110,0.2);border-radius:2px;padding:2.5rem;text-align:center;color:rgba(245,240,232,0.35);font-size:0.9rem;font-style:italic;';
+        placeholder.innerHTML = 'Your first audio drop unlocks June 28 — two days before the first call.<br><br><span style="color:var(--gold)">Check back soon.</span>';
+        grid.appendChild(placeholder);
       }
+    }
 
-      function submitPost() {
-        const name = document.getElementById('post-name').value.trim();
-        const text = document.getElementById('post-text').value.trim();
-        if (!name || !text) return;
-        const posts = getPosts();
-        posts.push({
-          name,
-          text,
-          date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
-        });
-        savePosts(posts);
-        document.getElementById('post-name').value = '';
-        document.getElementById('post-text').value = '';
-        renderPosts();
-      }
+    function toggleAudio(i) {
+      const wrap = document.getElementById('audio-player-' + i);
+      if (wrap) wrap.classList.toggle('open');
+    }
 
-      function escapeHtml(str) {
-        return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-      }
+    // ─────────────────────────────────────────────
+    // RECORDINGS
+    // ─────────────────────────────────────────────
+    function renderRecordings() {
+      const list = document.getElementById('recordings-list');
+      list.innerHTML = '';
+      SCHEDULE.recordings.forEach(item => {
+        const live = isLive(item.liveDate);
+        const card = document.createElement('div');
+        card.className = 'rec-card' + (live ? '' : ' locked-rec');
+        card.innerHTML = `
+          <div>
+            <div class="rec-week">Week ${item.week} · ${item.date}</div>
+            <div class="rec-title">${item.title}</div>
+            <div class="rec-meta">${live ? (item.src ? 'Recording available' : 'Being processed — check back shortly') : 'Available after the call'}</div>
+          </div>
+          ${live && item.src ? `<a href="${item.src}" target="_blank" class="rec-btn">Watch Replay</a>` : `<span class="locked-badge">${live ? 'Processing' : 'Upcoming'}</span>`}
+        `;
+        list.appendChild(card);
+      });
+    }
 
+    // ─────────────────────────────────────────────
+    // RESOURCES
+    // ─────────────────────────────────────────────
+    const RESOURCE_CONTENT = {
+      'res-audit': `
+        <h3>What This Is</h3>
+        <p>This is not a quiz. It is a mirror. Set aside 20 quiet minutes. Answer every question with the first honest answer that comes up — not the answer you think you should give.</p>
+        <h3>Part One: The Worth File</h3>
+        <div class="question">What do you currently charge for your primary offer? Write the number. Now write the number you would charge if you were not afraid of the reaction.</div>
+        <div class="answer-space">Your answer here...</div>
+        <div class="question">When someone pushes back on your price, what happens in your body? Describe the physical sensation.</div>
+        <div class="answer-space">Your answer here...</div>
+        <div class="question">Complete this sentence honestly: "Women like me charge ___."</div>
+        <div class="answer-space">Your answer here...</div>
+        <div class="question">Think of someone in your industry who charges significantly more than you. What is your first thought about them?</div>
+        <div class="answer-space">Your answer here...</div>
+        <h3>Part Two: The Safety File</h3>
+        <div class="question">When you think about posting something controversial or polarizing, what happens? Describe the feeling.</div>
+        <div class="answer-space">Your answer here...</div>
+        <div class="question">Have you ever written content and then deleted or softened it before posting? What did you delete? What were you afraid would happen?</div>
+        <div class="answer-space">Your answer here...</div>
+        <div class="question">Complete this sentence: "If I were fully visible — if everyone could see exactly who I am and what I believe — I am afraid that ___."</div>
+        <div class="answer-space">Your answer here...</div>
+        <h3>Part Three: The Enough File</h3>
+        <div class="question">Complete this sentence: "I will allow myself to rest when ___."</div>
+        <div class="answer-space">Your answer here...</div>
+        <div class="question">When you take a day off, what thoughts come up? Be specific.</div>
+        <div class="answer-space">Your answer here...</div>
+        <div class="question">What are you still waiting for permission to do?</div>
+        <div class="answer-space">Your answer here...</div>
+        <h3>Reading Your Results</h3>
+        <p>There are no scores. But there are patterns. Look at the gap between what you charge and what you know you are worth. Look at what you have been softening. Look at what you are waiting for. Those gaps are the work. Bring your most honest answers to Monday's call.</p>
+      `,
+      'res-reset': `
+        <h3>What This Is</h3>
+        <p>A 10-minute protocol for any moment you notice you are operating from urgency, reactivity, or performance. Use it before important calls, before you set prices, before you post something that matters.</p>
+        <h4>Step 1: Stop (1 minute)</h4>
+        <p>Whatever you are doing, stop. Close the laptop. Put down the phone. Sit down if you are standing. The act of stopping is itself a nervous system signal. Nothing is on fire. You have a minute.</p>
+        <h4>Step 2: Feel Your Feet (2 minutes)</h4>
+        <p>Press your feet into the floor. Feel the weight of your body. Notice five things you can physically feel right now — temperature, texture, weight. Stay with the physical sensations. This activates your parasympathetic nervous system.</p>
+        <h4>Step 3: Breathe (3 minutes)</h4>
+        <p>Inhale for 4 counts. Hold for 2. Exhale for 6. The extended exhale activates your rest-and-digest state. Do this for 3 minutes. If your mind wanders, return to the count.</p>
+        <h4>Step 4: Name the State (2 minutes)</h4>
+        <p>Ask yourself: what state was I just in? Survival mode — reactive, urgent, bracing? Performance mode — productive but hollow? Or soft power mode? Name it without judgment.</p>
+        <h4>Step 5: Ask the Question (2 minutes)</h4>
+        <p>Before you return to what you were doing, ask: what would I do right now if I were operating from soft power rather than survival? You do not have to act on the answer immediately. Just know it.</p>
+        <h3>When to Use This</h3>
+        <p>Before pricing conversations. Before difficult emails. Before posting something that feels risky. Before any decision that feels urgent. Before any conversation where you are tempted to over-explain or over-give.</p>
+      `,
+      'res-map': `
+        <h3>What This Is</h3>
+        <p>The Expansion Map shows you exactly where you are contracting and what the next level of expansion looks like — not the fantasy version, the next version. A step your nervous system can tolerate.</p>
+        <h3>Part One: Map the Contraction</h3>
+        <div class="question"><strong>Pricing:</strong> Where do you soften the number, offer a discount before being asked, or apologize for the price?</div>
+        <div class="answer-space">Your answer here...</div>
+        <div class="question"><strong>Visibility:</strong> What content do you not post, what opportunities do you not pursue, what rooms do you not enter?</div>
+        <div class="answer-space">Your answer here...</div>
+        <div class="question"><strong>Boundaries:</strong> What requests do you say yes to when you mean no? What clients do you keep past their time?</div>
+        <div class="answer-space">Your answer here...</div>
+        <div class="question"><strong>Rest:</strong> What conditions do you put on your own rest? What does it take for you to feel like you have done enough?</div>
+        <div class="answer-space">Your answer here...</div>
+        <div class="question"><strong>Desire:</strong> What desires have you dismissed as unrealistic, too much, or not for someone like you?</div>
+        <div class="answer-space">Your answer here...</div>
+        <h3>Part Two: Map the Expansion</h3>
+        <p>For each area, write what 20% bigger looks like. Not the dream — the next step.</p>
+        <div class="question"><strong>Pricing expansion:</strong> The next number. The one that makes you slightly uncomfortable but does not make you want to cancel everything.</div>
+        <div class="answer-space">Your answer here...</div>
+        <div class="question"><strong>Visibility expansion:</strong> The next piece of content you have been avoiding. The next opinion you have been softening.</div>
+        <div class="answer-space">Your answer here...</div>
+        <div class="question"><strong>Boundary expansion:</strong> The one thing you are going to stop doing. The one yes you are going to change to a no.</div>
+        <div class="answer-space">Your answer here...</div>
+        <div class="question"><strong>Rest expansion:</strong> One day, one hour, one morning that is yours without justification. Schedule it before you feel you have earned it.</div>
+        <div class="answer-space">Your answer here...</div>
+        <div class="question"><strong>Desire expansion:</strong> The one thing you have been dismissing as too much. Write it down. Do not edit it.</div>
+        <div class="answer-space">Your answer here...</div>
+        <h3>Your Commitment</h3>
+        <div class="question">Choose one area. Write: "In the next seven days, I will expand in the area of ___ by doing ___."</div>
+        <div class="answer-space">Your commitment here...</div>
+        <p>Bring this to the Week 3 call.</p>
+      `,
+      'res-protocol': `
+        <h3>The Daily Practice (5 minutes)</h3>
+        <p>Every morning, before you open your phone, before you check email, before you do anything — ask: <strong>What state am I operating from right now?</strong></p>
+        <p>If the answer is survival or performance, do the 10-minute nervous system reset before you begin your day. If the answer is soft power, begin.</p>
+        <h3>The Weekly Audit (15 minutes)</h3>
+        <p>Every Sunday, ask yourself five questions:</p>
+        <ol>
+          <li>Where did I contract this week?</li>
+          <li>Where did I expand? What did I do that the version of me from four weeks ago would not have done?</li>
+          <li>Which file ran most often — Worth, Safety, or Enough?</li>
+          <li>What decision am I avoiding right now? What would I do if I were operating from soft power?</li>
+          <li>What do I need to release before next week begins?</li>
+        </ol>
+        <p>Write the answers. Do not just think them. Writing makes them real.</p>
+        <h3>The Rooms Protocol</h3>
+        <p>Every quarter, audit the rooms you are in. Every relationship, community, client, commitment. Ask of each one: <em>Does this room require me to be smaller than I am?</em></p>
+        <p>If the answer is yes, you have a decision to make. Rich people leave the party first. You now know when a room is no longer yours. Act on that knowledge.</p>
+        <h3>Your Commitments</h3>
+        <div class="question">Write three things you are no longer willing to negotiate on. Not goals — commitments.</div>
+        <div class="answer-space">I am no longer willing to ___.<br><br>I am no longer willing to ___.<br><br>I am no longer willing to ___.</div>
+        <h3>A Note from Shania</h3>
+        <p>The work we did in this room is not a four-week program. It is the beginning of a permanent shift. You came in as one version of yourself. You are leaving as another.</p>
+        <p>The old patterns will come back. They always do. The difference is that now you can see them. You can name them. You can pause between the feeling and the action. That pause is everything.</p>
+        <p>Come back to The Room whenever you need to recalibrate. And when you are ready for the next level, I will be here.</p>
+        <p style="color:var(--gold);font-family:var(--serif);font-size:1rem;margin-top:1rem;">— Shania</p>
+      `
+    };
+
+    function renderResources() {
+      const list = document.getElementById('resources-list');
+      list.innerHTML = '';
+      SCHEDULE.resources.forEach(item => {
+        const live = isLive(item.liveDate);
+        const section = document.createElement('div');
+        section.className = 'resource-section';
+        section.innerHTML = `
+          <div class="resource-header ${live ? '' : 'locked-res'}">
+            <div class="resource-icon">${item.icon}</div>
+            <div style="flex:1">
+              <div class="resource-type">Week ${item.week} ${live ? '' : '· Unlocks ' + formatDate(item.liveDate)}</div>
+              <div class="resource-title">${item.title}</div>
+              <div class="resource-desc">${item.desc}</div>
+              ${live ? `<button class="resource-toggle" onclick="toggleResource('${item.contentId}', this)">Open Resource</button>` : ''}
+            </div>
+          </div>
+          ${live ? `<div class="resource-content" id="${item.contentId}">${RESOURCE_CONTENT[item.contentId] || ''}</div>` : ''}
+        `;
+        list.appendChild(section);
+      });
+    }
+
+    function toggleResource(id, btn) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.classList.toggle('open');
+      btn.textContent = el.classList.contains('open') ? 'Close Resource' : 'Open Resource';
+    }
+
+    // ─────────────────────────────────────────────
+    // COMMUNITY
+    // ─────────────────────────────────────────────
+    const POSTS_KEY = 'the-room-posts-v1';
+    const PINNED_POST = {
+      pinned: true,
+      name: "Shania",
+      text: "Welcome to The Room.\n\nYou made it. I am so glad you are here.\n\nThis is your private space for the next four weeks. Post your wins, your questions, your honest moments. The women in this room are your people.\n\nTo start: post your name and finish this sentence — The thing I am most ready to stop doing is ___.\n\nI will see you Monday.",
+      date: "June 30, 2026"
+    };
+
+    function getPosts() {
+      try { return JSON.parse(localStorage.getItem(POSTS_KEY)) || []; } catch { return []; }
+    }
+    function savePosts(posts) { localStorage.setItem(POSTS_KEY, JSON.stringify(posts)); }
+
+    function renderPosts() {
+      const list = document.getElementById('posts-list');
+      list.innerHTML = '';
+      // Pinned post always first
+      const pinned = document.createElement('div');
+      pinned.className = 'post-card pinned';
+      pinned.innerHTML = `<div class="pin-label">From Shania</div><div class="post-header"><span class="post-author">${PINNED_POST.name}</span><span class="post-date">${PINNED_POST.date}</span></div><p class="post-body">${PINNED_POST.text.replace(/\n/g,'<br>')}</p>`;
+      list.appendChild(pinned);
+      // User posts newest first
+      const posts = getPosts();
+      [...posts].reverse().forEach(post => {
+        const card = document.createElement('div');
+        card.className = 'post-card';
+        card.innerHTML = `<div class="post-header"><span class="post-author">${escapeHtml(post.name)}</span><span class="post-date">${post.date}</span></div><p class="post-body">${escapeHtml(post.text).replace(/\n/g,'<br>')}</p>`;
+        list.appendChild(card);
+      });
+    }
+
+    function submitPost() {
+      const name = document.getElementById('post-name').value.trim();
+      const text = document.getElementById('post-text').value.trim();
+      if (!name || !text) return;
+      const posts = getPosts();
+      posts.push({ name, text, date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) });
+      savePosts(posts);
+      document.getElementById('post-name').value = '';
+      document.getElementById('post-text').value = '';
       renderPosts();
+    }
 
-      // ── AUDIO PLAYER TOGGLE ──
-      function toggleAudio(id) {
-        const container = document.getElementById('audio-player-' + id);
-        if (!container) return;
-        container.classList.toggle('open');
-      }
+    function escapeHtml(s) {
+      return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+
+    // ─────────────────────────────────────────────
+    // TABS
+    // ─────────────────────────────────────────────
+    function showPage(id, btn) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+      document.getElementById('page-' + id).classList.add('active');
+      btn.classList.add('active');
+    }
+
+    // ─────────────────────────────────────────────
+    // HELPERS
+    // ─────────────────────────────────────────────
+    function formatDate(dateStr) {
+      return new Date(dateStr).toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
+    }
+
+    function init() {
+      renderAudio();
+      renderRecordings();
+      renderResources();
+      renderPosts();
+    }
     </script>
   </body>
 </html>
