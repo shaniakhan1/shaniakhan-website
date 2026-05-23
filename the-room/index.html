@@ -47,6 +47,16 @@
       .nav-tab:hover { color: var(--gold); }
       .nav-tab.active { color: var(--gold); background: rgba(201,169,110,0.1); }
 
+      /* CALL SCHEDULE CARD */
+      .call-schedule-card { margin-top: 1.5rem; background: rgba(201,169,110,0.06); border: 1px solid rgba(201,169,110,0.2); border-radius: 4px; padding: 1.25rem 1.5rem; max-width: 520px; }
+      .call-schedule-label { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+      .call-times-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.35rem 2rem; margin-bottom: 1rem; }
+      .call-time-row { display: contents; }
+      .tz-label { font-size: 0.8rem; color: rgba(245,240,232,0.5); }
+      .tz-time { font-size: 0.8rem; color: var(--cream); font-weight: 400; }
+      .call-your-time { font-size: 0.82rem; color: var(--gold-light); border-top: 1px solid rgba(201,169,110,0.15); padding-top: 0.75rem; margin-bottom: 0.5rem; }
+      .call-dates { font-size: 0.72rem; letter-spacing: 0.1em; color: rgba(245,240,232,0.35); }
+
       /* WELCOME HEADER */
       .welcome-header { padding: 3rem 2rem 2rem; max-width: 900px; margin: 0 auto; border-bottom: 1px solid rgba(201,169,110,0.1); }
       .welcome-eyebrow { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
@@ -177,6 +187,20 @@
         <p class="welcome-eyebrow">June 30 – July 28, 2026</p>
         <h2 class="welcome-title">You are in <em>The Room.</em></h2>
         <p class="welcome-msg">Welcome. Everything you need for the next four weeks lives here. New audio drops two days before each call. Recordings appear within 24 hours after each session. Resources unlock week by week.</p>
+        <div class="call-schedule-card">
+          <div class="call-schedule-label">Live Calls &mdash; Every Tuesday</div>
+          <div class="call-times-grid">
+            <div class="call-time-row"><span class="tz-label">Central (CDT)</span><span class="tz-time">12:00 PM</span></div>
+            <div class="call-time-row"><span class="tz-label">Eastern (EDT)</span><span class="tz-time">1:00 PM</span></div>
+            <div class="call-time-row"><span class="tz-label">Pacific (PDT)</span><span class="tz-time">10:00 AM</span></div>
+            <div class="call-time-row"><span class="tz-label">London (BST)</span><span class="tz-time">6:00 PM</span></div>
+            <div class="call-time-row"><span class="tz-label">Paris / Amsterdam</span><span class="tz-time">7:00 PM</span></div>
+            <div class="call-time-row"><span class="tz-label">Mumbai (IST)</span><span class="tz-time">10:30 PM</span></div>
+            <div class="call-time-row"><span class="tz-label">Sydney (AEST)</span><span class="tz-time">1:00 AM +1</span></div>
+          </div>
+          <div class="call-your-time">Your local time: <span id="local-call-time">calculating...</span></div>
+          <div class="call-dates">July 1 &middot; July 7 &middot; July 14 &middot; July 21</div>
+        </div>
       </div>
 
       <!-- AUDIO PAGE -->
@@ -491,6 +515,19 @@
     // ─────────────────────────────────────────────
     // COMMUNITY
     // ─────────────────────────────────────────────
+    // Local call time display
+    (function() {
+      try {
+        // Next Tuesday at 12:00 PM CDT = 17:00 UTC
+        const el = document.getElementById('local-call-time');
+        if (!el) return;
+        // Use a known Tuesday call date to get the right local time
+        const callUTC = new Date('2026-07-01T17:00:00Z'); // July 1 12pm CDT
+        const fmt = new Intl.DateTimeFormat(undefined, { hour: 'numeric', minute: '2-digit', timeZoneName: 'short' });
+        el.textContent = fmt.format(callUTC);
+      } catch(e) { document.getElementById('local-call-time').textContent = '12:00 PM CDT'; }
+    })();
+
     const POSTS_KEY = 'the-room-posts-v1';
     const PINNED_POST = {
       pinned: true,
