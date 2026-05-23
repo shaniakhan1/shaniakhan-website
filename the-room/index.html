@@ -1,0 +1,724 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Room | Soft Power Mastermind</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+      :root {
+        --black: #0a0a0a;
+        --off-black: #111111;
+        --charcoal: #1c1c1c;
+        --gold: #c9a96e;
+        --gold-light: #e8d5b0;
+        --cream: #f5f0e8;
+        --white: #ffffff;
+        --muted: #666;
+        --serif: 'Cormorant Garamond', Georgia, serif;
+        --sans: 'DM Sans', system-ui, sans-serif;
+      }
+
+      html, body { height: 100%; }
+
+      body {
+        background: var(--black);
+        color: var(--cream);
+        font-family: var(--sans);
+        font-weight: 300;
+        line-height: 1.7;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* ── LOCK SCREEN ── */
+      #lock-screen {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        background: radial-gradient(ellipse at center, #1a1208 0%, var(--black) 70%);
+      }
+      .lock-logo {
+        font-family: var(--serif);
+        font-size: 1rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 3rem;
+      }
+      .lock-title {
+        font-family: var(--serif);
+        font-size: clamp(2rem, 6vw, 3.5rem);
+        font-weight: 300;
+        color: var(--white);
+        text-align: center;
+        line-height: 1.15;
+        margin-bottom: 0.75rem;
+      }
+      .lock-title em { font-style: italic; color: var(--gold); }
+      .lock-subtitle {
+        font-size: 0.9rem;
+        color: rgba(245,240,232,0.5);
+        text-align: center;
+        margin-bottom: 2.5rem;
+      }
+      .lock-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        max-width: 340px;
+      }
+      .lock-input {
+        background: rgba(255,255,255,0.05);
+        border: 1px solid rgba(201,169,110,0.25);
+        border-radius: 2px;
+        padding: 0.9rem 1.2rem;
+        font-family: var(--sans);
+        font-size: 1rem;
+        color: var(--cream);
+        outline: none;
+        transition: border-color 0.2s;
+        letter-spacing: 0.1em;
+        text-align: center;
+      }
+      .lock-input::placeholder { color: rgba(245,240,232,0.3); letter-spacing: 0.05em; }
+      .lock-input:focus { border-color: var(--gold); }
+      .lock-btn {
+        background: var(--gold);
+        color: var(--black);
+        border: none;
+        border-radius: 2px;
+        padding: 0.9rem;
+        font-family: var(--sans);
+        font-size: 0.8rem;
+        font-weight: 500;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: background 0.2s, transform 0.15s;
+      }
+      .lock-btn:hover { background: var(--gold-light); transform: translateY(-1px); }
+      .lock-btn:active { transform: scale(0.98); }
+      .lock-error {
+        font-size: 0.82rem;
+        color: #e07070;
+        text-align: center;
+        display: none;
+      }
+      .lock-error.visible { display: block; }
+
+      /* ── MAIN APP ── */
+      #app { display: none; }
+      #app.unlocked { display: block; }
+
+      /* ── NAV ── */
+      nav {
+        position: sticky; top: 0; z-index: 100;
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 1.1rem 2rem;
+        background: rgba(10,10,10,0.92);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(201,169,110,0.15);
+      }
+      .nav-brand {
+        font-family: var(--serif);
+        font-size: 1.05rem;
+        color: var(--gold);
+        letter-spacing: 0.05em;
+      }
+      .nav-brand span { font-weight: 300; color: rgba(245,240,232,0.5); font-size: 0.85rem; margin-left: 0.5rem; }
+      .nav-tabs {
+        display: flex; gap: 0.25rem;
+      }
+      .nav-tab {
+        font-family: var(--sans);
+        font-size: 0.75rem;
+        font-weight: 400;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: rgba(245,240,232,0.5);
+        padding: 0.5rem 1rem;
+        border-radius: 2px;
+        cursor: pointer;
+        border: none;
+        background: transparent;
+        transition: color 0.2s, background 0.2s;
+      }
+      .nav-tab:hover { color: var(--gold); }
+      .nav-tab.active {
+        color: var(--gold);
+        background: rgba(201,169,110,0.1);
+      }
+
+      /* ── LAYOUT ── */
+      .page { display: none; padding: 3rem 2rem; max-width: 900px; margin: 0 auto; }
+      .page.active { display: block; }
+
+      /* ── WELCOME HEADER ── */
+      .welcome-header {
+        padding: 3rem 2rem 2rem;
+        max-width: 900px;
+        margin: 0 auto;
+        border-bottom: 1px solid rgba(201,169,110,0.1);
+        margin-bottom: 0;
+      }
+      .welcome-eyebrow {
+        font-size: 0.7rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 0.75rem;
+      }
+      .welcome-title {
+        font-family: var(--serif);
+        font-size: clamp(1.8rem, 4vw, 2.8rem);
+        font-weight: 300;
+        color: var(--white);
+        line-height: 1.2;
+        margin-bottom: 0.75rem;
+      }
+      .welcome-title em { font-style: italic; color: var(--gold); }
+      .welcome-sub {
+        font-size: 0.9rem;
+        color: rgba(245,240,232,0.55);
+      }
+
+      /* ── SECTION TITLE ── */
+      .section-label {
+        font-size: 0.68rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 1.5rem;
+      }
+      .section-title {
+        font-family: var(--serif);
+        font-size: 1.6rem;
+        font-weight: 300;
+        color: var(--white);
+        margin-bottom: 0.5rem;
+      }
+      .divider { width: 40px; height: 1px; background: var(--gold); opacity: 0.4; margin: 1.5rem 0; }
+
+      /* ── AUDIO DROPS ── */
+      .audio-grid { display: flex; flex-direction: column; gap: 1rem; }
+      .audio-card {
+        background: var(--charcoal);
+        border: 1px solid rgba(201,169,110,0.12);
+        border-radius: 2px;
+        padding: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+      }
+      .audio-card.new { border-color: rgba(201,169,110,0.4); }
+      .audio-play-btn {
+        width: 48px; height: 48px;
+        border-radius: 50%;
+        background: var(--gold);
+        border: none;
+        cursor: pointer;
+        display: flex; align-items: center; justify-content: center;
+        flex-shrink: 0;
+        transition: background 0.2s, transform 0.15s;
+      }
+      .audio-play-btn:hover { background: var(--gold-light); transform: scale(1.05); }
+      .audio-play-btn svg { margin-left: 3px; }
+      .audio-info { flex: 1; min-width: 0; }
+      .audio-week {
+        font-size: 0.65rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 0.3rem;
+      }
+      .audio-title {
+        font-family: var(--serif);
+        font-size: 1.1rem;
+        font-weight: 400;
+        color: var(--white);
+        margin-bottom: 0.2rem;
+      }
+      .audio-meta { font-size: 0.78rem; color: var(--muted); }
+      .audio-new-badge {
+        font-size: 0.62rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--black);
+        background: var(--gold);
+        padding: 0.2rem 0.6rem;
+        border-radius: 2px;
+        flex-shrink: 0;
+      }
+      .audio-player-container {
+        margin-top: 1rem;
+        display: none;
+      }
+      .audio-player-container.open { display: block; }
+      .audio-player-container audio {
+        width: 100%;
+        accent-color: var(--gold);
+      }
+      .audio-placeholder {
+        background: rgba(201,169,110,0.05);
+        border: 1px dashed rgba(201,169,110,0.2);
+        border-radius: 2px;
+        padding: 2rem;
+        text-align: center;
+        color: rgba(245,240,232,0.3);
+        font-size: 0.88rem;
+        font-style: italic;
+      }
+
+      /* ── COMMUNITY ── */
+      .community-intro {
+        font-size: 0.92rem;
+        color: rgba(245,240,232,0.6);
+        margin-bottom: 2rem;
+        line-height: 1.7;
+      }
+      .post-form {
+        background: var(--charcoal);
+        border: 1px solid rgba(201,169,110,0.15);
+        border-radius: 2px;
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+      }
+      .post-form-label {
+        font-size: 0.72rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 0.75rem;
+        display: block;
+      }
+      .post-name-input, .post-textarea {
+        width: 100%;
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(201,169,110,0.2);
+        border-radius: 2px;
+        padding: 0.75rem 1rem;
+        font-family: var(--sans);
+        font-size: 0.92rem;
+        color: var(--cream);
+        outline: none;
+        resize: vertical;
+        transition: border-color 0.2s;
+        margin-bottom: 0.75rem;
+      }
+      .post-name-input { resize: none; }
+      .post-name-input::placeholder, .post-textarea::placeholder { color: rgba(245,240,232,0.25); }
+      .post-name-input:focus, .post-textarea:focus { border-color: var(--gold); }
+      .post-textarea { min-height: 100px; }
+      .post-submit {
+        background: var(--gold);
+        color: var(--black);
+        border: none;
+        border-radius: 2px;
+        padding: 0.7rem 1.5rem;
+        font-family: var(--sans);
+        font-size: 0.75rem;
+        font-weight: 500;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: background 0.2s, transform 0.15s;
+      }
+      .post-submit:hover { background: var(--gold-light); transform: translateY(-1px); }
+      .posts-list { display: flex; flex-direction: column; gap: 1rem; }
+      .post-card {
+        background: var(--charcoal);
+        border: 1px solid rgba(201,169,110,0.1);
+        border-radius: 2px;
+        padding: 1.25rem 1.5rem;
+      }
+      .post-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem; }
+      .post-author {
+        font-family: var(--serif);
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--gold);
+      }
+      .post-date { font-size: 0.72rem; color: var(--muted); }
+      .post-body { font-size: 0.92rem; color: rgba(245,240,232,0.8); line-height: 1.7; }
+      .posts-empty {
+        text-align: center;
+        padding: 3rem;
+        color: rgba(245,240,232,0.3);
+        font-style: italic;
+        font-family: var(--serif);
+        font-size: 1rem;
+      }
+
+      /* ── RECORDINGS ── */
+      .recordings-grid { display: flex; flex-direction: column; gap: 1rem; }
+      .recording-card {
+        background: var(--charcoal);
+        border: 1px solid rgba(201,169,110,0.12);
+        border-radius: 2px;
+        padding: 1.25rem 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+      .recording-info {}
+      .recording-week {
+        font-size: 0.65rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 0.3rem;
+      }
+      .recording-title {
+        font-family: var(--serif);
+        font-size: 1.05rem;
+        color: var(--white);
+        margin-bottom: 0.2rem;
+      }
+      .recording-meta { font-size: 0.78rem; color: var(--muted); }
+      .recording-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: var(--sans);
+        font-size: 0.75rem;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--gold);
+        text-decoration: none;
+        border: 1px solid rgba(201,169,110,0.3);
+        border-radius: 2px;
+        padding: 0.5rem 1rem;
+        flex-shrink: 0;
+        transition: border-color 0.2s, background 0.2s;
+      }
+      .recording-btn:hover { border-color: var(--gold); background: rgba(201,169,110,0.07); }
+      .recording-locked {
+        font-size: 0.75rem;
+        color: rgba(245,240,232,0.25);
+        font-style: italic;
+        flex-shrink: 0;
+      }
+
+      /* ── RESOURCES ── */
+      .resources-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; }
+      .resource-card {
+        background: var(--charcoal);
+        border: 1px solid rgba(201,169,110,0.12);
+        border-radius: 2px;
+        padding: 1.5rem;
+        text-decoration: none;
+        transition: border-color 0.2s, transform 0.15s;
+        display: block;
+      }
+      .resource-card:hover { border-color: rgba(201,169,110,0.4); transform: translateY(-2px); }
+      .resource-icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
+      .resource-type {
+        font-size: 0.62rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 0.4rem;
+      }
+      .resource-title {
+        font-family: var(--serif);
+        font-size: 1rem;
+        color: var(--white);
+        line-height: 1.4;
+      }
+      .resource-desc { font-size: 0.8rem; color: var(--muted); margin-top: 0.4rem; }
+
+      /* ── RESPONSIVE ── */
+      @media (max-width: 640px) {
+        nav { padding: 1rem 1.25rem; }
+        .nav-tabs { gap: 0; }
+        .nav-tab { padding: 0.5rem 0.6rem; font-size: 0.68rem; }
+        .nav-brand span { display: none; }
+        .page { padding: 2rem 1.25rem; }
+        .welcome-header { padding: 2rem 1.25rem 1.5rem; }
+        .audio-card { flex-wrap: wrap; }
+        .recording-card { flex-direction: column; align-items: flex-start; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- LOCK SCREEN -->
+    <div id="lock-screen">
+      <p class="lock-logo">Shania Khan</p>
+      <h1 class="lock-title">Welcome to<br><em>The Room</em></h1>
+      <p class="lock-subtitle">Soft Power Mastermind · Members Only</p>
+      <form class="lock-form" onsubmit="checkPassword(event)">
+        <input
+          type="password"
+          id="password-input"
+          class="lock-input"
+          placeholder="Enter your password"
+          autocomplete="current-password"
+        />
+        <button type="submit" class="lock-btn">Enter The Room</button>
+        <p class="lock-error" id="lock-error">That password is not right. Check your welcome email.</p>
+      </form>
+    </div>
+
+    <!-- MAIN APP -->
+    <div id="app">
+
+      <!-- NAV -->
+      <nav>
+        <div class="nav-brand">The Room <span>Soft Power Mastermind</span></div>
+        <div class="nav-tabs">
+          <button class="nav-tab active" onclick="showPage('audio', this)">Audio</button>
+          <button class="nav-tab" onclick="showPage('community', this)">Community</button>
+          <button class="nav-tab" onclick="showPage('recordings', this)">Recordings</button>
+          <button class="nav-tab" onclick="showPage('resources', this)">Resources</button>
+        </div>
+      </nav>
+
+      <!-- WELCOME HEADER -->
+      <div class="welcome-header">
+        <p class="welcome-eyebrow">June 30 — July 28, 2026</p>
+        <h2 class="welcome-title">You are in <em>The Room.</em></h2>
+        <p class="welcome-sub">Welcome. Everything you need for the next four weeks lives here.</p>
+      </div>
+
+      <!-- AUDIO PAGE -->
+      <div id="page-audio" class="page active">
+        <p class="section-label">Weekly Audio Calibrations</p>
+        <h2 class="section-title">Shania's Drops</h2>
+        <div class="divider"></div>
+        <p style="font-size:0.9rem; color:rgba(245,240,232,0.55); margin-bottom:2rem;">A new audio drops each week before your live call. Listen before you join. These are not recordings — they are calibrations to bring you into the right state.</p>
+
+        <div class="audio-grid" id="audio-grid">
+          <!-- Audio drops will appear here. Placeholder shown until Week 1 starts. -->
+          <div class="audio-placeholder">
+            Your first audio drop will appear here on June 28 — two days before the first call.<br><br>
+            <span style="color:var(--gold);">Check back soon.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- COMMUNITY PAGE -->
+      <div id="page-community" class="page">
+        <p class="section-label">The Cohort</p>
+        <h2 class="section-title">The Room Community</h2>
+        <div class="divider"></div>
+        <p class="community-intro">This is your private space. Post reflections, wins, questions, or anything you want to share with the women in this room. Only the 20 of you can see this.</p>
+
+        <div class="post-form">
+          <label class="post-form-label">Share something with the room</label>
+          <input type="text" class="post-name-input" id="post-name" placeholder="Your first name" maxlength="40" />
+          <textarea class="post-textarea" id="post-text" placeholder="What is alive for you right now?" maxlength="1000"></textarea>
+          <button class="post-submit" onclick="submitPost()">Post to The Room</button>
+        </div>
+
+        <div class="posts-list" id="posts-list">
+          <div class="posts-empty" id="posts-empty">
+            Be the first to post. The room is waiting for you.
+          </div>
+        </div>
+      </div>
+
+      <!-- RECORDINGS PAGE -->
+      <div id="page-recordings" class="page">
+        <p class="section-label">Session Replays</p>
+        <h2 class="section-title">Call Recordings</h2>
+        <div class="divider"></div>
+        <p style="font-size:0.9rem; color:rgba(245,240,232,0.55); margin-bottom:2rem;">Recordings are added within 24 hours of each live call. All four weeks will be here by the end of the cohort.</p>
+
+        <div class="recordings-grid">
+          <div class="recording-card">
+            <div class="recording-info">
+              <div class="recording-week">Week 1 · June 30</div>
+              <div class="recording-title">Regulation as Strategy</div>
+              <div class="recording-meta">Recording available after the call</div>
+            </div>
+            <span class="recording-locked">Not yet</span>
+          </div>
+          <div class="recording-card">
+            <div class="recording-info">
+              <div class="recording-week">Week 2 · July 7</div>
+              <div class="recording-title">The Internal Update</div>
+              <div class="recording-meta">Recording available after the call</div>
+            </div>
+            <span class="recording-locked">Not yet</span>
+          </div>
+          <div class="recording-card">
+            <div class="recording-info">
+              <div class="recording-week">Week 3 · July 14</div>
+              <div class="recording-title">Visibility Without Performance</div>
+              <div class="recording-meta">Recording available after the call</div>
+            </div>
+            <span class="recording-locked">Not yet</span>
+          </div>
+          <div class="recording-card">
+            <div class="recording-info">
+              <div class="recording-week">Week 4 · July 21</div>
+              <div class="recording-title">The Integration</div>
+              <div class="recording-meta">Recording available after the call</div>
+            </div>
+            <span class="recording-locked">Not yet</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RESOURCES PAGE -->
+      <div id="page-resources" class="page">
+        <p class="section-label">Materials</p>
+        <h2 class="section-title">Resources</h2>
+        <div class="divider"></div>
+        <p style="font-size:0.9rem; color:rgba(245,240,232,0.55); margin-bottom:2rem;">Everything Shania shares with the group lives here. Added throughout the four weeks.</p>
+
+        <div class="resources-grid">
+          <div class="resource-card" style="cursor:default; opacity:0.4;">
+            <div class="resource-icon">📄</div>
+            <div class="resource-type">Framework</div>
+            <div class="resource-title">Soft Power Operating System Audit</div>
+            <div class="resource-desc">Added Week 1</div>
+          </div>
+          <div class="resource-card" style="cursor:default; opacity:0.4;">
+            <div class="resource-icon">🎧</div>
+            <div class="resource-type">Audio</div>
+            <div class="resource-title">Nervous System Reset — 10 min</div>
+            <div class="resource-desc">Added Week 2</div>
+          </div>
+          <div class="resource-card" style="cursor:default; opacity:0.4;">
+            <div class="resource-icon">📋</div>
+            <div class="resource-type">Worksheet</div>
+            <div class="resource-title">The Expansion Map</div>
+            <div class="resource-desc">Added Week 3</div>
+          </div>
+          <div class="resource-card" style="cursor:default; opacity:0.4;">
+            <div class="resource-icon">✦</div>
+            <div class="resource-type">Guide</div>
+            <div class="resource-title">Integration Protocol</div>
+            <div class="resource-desc">Added Week 4</div>
+          </div>
+        </div>
+
+        <div style="margin-top:3rem; padding:1.5rem; background:rgba(201,169,110,0.06); border:1px solid rgba(201,169,110,0.15); border-radius:2px;">
+          <p style="font-size:0.7rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); margin-bottom:0.5rem;">Your Bonus</p>
+          <p style="font-family:var(--serif); font-size:1.1rem; color:var(--white); margin-bottom:0.4rem;">6 Months of Soft60 App Access</p>
+          <p style="font-size:0.85rem; color:rgba(245,240,232,0.55);">Your Soft60 access will be activated within 24 hours of joining. Download the app at <a href="https://soft60.app" target="_blank" style="color:var(--gold);">soft60.app</a> and use the email you registered with.</p>
+        </div>
+      </div>
+
+    </div><!-- end #app -->
+
+    <script>
+      // ── PASSWORD ──
+      // Change this password before sharing with your cohort
+      const ROOM_PASSWORD = "softpower2026";
+      const SESSION_KEY = "the-room-unlocked";
+
+      function checkPassword(e) {
+        e.preventDefault();
+        const val = document.getElementById('password-input').value.trim();
+        const err = document.getElementById('lock-error');
+        if (val.toLowerCase() === ROOM_PASSWORD.toLowerCase()) {
+          sessionStorage.setItem(SESSION_KEY, '1');
+          unlock();
+        } else {
+          err.classList.add('visible');
+          document.getElementById('password-input').value = '';
+          document.getElementById('password-input').focus();
+        }
+      }
+
+      function unlock() {
+        document.getElementById('lock-screen').style.display = 'none';
+        document.getElementById('app').classList.add('unlocked');
+      }
+
+      // Auto-unlock if already authenticated this session
+      if (sessionStorage.getItem(SESSION_KEY) === '1') unlock();
+
+      // ── TABS ──
+      function showPage(id, btn) {
+        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+        document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+        document.getElementById('page-' + id).classList.add('active');
+        btn.classList.add('active');
+      }
+
+      // ── COMMUNITY POSTS ──
+      // Posts are stored in localStorage so they persist across sessions on the same device.
+      // For a shared community, Shania would need to upgrade to a backend.
+      // For now this works per-device and is a great starting point.
+      const POSTS_KEY = 'the-room-posts';
+
+      function getPosts() {
+        try { return JSON.parse(localStorage.getItem(POSTS_KEY)) || []; } catch { return []; }
+      }
+
+      function savePosts(posts) {
+        localStorage.setItem(POSTS_KEY, JSON.stringify(posts));
+      }
+
+      function renderPosts() {
+        const posts = getPosts();
+        const list = document.getElementById('posts-list');
+        const empty = document.getElementById('posts-empty');
+        if (posts.length === 0) {
+          empty.style.display = 'block';
+          return;
+        }
+        empty.style.display = 'none';
+        // Clear existing post cards (keep empty msg)
+        list.querySelectorAll('.post-card').forEach(c => c.remove());
+        // Render newest first
+        [...posts].reverse().forEach(post => {
+          const card = document.createElement('div');
+          card.className = 'post-card';
+          card.innerHTML = `
+            <div class="post-header">
+              <span class="post-author">${escapeHtml(post.name)}</span>
+              <span class="post-date">${post.date}</span>
+            </div>
+            <p class="post-body">${escapeHtml(post.text).replace(/\n/g,'<br>')}</p>
+          `;
+          list.appendChild(card);
+        });
+      }
+
+      function submitPost() {
+        const name = document.getElementById('post-name').value.trim();
+        const text = document.getElementById('post-text').value.trim();
+        if (!name || !text) return;
+        const posts = getPosts();
+        posts.push({
+          name,
+          text,
+          date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+        });
+        savePosts(posts);
+        document.getElementById('post-name').value = '';
+        document.getElementById('post-text').value = '';
+        renderPosts();
+      }
+
+      function escapeHtml(str) {
+        return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+      }
+
+      renderPosts();
+
+      // ── AUDIO PLAYER TOGGLE ──
+      function toggleAudio(id) {
+        const container = document.getElementById('audio-player-' + id);
+        if (!container) return;
+        container.classList.toggle('open');
+      }
+    </script>
+  </body>
+</html>
