@@ -849,6 +849,80 @@
 </style>
 </head>
 <body>
+
+<!-- ANNOUNCEMENT BAR -->
+<div id="announce-bar" style="
+  position: relative;
+  z-index: 100;
+  background: var(--ink);
+  border-bottom: 1px solid rgba(201,164,85,0.35);
+  padding: 0.85rem 4vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+">
+  <span style="
+    font-family: 'Inter', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(244,237,226,0.6);
+  ">Now Enrolling</span>
+  <span style="
+    width: 1px;
+    height: 0.9rem;
+    background: rgba(201,164,85,0.4);
+    display: inline-block;
+    flex-shrink: 0;
+  "></span>
+  <a href="/mastermind/" style="
+    font-family: 'Italiana', serif;
+    font-size: 1.05rem;
+    color: var(--cream);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: color 0.3s;
+  " onmouseover="this.style.color='#c9a455'" onmouseout="this.style.color='var(--cream)'">
+    Soft Power Mastermind &mdash; June 30
+  </a>
+  <span style="
+    width: 1px;
+    height: 0.9rem;
+    background: rgba(201,164,85,0.4);
+    display: inline-block;
+    flex-shrink: 0;
+  "></span>
+  <a href="/mastermind/" style="
+    font-family: 'Inter', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gold-bright);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(201,164,85,0.4);
+    padding-bottom: 0.1rem;
+    transition: all 0.3s;
+    white-space: nowrap;
+  " onmouseover="this.style.borderColor='var(--gold-bright)'" onmouseout="this.style.borderColor='rgba(201,164,85,0.4)'">
+    14 spots &rarr;
+  </a>
+  <button onclick="document.getElementById('announce-bar').style.display='none'" style="
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: rgba(244,237,226,0.35);
+    font-size: 1rem;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0.25rem 0.5rem;
+    transition: color 0.3s;
+  " onmouseover="this.style.color='rgba(244,237,226,0.8)'" onmouseout="this.style.color='rgba(244,237,226,0.35)'" aria-label="Dismiss">&times;</button>
+</div>
+
 <div class="inner">
 
 <nav>
@@ -901,7 +975,7 @@
       <div class="auth-label">Luxury &amp; Beauty<br>Brand Experience</div>
     </div>
     <div class="auth-item">
-      <div class="auth-number">370<em>K</em></div>
+      <div class="auth-number">400<em>K+</em></div>
       <div class="auth-label">Combined Audience<br>Instagram &amp; TikTok</div>
     </div>
     <div class="auth-item">
