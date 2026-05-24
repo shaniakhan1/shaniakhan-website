@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #0A0A0A;
+            display: flex;
+            flex-direction: column;
+            font-family: 'DM Sans', sans-serif;
+            position: relative;
+        }
+        .top-bar {
+            height: 6px;
+            background: #C9A84C;
+            width: 100%;
+            flex-shrink: 0;
+        }
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .bg-numeral {
+            position: absolute;
+            font-family: 'Playfair Display', serif;
+            font-size: 420px;
+            font-weight: 900;
+            color: #C9A84C;
+            opacity: 0.04;
+            line-height: 1;
+            letter-spacing: -10px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            white-space: nowrap;
+        }
+        .inner {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .call-label {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: #C9A84C;
+            margin-bottom: 36px;
+        }
+        .main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 88px;
+            font-weight: 900;
+            color: #F5F0E8;
+            line-height: 1.0;
+            margin-bottom: 40px;
+        }
+        .main-title em {
+            font-style: italic;
+            color: #C9A84C;
+        }
+        .divider {
+            width: 80px;
+            height: 2px;
+            background: #C9A84C;
+            margin-bottom: 36px;
+        }
+        .subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 400;
+            font-style: italic;
+            color: #F5F0E8;
+            opacity: 0.55;
+            line-height: 1.6;
+            max-width: 640px;
+        }
+        .bottom-row {
+            position: absolute;
+            bottom: 44px;
+            left: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 100px;
+        }
+        .brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 13px;
+            color: #F5F0E8;
+            opacity: 0.2;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        .date-badge {
+            background: #C9A84C;
+            color: #0A0A0A;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 7px 18px;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+    <div class="top-bar"></div>
+    <div class="content">
+        <div class="bg-numeral">IV</div>
+        <div class="inner">
+            <div class="call-label">Soft Power Mastermind · Call Four</div>
+            <div class="main-title">The<br><em>Integration</em></div>
+            <div class="divider"></div>
+            <div class="subtitle">This is not the end. This is the beginning of operating from a different place permanently.</div>
+        </div>
+    </div>
+    <div class="bottom-row">
+        <div class="brand">Shania Khan</div>
+        <div class="date-badge">July 21</div>
+    </div>
+</div>
+</body>
+</html>

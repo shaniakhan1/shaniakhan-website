@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #0A0A0A;
+            display: flex;
+            font-family: 'DM Sans', sans-serif;
+        }
+        .accent-col {
+            width: 6px;
+            background: #C9A84C;
+            flex-shrink: 0;
+        }
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 64px 80px 64px 72px;
+        }
+        .file-tag {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #C9A84C;
+            margin-bottom: 8px;
+        }
+        .file-number-row {
+            display: flex;
+            align-items: baseline;
+            gap: 20px;
+            margin-bottom: 32px;
+        }
+        .file-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 100px;
+            font-weight: 900;
+            color: #C9A84C;
+            opacity: 0.12;
+            line-height: 1;
+        }
+        .file-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 56px;
+            font-weight: 900;
+            color: #F5F0E8;
+            line-height: 1.0;
+        }
+        .file-title em {
+            font-style: italic;
+            color: #C9A84C;
+        }
+        .file-definition {
+            font-size: 18px;
+            font-weight: 300;
+            color: #F5F0E8;
+            opacity: 0.7;
+            line-height: 1.6;
+            max-width: 700px;
+            margin-bottom: 48px;
+        }
+        .two-col {
+            display: flex;
+            gap: 60px;
+            flex: 1;
+        }
+        .col {
+            flex: 1;
+        }
+        .col-label {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #C9A84C;
+            margin-bottom: 24px;
+            opacity: 0.8;
+        }
+        .col-divider {
+            width: 40px;
+            height: 1px;
+            background: #C9A84C;
+            opacity: 0.4;
+            margin-bottom: 24px;
+        }
+        .list-item {
+            display: flex;
+            gap: 14px;
+            margin-bottom: 18px;
+            align-items: flex-start;
+        }
+        .dot {
+            width: 5px;
+            height: 5px;
+            background: #C9A84C;
+            border-radius: 50%;
+            margin-top: 8px;
+            flex-shrink: 0;
+        }
+        .item-text {
+            font-size: 15px;
+            font-weight: 300;
+            color: #F5F0E8;
+            opacity: 0.75;
+            line-height: 1.5;
+        }
+        .item-text strong {
+            font-weight: 500;
+            opacity: 1;
+            color: #F5F0E8;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+    <div class="accent-col"></div>
+    <div class="main-content">
+        <div class="file-tag">File 01 of 03</div>
+        <div class="file-number-row">
+            <div class="file-number">01</div>
+            <div class="file-title">The <em>Worth</em> File</div>
+        </div>
+        <div class="file-definition">What you believe you deserve. Not what you are worth — what you <em style="font-style:italic;color:#C9A84C;">believe</em> you are worth. Every pricing decision, negotiation, and ask you make runs through this file first.</div>
+        <div class="two-col">
+            <div class="col">
+                <div class="col-label">How it shows up</div>
+                <div class="col-divider"></div>
+                <div class="list-item"><div class="dot"></div><div class="item-text">Charging <strong>less than you know you should</strong></div></div>
+                <div class="list-item"><div class="dot"></div><div class="item-text">Giving discounts <strong>nobody asked for</strong></div></div>
+                <div class="list-item"><div class="dot"></div><div class="item-text">Waiting until you feel <strong>ready enough</strong> to raise your rates</div></div>
+                <div class="list-item"><div class="dot"></div><div class="item-text">Apologizing for your price <strong>before anyone objects</strong></div></div>
+            </div>
+            <div class="col">
+                <div class="col-label">What updating it looks like</div>
+                <div class="col-divider"></div>
+                <div class="list-item"><div class="dot"></div><div class="item-text">Stating your price <strong>without a disclaimer</strong></div></div>
+                <div class="list-item"><div class="dot"></div><div class="item-text">Receiving a compliment <strong>without deflecting</strong></div></div>
+                <div class="list-item"><div class="dot"></div><div class="item-text">Asking for what you want <strong>without over-explaining</strong></div></div>
+                <div class="list-item"><div class="dot"></div><div class="item-text">Knowing your number and <strong>not moving from it</strong></div></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #0A0A0A;
+            display: flex;
+            flex-direction: column;
+            font-family: 'DM Sans', sans-serif;
+        }
+        .top-bar { height: 4px; background: #C9A84C; width: 100%; flex-shrink: 0; }
+        .header {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            padding: 36px 120px 32px;
+            border-bottom: 1px solid #1E1E1E;
+            flex-shrink: 0;
+        }
+        .slide-label {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #C9A84C;
+        }
+        .slide-headline {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 900;
+            color: #F5F0E8;
+            text-align: right;
+        }
+        .slide-headline em { font-style: italic; color: #C9A84C; }
+        .items-grid {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+        }
+        .item {
+            display: flex;
+            align-items: flex-start;
+            gap: 28px;
+            padding: 40px 52px;
+            border-right: 1px solid #1E1E1E;
+            border-bottom: 1px solid #1E1E1E;
+        }
+        .item:nth-child(2) { border-right: none; }
+        .item:nth-child(3) { border-bottom: none; }
+        .item:nth-child(4) { border-right: none; border-bottom: none; }
+        .item-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 52px;
+            font-weight: 900;
+            color: #C9A84C;
+            opacity: 0.3;
+            line-height: 1;
+            flex-shrink: 0;
+            width: 48px;
+        }
+        .item-body { flex: 1; }
+        .item-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            font-weight: 700;
+            color: #F5F0E8;
+            line-height: 1.2;
+            margin-bottom: 12px;
+        }
+        .item-title em { font-style: italic; color: #C9A84C; }
+        .item-desc {
+            font-size: 14px;
+            font-weight: 300;
+            color: #F5F0E8;
+            opacity: 0.55;
+            line-height: 1.7;
+        }
+        .item-desc strong { font-weight: 500; color: #F5F0E8; opacity: 0.85; }
+        .bottom-strip {
+            background: #C9A84C;
+            padding: 22px 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .strip-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 700;
+            font-style: italic;
+            color: #0A0A0A;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+    <div class="top-bar"></div>
+    <div class="header">
+        <div class="slide-label">Call Four · What You Keep</div>
+        <div class="slide-headline">What comes <em>next.</em></div>
+    </div>
+    <div class="items-grid">
+        <div class="item">
+            <div class="item-number">1</div>
+            <div class="item-body">
+                <div class="item-title"><em>The Room</em> stays open.</div>
+                <div class="item-desc">Your access to shaniakhan.com/the-room does not expire. The audios, the resources, the Integration Protocol — all yours. <strong>Come back whenever you need to recalibrate.</strong></div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="item-number">2</div>
+            <div class="item-body">
+                <div class="item-title">All four <em>recordings</em> are yours.</div>
+                <div class="item-desc">Every call replay is in The Room. Watch them again in six months. You will hear things you missed the first time. <strong>The work compounds.</strong></div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="item-number">3</div>
+            <div class="item-body">
+                <div class="item-title">These <em>20 women</em> are your people.</div>
+                <div class="item-desc">You spent four weeks in a room with women who operate at your level. <strong>That does not end today.</strong> The community tab in The Room stays live.</div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="item-number">4</div>
+            <div class="item-body">
+                <div class="item-title">The <em>Integration Protocol</em> is your operating system.</div>
+                <div class="item-desc">Five minutes daily. Fifteen minutes weekly. One quarterly audit. <strong>That is all it takes</strong> to keep the shift permanent. It is in The Room under Resources.</div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-strip">
+        <div class="strip-text">The woman who walked in four weeks ago is not the woman leaving today.</div>
+    </div>
+</div>
+</body>
+</html>

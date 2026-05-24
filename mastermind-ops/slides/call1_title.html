@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #0A0A0A;
+            display: flex;
+            align-items: stretch;
+            font-family: 'DM Sans', sans-serif;
+            overflow: hidden;
+        }
+        .left-bar {
+            width: 6px;
+            background: #C9A84C;
+            flex-shrink: 0;
+        }
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 80px 100px 80px 80px;
+        }
+        .call-label {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #C9A84C;
+            margin-bottom: 32px;
+        }
+        .main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 80px;
+            font-weight: 900;
+            color: #F5F0E8;
+            line-height: 1.0;
+            margin-bottom: 40px;
+        }
+        .main-title em {
+            font-style: italic;
+            color: #C9A84C;
+        }
+        .divider {
+            width: 80px;
+            height: 2px;
+            background: #C9A84C;
+            margin-bottom: 32px;
+        }
+        .subtitle {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 20px;
+            font-weight: 300;
+            color: #F5F0E8;
+            opacity: 0.7;
+            line-height: 1.6;
+            max-width: 600px;
+        }
+        .bottom-row {
+            position: absolute;
+            bottom: 48px;
+            right: 80px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 14px;
+            color: #F5F0E8;
+            opacity: 0.4;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .week-badge {
+            background: #C9A84C;
+            color: #0A0A0A;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 6px 14px;
+        }
+        .slide-container { position: relative; }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+    <div class="left-bar"></div>
+    <div class="content">
+        <div class="call-label">Soft Power Mastermind · Call One</div>
+        <div class="main-title">Regulation<br>as <em>Strategy</em></div>
+        <div class="divider"></div>
+        <div class="subtitle">Your nervous system is not a problem to fix.<br>It is a strategy to master.</div>
+    </div>
+    <div class="bottom-row">
+        <div class="brand">Shania Khan</div>
+        <div class="week-badge">June 30</div>
+    </div>
+</div>
+</body>
+</html>

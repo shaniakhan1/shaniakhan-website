@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #0A0A0A;
+            display: flex;
+            flex-direction: column;
+            font-family: 'DM Sans', sans-serif;
+        }
+        .top-bar {
+            height: 4px;
+            background: #C9A84C;
+            width: 100%;
+        }
+        .header {
+            padding: 52px 80px 40px;
+            text-align: center;
+        }
+        .slide-label {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #C9A84C;
+            margin-bottom: 16px;
+        }
+        .main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 900;
+            color: #F5F0E8;
+            line-height: 1.1;
+        }
+        .main-title em { font-style: italic; color: #C9A84C; }
+        .subtitle {
+            font-size: 16px;
+            font-weight: 300;
+            color: #F5F0E8;
+            opacity: 0.6;
+            margin-top: 12px;
+        }
+        .columns {
+            flex: 1;
+            display: flex;
+            gap: 1px;
+            background: #222;
+            margin: 0 80px 60px;
+        }
+        .file-col {
+            flex: 1;
+            background: #0A0A0A;
+            padding: 40px 36px;
+            display: flex;
+            flex-direction: column;
+        }
+        .file-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 64px;
+            font-weight: 900;
+            color: #C9A84C;
+            opacity: 0.15;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+        .file-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #C9A84C;
+            margin-bottom: 12px;
+        }
+        .file-desc {
+            font-size: 14px;
+            font-weight: 400;
+            color: #F5F0E8;
+            opacity: 0.8;
+            line-height: 1.5;
+            margin-bottom: 24px;
+        }
+        .file-examples {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .example {
+            font-size: 13px;
+            font-weight: 300;
+            color: #F5F0E8;
+            opacity: 0.55;
+            line-height: 1.4;
+            padding-left: 16px;
+            border-left: 2px solid #C9A84C;
+            border-left-opacity: 0.3;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+    <div class="top-bar"></div>
+    <div class="header">
+        <div class="slide-label">The Operating System</div>
+        <div class="main-title">The Three <em>Files</em> Running Your Life</div>
+        <div class="subtitle">Every decision you make runs through one of these. Most women do not know they exist.</div>
+    </div>
+    <div class="columns">
+        <div class="file-col">
+            <div class="file-number">01</div>
+            <div class="file-name">The Worth File</div>
+            <div class="file-desc">What you believe you deserve. Drives every pricing decision, negotiation, and ask you make.</div>
+            <div class="file-examples">
+                <div class="example">Charging less than you know you should</div>
+                <div class="example">Giving discounts nobody asked for</div>
+                <div class="example">Waiting until you feel "ready enough"</div>
+            </div>
+        </div>
+        <div class="file-col">
+            <div class="file-number">02</div>
+            <div class="file-name">The Safety File</div>
+            <div class="file-desc">What your nervous system believes is safe to be. Visible. Loud. Wealthy. Different.</div>
+            <div class="file-examples">
+                <div class="example">Softening your most powerful opinions</div>
+                <div class="example">Staying small to avoid the comment section</div>
+                <div class="example">Performing instead of being seen</div>
+            </div>
+        </div>
+        <div class="file-col">
+            <div class="file-number">03</div>
+            <div class="file-name">The Enough File</div>
+            <div class="file-desc">What you believe about rest and existing without producing. The robe theory lives here.</div>
+            <div class="file-examples">
+                <div class="example">Rest that feels like guilt</div>
+                <div class="example">Always being "on" and earning your place</div>
+                <div class="example">Never owning a robe</div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

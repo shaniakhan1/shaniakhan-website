@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #0A0A0A;
+            display: flex;
+            flex-direction: column;
+            font-family: 'DM Sans', sans-serif;
+        }
+        .top-bar { height: 4px; background: #C9A84C; width: 100%; flex-shrink: 0; }
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 56px 140px 28px; /* reduced horizontal padding and bottom padding */
+        }
+        .slide-label {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #C9A84C;
+            margin-bottom: 20px; /* reduced */
+            text-align: center;
+        }
+        .main-headline {
+            font-family: 'Playfair Display', serif;
+            font-size: 68px;
+            font-weight: 900;
+            color: #F5F0E8;
+            line-height: 1.0;
+            text-align: center;
+            margin-bottom: 12px; /* reduced */
+        }
+        .main-headline em {
+            font-style: italic;
+            color: #C9A84C;
+        }
+        .sub-headline {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 400;
+            font-style: italic;
+            color: #F5F0E8;
+            opacity: 0.45;
+            text-align: center;
+            margin-bottom: 36px;
+        }
+        .divider-center {
+            width: 60px;
+            height: 2px;
+            background: #C9A84C;
+            margin: 0 auto 36px; /* reduced */
+        }
+        .instructions {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            max-width: 840px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .instruction-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px; /* reduced gap */
+            padding: 16px 0; /* reduced vertical padding */
+            border-bottom: 1px solid #1E1E1E;
+        }
+        .instruction-row:last-child {
+            border-bottom: none;
+        }
+        .instruction-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 900;
+            color: #C9A84C;
+            opacity: 0.35;
+            line-height: 1;
+            width: 48px; /* slightly reduced width */
+            flex-shrink: 0;
+            padding-top: 2px;
+        }
+        .instruction-body {
+            flex: 1;
+        }
+        .instruction-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: #F5F0E8;
+            line-height: 1.15; /* tightened line-height */
+            margin-bottom: 6px; /* reduced */
+        }
+        .instruction-title em {
+            font-style: italic;
+            color: #C9A84C;
+        }
+        .instruction-detail {
+            font-size: 14px;
+            font-weight: 300;
+            color: #F5F0E8;
+            opacity: 0.5;
+            line-height: 1.5; /* tightened */
+            max-height: 80px; /* cap each detail to avoid overflow */
+            overflow: hidden;
+        }
+        .bottom-strip {
+            background: #C9A84C;
+            padding: 18px 140px; /* reduced padding */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-shrink: 0;
+        }
+        .strip-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 700;
+            font-style: italic;
+            color: #0A0A0A;
+        }
+        .strip-date {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #0A0A0A;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+    <div class="top-bar"></div>
+    <div class="content">
+        <div class="slide-label">Call Three · This Week's Work</div>
+        <div class="main-headline">Post the thing<br>you have been <em>avoiding.</em></div>
+        <div class="divider-center"></div>
+        <div class="instructions">
+            <div class="instruction-row">
+                <div class="instruction-number">1</div>
+                <div class="instruction-body">
+                    <div class="instruction-title">Identify the piece of content you keep <em>not posting.</em></div>
+                    <div class="instruction-detail">The opinion you soften. The story you save for later. The price you almost said out loud. The video you filmed and deleted. That one.</div>
+                </div>
+            </div>
+            <div class="instruction-row">
+                <div class="instruction-number">2</div>
+                <div class="instruction-body">
+                    <div class="instruction-title">Post it. No disclaimers. No softening. No apology.</div>
+                    <div class="instruction-detail">Before July 21. Platform of your choice. Caption does not need to be perfect. It needs to be true.</div>
+                </div>
+            </div>
+            <div class="instruction-row">
+                <div class="instruction-number">3</div>
+                <div class="instruction-body">
+                    <div class="instruction-title">Notice what happens. In your body. In the response.</div>
+                    <div class="instruction-detail">Not the metrics. What happened inside you when you posted it. That is what we are working with on July 21.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-strip">
+        <div class="strip-text">Bring what happened to the final call.</div>
+        <div class="strip-date">Before July 21</div>
+    </div>
+</div>
+</body>
+</html>

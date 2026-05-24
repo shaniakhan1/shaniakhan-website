@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #0A0A0A;
+            display: flex;
+            align-items: stretch;
+            font-family: 'DM Sans', sans-serif;
+        }
+        .left-bar {
+            width: 6px;
+            background: #C9A84C;
+            flex-shrink: 0;
+        }
+        .left-panel {
+            width: 420px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 64px 52px 64px 60px;
+            border-right: 1px solid #1E1E1E;
+        }
+        .slide-label {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #C9A84C;
+            margin-bottom: 32px;
+        }
+        .main-statement {
+            font-family: 'Playfair Display', serif;
+            font-size: 46px;
+            font-weight: 900;
+            color: #F5F0E8;
+            line-height: 1.05;
+            margin-bottom: 32px;
+        }
+        .main-statement em {
+            font-style: italic;
+            color: #C9A84C;
+        }
+        .divider {
+            width: 48px;
+            height: 2px;
+            background: #C9A84C;
+            margin-bottom: 28px;
+        }
+        .supporting-text {
+            font-size: 15px;
+            font-weight: 300;
+            color: #F5F0E8;
+            opacity: 0.6;
+            line-height: 1.7;
+        }
+        .supporting-text strong {
+            font-weight: 500;
+            color: #F5F0E8;
+            opacity: 0.9;
+        }
+        .right-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .right-header {
+            padding: 36px 64px 28px;
+            border-bottom: 1px solid #1E1E1E;
+        }
+        .right-header-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #F5F0E8;
+            opacity: 0.25;
+        }
+        .misfire-rows {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .misfire-row {
+            flex: 1;
+            display: flex;
+            align-items: stretch;
+            border-bottom: 1px solid #1E1E1E;
+        }
+        .misfire-row:last-child {
+            border-bottom: none;
+        }
+        .misfire-trigger {
+            width: 280px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 24px 32px 24px 64px;
+            border-right: 1px solid #1E1E1E;
+        }
+        .trigger-label {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #C9A84C;
+            opacity: 0.6;
+            margin-bottom: 8px;
+        }
+        .trigger-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-weight: 700;
+            font-style: italic;
+            color: #F5F0E8;
+            line-height: 1.3;
+        }
+        .misfire-response {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 24px 64px 24px 32px;
+        }
+        .response-label {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #F5F0E8;
+            opacity: 0.2;
+            margin-bottom: 8px;
+        }
+        .response-text {
+            font-size: 14px;
+            font-weight: 300;
+            color: #F5F0E8;
+            opacity: 0.6;
+            line-height: 1.6;
+        }
+        .response-text strong {
+            font-weight: 500;
+            color: #F5F0E8;
+            opacity: 0.9;
+        }
+        .bottom-strip {
+            background: #C9A84C;
+            padding: 18px 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-shrink: 0;
+        }
+        .strip-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-weight: 700;
+            font-style: italic;
+            color: #0A0A0A;
+        }
+        .strip-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #0A0A0A;
+            opacity: 0.55;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+    <div class="left-bar"></div>
+    <div class="left-panel">
+        <div class="slide-label">Call 3 · Visibility Without Performance</div>
+        <div class="main-statement">Your body is not<br><em>broken.</em><br>It is outdated.</div>
+        <div class="divider"></div>
+        <div class="supporting-text">
+            The nervous system that kept you safe at seven years old is still running the same threat detection software.<br><br>
+            It does not know the difference between a <strong>predator</strong> and a <strong>comment section.</strong><br><br>
+            Regulation is not a wellness practice. It is what makes visibility possible.
+        </div>
+    </div>
+    <div class="right-panel">
+        <div class="right-header">
+            <div class="right-header-label">What the body reads as danger</div>
+        </div>
+        <div class="misfire-rows">
+            <div class="misfire-row">
+                <div class="misfire-trigger">
+                    <div class="trigger-label">The trigger</div>
+                    <div class="trigger-text">Posting a controversial opinion</div>
+                </div>
+                <div class="misfire-response">
+                    <div class="response-label">What the nervous system hears</div>
+                    <div class="response-text"><strong>"You are about to be rejected by the group."</strong> Historically, rejection meant death. The body does not know you are just posting a Reel.</div>
+                </div>
+            </div>
+            <div class="misfire-row">
+                <div class="misfire-trigger">
+                    <div class="trigger-label">The trigger</div>
+                    <div class="trigger-text">Stating a high price out loud</div>
+                </div>
+                <div class="misfire-response">
+                    <div class="response-label">What the nervous system hears</div>
+                    <div class="response-text"><strong>"You are claiming more than you deserve."</strong> The body braces for punishment. So you lower the number before they can punish you.</div>
+                </div>
+            </div>
+            <div class="misfire-row">
+                <div class="misfire-trigger">
+                    <div class="trigger-label">The trigger</div>
+                    <div class="trigger-text">Being seen without performing</div>
+                </div>
+                <div class="misfire-response">
+                    <div class="response-label">What the nervous system hears</div>
+                    <div class="response-text"><strong>"If they see the real you, they will leave."</strong> So you polish. You qualify. You add the disclaimer. You perform safety before they can take it from you.</div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-strip">
+            <div class="strip-text">Regulation is not the goal. It is the prerequisite.</div>
+            <div class="strip-label">Call Three</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #0A0A0A;
+            display: flex;
+            align-items: stretch;
+            font-family: 'DM Sans', sans-serif;
+        }
+        .left-bar {
+            width: 6px;
+            background: #C9A84C;
+            flex-shrink: 0;
+        }
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 80px 120px 80px 80px;
+        }
+        .call-label {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #C9A84C;
+            margin-bottom: 40px;
+        }
+        .main-statement {
+            font-family: 'Playfair Display', serif;
+            font-size: 64px;
+            font-weight: 900;
+            color: #F5F0E8;
+            line-height: 1.05;
+            margin-bottom: 40px;
+        }
+        .main-statement em {
+            font-style: italic;
+            color: #C9A84C;
+        }
+        .divider {
+            width: 80px;
+            height: 2px;
+            background: #C9A84C;
+            margin-bottom: 36px;
+        }
+        .sub-statement {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 400;
+            font-style: italic;
+            color: #F5F0E8;
+            opacity: 0.65;
+            line-height: 1.6;
+            max-width: 680px;
+            margin-bottom: 56px;
+        }
+        .homework-box {
+            background: #111;
+            border-left: 3px solid #C9A84C;
+            padding: 24px 32px;
+            max-width: 640px;
+        }
+        .homework-label {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #C9A84C;
+            margin-bottom: 10px;
+        }
+        .homework-text {
+            font-size: 15px;
+            font-weight: 300;
+            color: #F5F0E8;
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+        .bottom-brand {
+            position: absolute;
+            bottom: 48px;
+            right: 80px;
+            font-family: 'Playfair Display', serif;
+            font-size: 13px;
+            color: #F5F0E8;
+            opacity: 0.25;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .slide-container { position: relative; }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+    <div class="left-bar"></div>
+    <div class="content">
+        <div class="call-label">Call One · Closing</div>
+        <div class="main-statement">You are worth<br>investing <em>in.</em></div>
+        <div class="divider"></div>
+        <div class="sub-statement">The decision you made to be in this room was not a purchase. It was the first act of soft power. Everything else follows from that.</div>
+        <div class="homework-box">
+            <div class="homework-label">Before Call 2</div>
+            <div class="homework-text">Complete the Soft Power Operating System Audit in The Room. Bring honest answers — not polished ones. The audit is your map. We work from it next week.</div>
+        </div>
+    </div>
+    <div class="bottom-brand">Shania Khan · Soft Power Mastermind</div>
+</div>
+</body>
+</html>

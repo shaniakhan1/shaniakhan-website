@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #0A0A0A;
+            display: flex;
+            font-family: 'DM Sans', sans-serif;
+        }
+        .left-panel {
+            width: 480px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 80px 60px 80px 80px;
+            border-right: 1px solid #1E1E1E;
+        }
+        .slide-label {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #C9A84C;
+            margin-bottom: 36px;
+        }
+        .myth-label {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #F5F0E8;
+            opacity: 0.3;
+            margin-bottom: 12px;
+        }
+        .myth-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 400;
+            font-style: italic;
+            color: #F5F0E8;
+            opacity: 0.4;
+            line-height: 1.3;
+            text-decoration: line-through;
+            text-decoration-color: #C9A84C;
+            margin-bottom: 40px;
+        }
+        .real-label {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #C9A84C;
+            margin-bottom: 12px;
+        }
+        .real-definition {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 900;
+            color: #F5F0E8;
+            line-height: 1.2;
+        }
+        .real-definition em {
+            font-style: italic;
+            color: #C9A84C;
+        }
+        .right-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 80px 80px;
+        }
+        .points-title {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #F5F0E8;
+            opacity: 0.4;
+            margin-bottom: 48px;
+        }
+        .point {
+            display: flex;
+            gap: 28px;
+            margin-bottom: 36px;
+            align-items: flex-start;
+        }
+        .point-bar {
+            width: 3px;
+            height: 56px;
+            background: #C9A84C;
+            flex-shrink: 0;
+            margin-top: 4px;
+        }
+        .point-content {}
+        .point-headline {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: #F5F0E8;
+            margin-bottom: 8px;
+        }
+        .point-body {
+            font-size: 14px;
+            font-weight: 300;
+            color: #F5F0E8;
+            opacity: 0.6;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+    <div class="left-panel">
+        <div class="slide-label">What Soft Power Actually Is</div>
+        <div class="myth-label">What people think it means</div>
+        <div class="myth-text">Being nice.<br>Being quiet.<br>Being agreeable.</div>
+        <div class="real-label">What it actually means</div>
+        <div class="real-definition">Operating from<br><em>choice,</em><br>not fear.</div>
+    </div>
+    <div class="right-panel">
+        <div class="points-title">The three markers</div>
+        <div class="point">
+            <div class="point-bar"></div>
+            <div class="point-content">
+                <div class="point-headline">You respond. You do not react.</div>
+                <div class="point-body">Your actions come from a regulated state, not from whatever feeling just arrived. You choose your next move.</div>
+            </div>
+        </div>
+        <div class="point">
+            <div class="point-bar"></div>
+            <div class="point-content">
+                <div class="point-headline">You say the true thing.</div>
+                <div class="point-body">Not the softened version. Not the version with the disclaimer. The thing you actually believe, said clearly.</div>
+            </div>
+        </div>
+        <div class="point">
+            <div class="point-bar"></div>
+            <div class="point-content">
+                <div class="point-headline">You leave when it is time.</div>
+                <div class="point-body">Rooms, relationships, rates, roles. You do not stay past the expiration date because leaving feels dangerous.</div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

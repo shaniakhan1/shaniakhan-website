@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #0A0A0A;
+            display: flex;
+            align-items: stretch;
+            font-family: 'DM Sans', sans-serif;
+        }
+        .left-bar {
+            width: 6px;
+            background: #C9A84C;
+            flex-shrink: 0;
+        }
+        .left-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 72px 56px 68px 72px; /* reduced bottom padding to save 4px */
+            border-right: 1px solid #1E1E1E;
+        }
+        .call-label {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #C9A84C;
+            margin-bottom: 40px;
+        }
+        .main-statement {
+            font-family: 'Playfair Display', serif;
+            font-size: 68px;
+            font-weight: 900;
+            color: #F5F0E8;
+            line-height: 1.0;
+            margin-bottom: 40px;
+        }
+        .main-statement em {
+            font-style: italic;
+            color: #C9A84C;
+        }
+        .divider {
+            width: 72px;
+            height: 2px;
+            background: #C9A84C;
+            margin-bottom: 32px;
+        }
+        .sub-statement {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 400;
+            font-style: italic;
+            color: #F5F0E8;
+            opacity: 0.55;
+            line-height: 1.6;
+            max-width: 480px;
+        }
+        .right-panel {
+            width: 420px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 72px 72px 68px 56px; /* reduced bottom padding to save 4px */
+        }
+        .hw-eyebrow {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #C9A84C;
+            margin-bottom: 28px;
+        }
+        .hw-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #F5F0E8;
+            line-height: 1.3;
+            margin-bottom: 28px;
+        }
+        .hw-divider {
+            width: 40px;
+            height: 2px;
+            background: #C9A84C;
+            margin-bottom: 28px;
+        }
+        .hw-instruction {
+            font-size: 15px;
+            font-weight: 300;
+            color: #F5F0E8;
+            opacity: 0.65;
+            line-height: 1.75;
+            margin-bottom: 40px;
+        }
+        .hw-instruction strong {
+            font-weight: 500;
+            color: #F5F0E8;
+            opacity: 1;
+        }
+        .hw-rules {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .hw-rule {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
+        .rule-dot {
+            width: 6px;
+            height: 6px;
+            background: #C9A84C;
+            flex-shrink: 0;
+            margin-top: 7px;
+        }
+        .rule-text {
+            font-size: 14px;
+            font-weight: 300;
+            color: #F5F0E8;
+            opacity: 0.5;
+            line-height: 1.5;
+        }
+        .rule-text strong {
+            font-weight: 500;
+            color: #F5F0E8;
+            opacity: 0.85;
+        }
+        .bottom-strip {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 52px;
+            background: #111;
+            border-top: 1px solid #1E1E1E;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 72px 0 78px;
+        }
+        .brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 13px;
+            color: #F5F0E8;
+            opacity: 0.2;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .date-badge {
+            background: #C9A84C;
+            color: #0A0A0A;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 6px 14px;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container" style="position:relative; padding-bottom: 52px;">
+    <div class="left-bar"></div>
+    <div class="left-panel">
+        <div class="call-label">Call Three · Closing</div>
+        <div class="main-statement">The content<br>you <em>avoid</em><br>is the content<br>that converts.</div>
+        <div class="divider"></div>
+        <div class="sub-statement">The most powerful thing you can do this week is say the true thing.</div>
+    </div>
+    <div class="right-panel">
+        <div class="hw-eyebrow">Before Call Four · July 14</div>
+        <div class="hw-title">Post the piece of content you have been avoiding.</div>
+        <div class="hw-divider"></div>
+        <div class="hw-instruction">
+            You know which one it is. The opinion you have been sitting on. The story you have been softening. The price you have been afraid to say out loud.<br><br>
+            <strong>Post it before July 14. Bring what happened to the final call.</strong>
+        </div>
+        <div class="hw-rules">
+            <div class="hw-rule">
+                <div class="rule-dot"></div>
+                <div class="rule-text"><strong>No disclaimers.</strong> Say the thing without the apology before it.</div>
+            </div>
+            <div class="hw-rule">
+                <div class="rule-dot"></div>
+                <div class="rule-text"><strong>No softening.</strong> The version that makes you nervous is the right one.</div>
+            </div>
+            <div class="hw-rule">
+                <div class="rule-dot"></div>
+                <div class="rule-text"><strong>No waiting</strong> until it is perfect. Post it as it is.</div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-strip">
+        <div class="brand">Shania Khan · Soft Power Mastermind</div>
+        <div class="date-badge">July 14</div>
+    </div>
+</div>
+</body>
+</html>

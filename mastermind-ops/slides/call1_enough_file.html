@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #0A0A0A;
+            display: flex;
+            font-family: 'DM Sans', sans-serif;
+        }
+        .left-panel {
+            width: 480px;
+            flex-shrink: 0;
+            background: #C9A84C;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 72px 60px;
+        }
+        .file-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #0A0A0A;
+            opacity: 0.6;
+            margin-bottom: 32px;
+        }
+        .quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 900;
+            color: #0A0A0A;
+            line-height: 1.15;
+            margin-bottom: 28px;
+        }
+        .quote em {
+            font-style: italic;
+        }
+        .quote-source {
+            font-size: 13px;
+            font-weight: 400;
+            color: #0A0A0A;
+            opacity: 0.65;
+            letter-spacing: 1px;
+        }
+        .right-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 72px 72px;
+        }
+        .slide-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 13px;
+            font-weight: 400;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #C9A84C;
+            margin-bottom: 12px;
+        }
+        .main-heading {
+            font-family: 'Playfair Display', serif;
+            font-size: 38px;
+            font-weight: 900;
+            color: #F5F0E8;
+            line-height: 1.1;
+            margin-bottom: 36px;
+        }
+        .row {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 28px;
+        }
+        .col-head {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #C9A84C;
+            margin-bottom: 14px;
+        }
+        .col-item {
+            font-size: 14px;
+            font-weight: 300;
+            color: #F5F0E8;
+            opacity: 0.7;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+        .col-item::before {
+            content: "— ";
+            color: #C9A84C;
+            opacity: 0.6;
+        }
+        .col {
+            flex: 1;
+        }
+        .divider-line {
+            width: 100%;
+            height: 1px;
+            background: #222;
+            margin-bottom: 28px;
+        }
+        .bottom-note {
+            font-family: 'Playfair Display', serif;
+            font-size: 17px;
+            font-style: italic;
+            color: #F5F0E8;
+            opacity: 0.5;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+    <div class="left-panel">
+        <div class="file-label">File 03 of 03</div>
+        <div class="quote">"The pause<br>is the<br><em>luxury.</em><br>Not the robe."</div>
+        <div class="quote-source">The Robe Theory · Shania Khan</div>
+    </div>
+    <div class="right-panel">
+        <div class="slide-title">The Enough File</div>
+        <div class="main-heading">What you believe about<br>rest and existing.</div>
+        <div class="row">
+            <div class="col">
+                <div class="col-head">What it says</div>
+                <div class="col-item">You must earn your rest</div>
+                <div class="col-item">Idle time is wasted time</div>
+                <div class="col-item">Productivity proves your worth</div>
+            </div>
+            <div class="col">
+                <div class="col-head">How it shows up</div>
+                <div class="col-item">You never fully stop working</div>
+                <div class="col-item">Guilt when you are not producing</div>
+                <div class="col-item">You do not own a robe</div>
+            </div>
+        </div>
+        <div class="divider-line"></div>
+        <div class="bottom-note">Wealth is not just having money. It is having permission to exist without producing.</div>
+    </div>
+</div>
+</body>
+</html>

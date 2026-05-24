@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #0A0A0A;
+            display: flex;
+            font-family: 'DM Sans', sans-serif;
+        }
+        .left-panel {
+            width: 480px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 80px 60px 80px 80px;
+            border-right: 1px solid #1E1E1E;
+        }
+        .file-label {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #C9A84C;
+            margin-bottom: 24px;
+        }
+        .file-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 52px;
+            font-weight: 900;
+            color: #F5F0E8;
+            line-height: 1.05;
+            margin-bottom: 32px;
+        }
+        .file-title em { font-style: italic; color: #C9A84C; }
+        .file-definition {
+            font-size: 16px;
+            font-weight: 300;
+            color: #F5F0E8;
+            opacity: 0.65;
+            line-height: 1.7;
+        }
+        .gold-line {
+            width: 48px;
+            height: 2px;
+            background: #C9A84C;
+            margin-top: 32px;
+        }
+        .right-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 80px 80px;
+        }
+        .right-label {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #F5F0E8;
+            opacity: 0.35;
+            margin-bottom: 40px;
+        }
+        .voice-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 28px;
+        }
+        .voice-dot {
+            width: 6px;
+            height: 6px;
+            background: #C9A84C;
+            flex-shrink: 0;
+            margin-top: 9px;
+        }
+        .voice-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 19px;
+            font-weight: 400;
+            font-style: italic;
+            color: #F5F0E8;
+            opacity: 0.85;
+            line-height: 1.4;
+        }
+        .bottom-note {
+            margin-top: 36px;
+            font-size: 13px;
+            font-weight: 400;
+            color: #C9A84C;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+    <div class="left-panel">
+        <div class="file-label">File 02 of 03</div>
+        <div class="file-title">The<br><em>Safety</em><br>File</div>
+        <div class="file-definition">What your nervous system believes is safe to be. Visible. Loud. Controversial. Wealthy. Different.</div>
+        <div class="gold-line"></div>
+    </div>
+    <div class="right-panel">
+        <div class="right-label">What the safety file sounds like</div>
+        <div class="voice-item">
+            <div class="voice-dot"></div>
+            <div class="voice-text">"I do not want to seem like I am bragging."</div>
+        </div>
+        <div class="voice-item">
+            <div class="voice-dot"></div>
+            <div class="voice-text">"I will post it, but let me soften this part first."</div>
+        </div>
+        <div class="voice-item">
+            <div class="voice-dot"></div>
+            <div class="voice-text">"I do not want to alienate people."</div>
+        </div>
+        <div class="voice-item">
+            <div class="voice-dot"></div>
+            <div class="voice-text">"What if they think I am too much?"</div>
+        </div>
+        <div class="voice-item">
+            <div class="voice-dot"></div>
+            <div class="voice-text">"I will share it when I have more proof."</div>
+        </div>
+        <div class="bottom-note">Your nervous system does not know the difference between a predator and a comment section.</div>
+    </div>
+</div>
+</body>
+</html>

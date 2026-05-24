@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #0A0A0A;
+            display: flex;
+            align-items: stretch;
+            font-family: 'DM Sans', sans-serif;
+        }
+        .left-bar { width: 6px; background: #C9A84C; flex-shrink: 0; }
+        .body { flex: 1; display: flex; flex-direction: column; }
+        .header {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            padding: 40px 80px 0 72px;
+        }
+        .slide-label {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #C9A84C;
+        }
+        .slide-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 900;
+            color: #F5F0E8;
+        }
+        .columns {
+            flex: 1;
+            display: flex;
+            padding-top: 36px;
+        }
+        .col-then {
+            width: 420px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            padding: 0 52px 0 72px;
+            border-right: 1px solid #1E1E1E;
+        }
+        .col-now {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 0 80px 0 52px;
+        }
+        .col-header {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 28px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #1E1E1E;
+        }
+        .col-header.then { color: #F5F0E8; opacity: 0.2; }
+        .col-header.now { color: #C9A84C; }
+        .evidence-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+        .evidence-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+            padding: 18px 0;
+            border-bottom: 1px solid #1E1E1E;
+        }
+        .evidence-item:last-child { border-bottom: none; }
+        .ev-dot {
+            width: 6px;
+            height: 6px;
+            flex-shrink: 0;
+            margin-top: 8px;
+        }
+        .ev-dot.then { background: #F5F0E8; opacity: 0.15; }
+        .ev-dot.now { background: #C9A84C; }
+        .ev-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 17px;
+            font-weight: 400;
+            line-height: 1.45;
+        }
+        .ev-text.then {
+            font-style: italic;
+            color: #F5F0E8;
+            opacity: 0.22;
+        }
+        .ev-text.now {
+            color: #F5F0E8;
+            opacity: 0.85;
+        }
+        .ev-text.now strong {
+            font-weight: 700;
+            color: #C9A84C;
+        }
+        .bottom-strip {
+            background: #C9A84C;
+            padding: 20px 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-shrink: 0;
+        }
+        .strip-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 19px;
+            font-weight: 700;
+            font-style: italic;
+            color: #0A0A0A;
+        }
+        .strip-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #0A0A0A;
+            opacity: 0.55;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+    <div class="left-bar"></div>
+    <div class="body">
+        <div class="header">
+            <div class="slide-label">Call Four · The Integration</div>
+            <div class="slide-title">Look at How Far You Have Come</div>
+        </div>
+        <div class="columns">
+            <div class="col-then">
+                <div class="col-header then">Four weeks ago</div>
+                <div class="evidence-list">
+                    <div class="evidence-item">
+                        <div class="ev-dot then"></div>
+                        <div class="ev-text then">Quoted a price and immediately offered a discount before they could say no</div>
+                    </div>
+                    <div class="evidence-item">
+                        <div class="ev-dot then"></div>
+                        <div class="ev-text then">Filmed the video, watched it back twelve times, and deleted it</div>
+                    </div>
+                    <div class="evidence-item">
+                        <div class="ev-dot then"></div>
+                        <div class="ev-text then">Stayed in a room that was not yours anymore because leaving felt rude</div>
+                    </div>
+                    <div class="evidence-item">
+                        <div class="ev-dot then"></div>
+                        <div class="ev-text then">Rested only when you had earned it. Which meant you never really rested.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-now">
+                <div class="col-header now">Right now</div>
+                <div class="evidence-list">
+                    <div class="evidence-item">
+                        <div class="ev-dot now"></div>
+                        <div class="ev-text now">Said the price. <strong>Held the silence.</strong> Let them respond.</div>
+                    </div>
+                    <div class="evidence-item">
+                        <div class="ev-dot now"></div>
+                        <div class="ev-text now">Posted the video that made you nervous. And noticed what happened.</div>
+                    </div>
+                    <div class="evidence-item">
+                        <div class="ev-dot now"></div>
+                        <div class="ev-text now">Left a room. <strong>Without explaining yourself.</strong> And felt something shift.</div>
+                    </div>
+                    <div class="evidence-item">
+                        <div class="ev-dot now"></div>
+                        <div class="ev-text now">Wore the robe. Took the pause. <strong>Existed without producing.</strong> On purpose.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-strip">
+            <div class="strip-text">That is not a mindset shift. That is a different operating system.</div>
+            <div class="strip-label">Call Four</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

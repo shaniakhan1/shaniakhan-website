@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #0A0A0A;
+            display: flex;
+            flex-direction: column;
+            font-family: 'DM Sans', sans-serif;
+        }
+        .top-bar { height: 4px; background: #C9A84C; width: 100%; }
+        .header {
+            padding: 40px 80px 32px;
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+        }
+        .slide-label {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #C9A84C;
+        }
+        .main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 900;
+            color: #F5F0E8;
+        }
+        .main-title em { font-style: italic; color: #C9A84C; }
+        .body {
+            flex: 1;
+            display: flex;
+        }
+        .col-old {
+            flex: 1;
+            padding: 36px 60px 40px 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-right: 1px solid #1E1E1E;
+        }
+        .col-new {
+            flex: 1;
+            padding: 36px 80px 40px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .col-era {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        .col-era.old { color: #F5F0E8; opacity: 0.25; }
+        .col-era.new { color: #C9A84C; }
+        .col-headline {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 900;
+            line-height: 1.15;
+            margin-bottom: 28px;
+        }
+        .col-headline.old {
+            color: #F5F0E8;
+            opacity: 0.3;
+            text-decoration: line-through;
+            text-decoration-color: #C9A84C;
+            text-decoration-thickness: 2px;
+        }
+        .col-headline.new {
+            color: #F5F0E8;
+        }
+        .col-headline.new em {
+            font-style: italic;
+            color: #C9A84C;
+        }
+        .item {
+            display: flex;
+            gap: 14px;
+            margin-bottom: 14px;
+            align-items: flex-start;
+        }
+        .item-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            margin-top: 7px;
+        }
+        .item-dot.old { background: #F5F0E8; opacity: 0.2; }
+        .item-dot.new { background: #C9A84C; }
+        .item-text {
+            font-size: 15px;
+            font-weight: 300;
+            line-height: 1.55;
+        }
+        .item-text.old { color: #F5F0E8; opacity: 0.3; }
+        .item-text.new { color: #F5F0E8; opacity: 0.8; }
+        .bottom-statement {
+            margin: 0 80px 40px;
+            border-top: 1px solid #1E1E1E;
+            padding-top: 28px;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+        .gold-bar {
+            width: 40px;
+            height: 3px;
+            background: #C9A84C;
+            flex-shrink: 0;
+        }
+        .statement-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-style: italic;
+            color: #F5F0E8;
+            opacity: 0.7;
+            line-height: 1.5;
+        }
+        .statement-text strong {
+            font-style: normal;
+            color: #C9A84C;
+            opacity: 1;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+    <div class="top-bar"></div>
+    <div class="header">
+        <div class="slide-label">Call Two · The Internal Update</div>
+        <div class="main-title">You Can <em>Update</em> the File</div>
+    </div>
+    <div class="body">
+        <div class="col-old">
+            <div class="col-era old">The old file</div>
+            <div class="col-headline old">I have to earn<br>my place.</div>
+            <div class="item">
+                <div class="item-dot old"></div>
+                <div class="item-text old">Discount before being asked</div>
+            </div>
+            <div class="item">
+                <div class="item-dot old"></div>
+                <div class="item-text old">Over-deliver to justify the price</div>
+            </div>
+            <div class="item">
+                <div class="item-dot old"></div>
+                <div class="item-text old">Wait until you feel ready to raise rates</div>
+            </div>
+            <div class="item">
+                <div class="item-dot old"></div>
+                <div class="item-text old">Apologize for your prices</div>
+            </div>
+            <div class="item">
+                <div class="item-dot old"></div>
+                <div class="item-text old">Stay in rooms that stopped serving you</div>
+            </div>
+        </div>
+        <div class="col-new">
+            <div class="col-era new">The updated file</div>
+            <div class="col-headline new">My place is not<br>earned. It is <em>claimed.</em></div>
+            <div class="item">
+                <div class="item-dot new"></div>
+                <div class="item-text new">State the price. No qualifier after it.</div>
+            </div>
+            <div class="item">
+                <div class="item-dot new"></div>
+                <div class="item-text new">Deliver what you promised. Nothing more.</div>
+            </div>
+            <div class="item">
+                <div class="item-dot new"></div>
+                <div class="item-text new">Raise the rate. Let the discomfort be information.</div>
+            </div>
+            <div class="item">
+                <div class="item-dot new"></div>
+                <div class="item-text new">Say the price the way you say your name.</div>
+            </div>
+            <div class="item">
+                <div class="item-dot new"></div>
+                <div class="item-text new">Leave when it is time. Without explanation.</div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom-statement">
+        <div class="gold-bar"></div>
+        <div class="statement-text">The file does not update through <strong>thinking.</strong> It updates through acting from a different place and letting the evidence accumulate.</div>
+    </div>
+</div>
+</body>
+</html>

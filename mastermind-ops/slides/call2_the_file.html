@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #0A0A0A;
+            display: flex;
+            flex-direction: column;
+            font-family: 'DM Sans', sans-serif;
+        }
+        .top-section {
+            background: #111;
+            padding: 52px 80px 44px;
+            border-bottom: 1px solid #1E1E1E;
+        }
+        .slide-label {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #C9A84C;
+            margin-bottom: 20px;
+        }
+        .main-statement {
+            font-family: 'Playfair Display', serif;
+            font-size: 52px;
+            font-weight: 900;
+            color: #F5F0E8;
+            line-height: 1.05;
+        }
+        .main-statement em {
+            font-style: italic;
+            color: #C9A84C;
+        }
+        .bottom-section {
+            flex: 1;
+            display: flex;
+        }
+        .timeline-col {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 44px 60px 44px 80px;
+            border-right: 1px solid #1E1E1E;
+        }
+        .timeline-col:last-child {
+            border-right: none;
+            padding: 44px 80px 44px 60px;
+        }
+        .col-era {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #C9A84C;
+            opacity: 0.7;
+            margin-bottom: 20px;
+        }
+        .col-headline {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            font-weight: 700;
+            color: #F5F0E8;
+            line-height: 1.2;
+            margin-bottom: 28px;
+        }
+        .memory-item {
+            display: flex;
+            gap: 14px;
+            margin-bottom: 16px;
+            align-items: flex-start;
+        }
+        .memory-dash {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            color: #C9A84C;
+            opacity: 0.5;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+        .memory-text {
+            font-size: 15px;
+            font-weight: 300;
+            color: #F5F0E8;
+            opacity: 0.7;
+            line-height: 1.5;
+        }
+        .center-divider {
+            width: 1px;
+            background: #1E1E1E;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+    <div class="top-section">
+        <div class="slide-label">Call 2 · The Internal Update</div>
+        <div class="main-statement">You have a <em>file</em> on money.<br>It was written before you were ten.</div>
+    </div>
+    <div class="bottom-section">
+        <div class="timeline-col">
+            <div class="col-era">Where it was written</div>
+            <div class="col-headline">Before you knew<br>what money was.</div>
+            <div class="memory-item">
+                <div class="memory-dash">—</div>
+                <div class="memory-text">Watching your parents fight about bills</div>
+            </div>
+            <div class="memory-item">
+                <div class="memory-dash">—</div>
+                <div class="memory-text">Hearing "we cannot afford that"</div>
+            </div>
+            <div class="memory-item">
+                <div class="memory-dash">—</div>
+                <div class="memory-text">Seeing what happened to people who had it</div>
+            </div>
+            <div class="memory-item">
+                <div class="memory-dash">—</div>
+                <div class="memory-text">Learning that wanting more was dangerous</div>
+            </div>
+        </div>
+        <div class="timeline-col">
+            <div class="col-era">Where it is running right now</div>
+            <div class="col-headline">In every decision<br>you make today.</div>
+            <div class="memory-item">
+                <div class="memory-dash">—</div>
+                <div class="memory-text">The price you quoted last week</div>
+            </div>
+            <div class="memory-item">
+                <div class="memory-dash">—</div>
+                <div class="memory-text">The discount you gave without being asked</div>
+            </div>
+            <div class="memory-item">
+                <div class="memory-dash">—</div>
+                <div class="memory-text">The rate you have not raised yet</div>
+            </div>
+            <div class="memory-item">
+                <div class="memory-dash">—</div>
+                <div class="memory-text">The ask you have been putting off</div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

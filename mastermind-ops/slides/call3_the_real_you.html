@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #0A0A0A;
+            display: flex;
+            flex-direction: column;
+            font-family: 'DM Sans', sans-serif;
+        }
+        .top-bar {
+            height: 4px;
+            background: #C9A84C;
+            width: 100%;
+            flex-shrink: 0;
+        }
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 120px 0 120px;
+            text-align: center;
+        }
+        .slide-label {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #C9A84C;
+            margin-bottom: 36px;
+        }
+        .main-statement {
+            font-family: 'Playfair Display', serif;
+            font-size: 64px;
+            font-weight: 900;
+            color: #F5F0E8;
+            line-height: 1.05;
+            margin-bottom: 16px;
+        }
+        .main-statement em {
+            font-style: italic;
+            color: #C9A84C;
+        }
+        .sub-statement {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            font-weight: 400;
+            font-style: italic;
+            color: #F5F0E8;
+            opacity: 0.45;
+            margin-bottom: 52px;
+            line-height: 1.5;
+        }
+        .behaviors-row {
+            display: flex;
+            gap: 0;
+            width: 100%;
+            border-top: 1px solid #1E1E1E;
+            border-bottom: 1px solid #1E1E1E;
+            margin-bottom: 44px;
+        }
+        .behavior {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 28px 32px;
+            border-right: 1px solid #1E1E1E;
+        }
+        .behavior:last-child {
+            border-right: none;
+        }
+        .behavior-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 13px;
+            font-weight: 700;
+            color: #C9A84C;
+            opacity: 0.6;
+            margin-bottom: 12px;
+            letter-spacing: 2px;
+        }
+        .behavior-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 19px;
+            font-style: italic;
+            color: #F5F0E8;
+            line-height: 1.4;
+            text-align: center;
+        }
+        .behavior-qualifier {
+            font-size: 12px;
+            font-weight: 300;
+            color: #F5F0E8;
+            opacity: 0.35;
+            margin-top: 10px;
+            line-height: 1.5;
+            text-align: center;
+        }
+        .reframe-row {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+        .reframe-bar {
+            width: 40px;
+            height: 2px;
+            background: #C9A84C;
+            flex-shrink: 0;
+        }
+        .reframe-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: #F5F0E8;
+            line-height: 1.4;
+        }
+        .reframe-text em {
+            font-style: italic;
+            color: #C9A84C;
+        }
+        .bottom-brand {
+            padding: 24px 80px;
+            text-align: right;
+            flex-shrink: 0;
+        }
+        .brand-text {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #F5F0E8;
+            opacity: 0.18;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+    <div class="top-bar"></div>
+    <div class="content">
+        <div class="slide-label">Call 3 · Visibility Without Performance</div>
+        <div class="main-statement">She is not a future version<br>of you.</div>
+        <div class="sub-statement">She is you, regulated.</div>
+        <div class="behaviors-row">
+            <div class="behavior">
+                <div class="behavior-number">01</div>
+                <div class="behavior-text">Says the thing without the disclaimer</div>
+                <div class="behavior-qualifier">Not because she stopped caring what people think. Because she stopped needing their approval to proceed.</div>
+            </div>
+            <div class="behavior">
+                <div class="behavior-number">02</div>
+                <div class="behavior-text">Charges the price without the apology</div>
+                <div class="behavior-qualifier">Not because she is fearless. Because the fear is no longer running the decision.</div>
+            </div>
+            <div class="behavior">
+                <div class="behavior-number">03</div>
+                <div class="behavior-text">Posts the video without checking it twelve times</div>
+                <div class="behavior-qualifier">Not because she stopped caring about quality. Because she stopped confusing quality with safety.</div>
+            </div>
+            <div class="behavior">
+                <div class="behavior-number">04</div>
+                <div class="behavior-text">Leaves the room when it is time to leave</div>
+                <div class="behavior-qualifier">Not because she is cold. Because she finally trusts herself enough to go.</div>
+            </div>
+        </div>
+        <div class="reframe-row">
+            <div class="reframe-bar"></div>
+            <div class="reframe-text">You are not waiting to <em>become</em> her. You are waiting to stop <em>blocking</em> her.</div>
+        </div>
+    </div>
+    <div class="bottom-brand">
+        <div class="brand-text">Shania Khan · Soft Power Mastermind</div>
+    </div>
+</div>
+</body>
+</html>

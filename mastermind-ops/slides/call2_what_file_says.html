@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #0A0A0A;
+            display: flex;
+            flex-direction: column;
+            font-family: 'DM Sans', sans-serif;
+        }
+        .top-bar { height: 4px; background: #C9A84C; width: 100%; }
+        .header {
+            padding: 44px 80px 32px;
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+        }
+        .slide-label {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #C9A84C;
+        }
+        .main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 900;
+            color: #F5F0E8;
+        }
+        .main-title em { font-style: italic; color: #C9A84C; }
+        .grid {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 1px;
+            background: #1E1E1E;
+            margin: 0 80px;
+        }
+        .file-cell {
+            background: #0A0A0A;
+            padding: 36px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .file-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 900;
+            color: #C9A84C;
+            opacity: 0.15;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+        .file-belief {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            font-weight: 700;
+            font-style: italic;
+            color: #F5F0E8;
+            line-height: 1.2;
+            margin-bottom: 12px;
+        }
+        .file-desc {
+            font-size: 14px;
+            font-weight: 300;
+            color: #F5F0E8;
+            opacity: 0.55;
+            line-height: 1.6;
+        }
+        .bottom-row {
+            padding: 24px 80px 40px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .bottom-line {
+            flex: 1;
+            height: 1px;
+            background: #1E1E1E;
+        }
+        .bottom-question {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-style: italic;
+            color: #C9A84C;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+    <div class="top-bar"></div>
+    <div class="header">
+        <div class="slide-label">Call Two · The Internal Update</div>
+        <div class="main-title">What the <em>File</em> Says</div>
+    </div>
+    <div class="grid">
+        <div class="file-cell">
+            <div class="file-num">01</div>
+            <div class="file-belief">"Money is hard."</div>
+            <div class="file-desc">You watched the adults in your life struggle with it. You learned that money requires suffering to obtain and causes suffering when it leaves.</div>
+        </div>
+        <div class="file-cell">
+            <div class="file-num">02</div>
+            <div class="file-belief">"Money changes people."</div>
+            <div class="file-desc">You saw wealth make someone cold, selfish, or disconnected. You decided, somewhere deep down, that staying broke was staying safe — and staying good.</div>
+        </div>
+        <div class="file-cell">
+            <div class="file-num">03</div>
+            <div class="file-belief">"I am not the kind of person who has money."</div>
+            <div class="file-desc">People like you do not end up wealthy. That is for other people. Different families. Different backgrounds. Not you.</div>
+        </div>
+        <div class="file-cell">
+            <div class="file-num">04</div>
+            <div class="file-belief">"I have to earn my place."</div>
+            <div class="file-desc">You over-deliver, over-explain, and over-qualify because you are still trying to prove you deserve to be in the room. You have been proving it your whole life.</div>
+        </div>
+    </div>
+    <div class="bottom-row">
+        <div class="bottom-line"></div>
+        <div class="bottom-question">Which one is yours?</div>
+        <div class="bottom-line"></div>
+    </div>
+</div>
+</body>
+</html>

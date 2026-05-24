@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #0A0A0A;
+            display: flex;
+            align-items: stretch;
+            font-family: 'DM Sans', sans-serif;
+            position: relative;
+        }
+        .left-bar {
+            width: 6px;
+            background: #C9A84C;
+            flex-shrink: 0;
+        }
+        .content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            padding: 0 100px 0 80px;
+        }
+        .left-content {
+            flex: 1;
+        }
+        .call-label {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #C9A84C;
+            margin-bottom: 28px;
+        }
+        .main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 76px;
+            font-weight: 900;
+            color: #F5F0E8;
+            line-height: 1.0;
+            margin-bottom: 36px;
+        }
+        .main-title em {
+            font-style: italic;
+            color: #C9A84C;
+        }
+        .divider {
+            width: 80px;
+            height: 2px;
+            background: #C9A84C;
+            margin-bottom: 28px;
+        }
+        .subtitle {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 18px;
+            font-weight: 300;
+            color: #F5F0E8;
+            opacity: 0.65;
+            line-height: 1.7;
+            max-width: 540px;
+        }
+        .right-content {
+            width: 280px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        .big-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 280px;
+            font-weight: 900;
+            color: #C9A84C;
+            opacity: 0.06;
+            line-height: 1;
+        }
+        .bottom-row {
+            position: absolute;
+            bottom: 48px;
+            right: 100px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 14px;
+            color: #F5F0E8;
+            opacity: 0.3;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .week-badge {
+            background: #C9A84C;
+            color: #0A0A0A;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 6px 14px;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+    <div class="left-bar"></div>
+    <div class="content">
+        <div class="left-content">
+            <div class="call-label">Soft Power Mastermind · Call Three</div>
+            <div class="main-title">Visibility<br>Without<br><em>Performance</em></div>
+            <div class="divider"></div>
+            <div class="subtitle">The content you have been avoiding is the content your people need most. The version of you that converts is not the polished one.</div>
+        </div>
+        <div class="right-content">
+            <div class="big-number">3</div>
+        </div>
+    </div>
+    <div class="bottom-row">
+        <div class="brand">Shania Khan</div>
+        <div class="week-badge">July 14</div>
+    </div>
+</div>
+</body>
+</html>

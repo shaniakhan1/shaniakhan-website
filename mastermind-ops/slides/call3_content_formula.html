@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #0A0A0A;
+            display: flex;
+            flex-direction: column;
+            font-family: 'DM Sans', sans-serif;
+        }
+        .top-bar { height: 4px; background: #C9A84C; width: 100%; flex-shrink: 0; }
+        .header {
+            padding: 36px 80px 0;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+        }
+        .slide-label {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #C9A84C;
+        }
+        .slide-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 900;
+            color: #F5F0E8;
+            text-align: right;
+        }
+        .formula-row {
+            flex: 1;
+            display: flex;
+            padding-top: 40px;
+        }
+        .formula-step {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 0 52px;
+            border-right: 1px solid #1E1E1E;
+        }
+        .formula-step:last-child { border-right: none; }
+        .step-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 80px;
+            font-weight: 900;
+            color: #C9A84C;
+            opacity: 0.15;
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+        .step-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 34px;
+            font-weight: 900;
+            color: #F5F0E8;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+        .step-divider {
+            width: 40px;
+            height: 2px;
+            background: #C9A84C;
+            margin-bottom: 16px;
+        }
+        .step-definition {
+            font-size: 14px;
+            font-weight: 300;
+            color: #F5F0E8;
+            opacity: 0.6;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        .step-definition strong {
+            font-weight: 500;
+            color: #F5F0E8;
+            opacity: 0.9;
+        }
+        .step-example-label {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #C9A84C;
+            opacity: 0.55;
+            margin-bottom: 8px;
+        }
+        .step-example {
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            font-style: italic;
+            color: #F5F0E8;
+            opacity: 0.75;
+            line-height: 1.5;
+        }
+        .bottom-strip {
+            background: #111;
+            border-top: 1px solid #1E1E1E;
+            padding: 20px 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-shrink: 0;
+        }
+        .strip-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .strip-bar {
+            width: 32px;
+            height: 2px;
+            background: #C9A84C;
+            flex-shrink: 0;
+        }
+        .strip-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            font-style: italic;
+            color: #F5F0E8;
+            opacity: 0.5;
+        }
+        .strip-text em { color: #C9A84C; opacity: 1; font-style: italic; }
+        .strip-brand {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #F5F0E8;
+            opacity: 0.2;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+    <div class="top-bar"></div>
+    <div class="header">
+        <div class="slide-label">Call Three · The Soft Power Content Formula</div>
+        <div class="slide-title">Observation + Reframe + Permission</div>
+    </div>
+    <div class="formula-row">
+        <div class="formula-step">
+            <div class="step-number">01</div>
+            <div class="step-name">Observation</div>
+            <div class="step-divider"></div>
+            <div class="step-definition">
+                Name what people are <strong>already living.</strong><br>
+                Not an insight. A mirror.<br><br>
+                They read it and feel seen before they feel taught. The scroll stops because the first line is their life.
+            </div>
+            <div class="step-example-label">The Robe Theory</div>
+            <div class="step-example">"Women with money own robes. Women without money don't."</div>
+        </div>
+        <div class="formula-step">
+            <div class="step-number">02</div>
+            <div class="step-name">Reframe</div>
+            <div class="step-divider"></div>
+            <div class="step-definition">
+                Show them <strong>why it is happening.</strong><br>
+                The thing they blamed themselves for was never their fault.<br><br>
+                This is where the tears come. Not from inspiration. From relief.
+            </div>
+            <div class="step-example-label">The Robe Theory</div>
+            <div class="step-example">"Robes only make sense if you believe in moments without output. Some of us were never taught that."</div>
+        </div>
+        <div class="formula-step">
+            <div class="step-number">03</div>
+            <div class="step-name">Permission</div>
+            <div class="step-divider"></div>
+            <div class="step-definition">
+                Give them the thing they have been waiting for <strong>someone to say out loud.</strong><br><br>
+                Not advice. Not a tip. The specific permission they have been denying themselves.
+            </div>
+            <div class="step-example-label">The Robe Theory</div>
+            <div class="step-example">"Wealth isn't just having money. It's having permission to exist without producing. The pause is the luxury."</div>
+        </div>
+    </div>
+    <div class="bottom-strip">
+        <div class="strip-left">
+            <div class="strip-bar"></div>
+            <div class="strip-text">Every piece of content that made you go <em>viral</em> follows this formula. You were doing it intuitively. Now you do it on purpose.</div>
+        </div>
+        <div class="strip-brand">Shania Khan</div>
+    </div>
+</div>
+</body>
+</html>

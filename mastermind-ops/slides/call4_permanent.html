@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #0A0A0A;
+            display: flex;
+            align-items: stretch;
+            font-family: 'DM Sans', sans-serif;
+        }
+        .left-bar {
+            width: 6px;
+            background: #C9A84C;
+            flex-shrink: 0;
+        }
+        .left-panel {
+            width: 420px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 64px 52px 64px 60px;
+            border-right: 1px solid #1E1E1E;
+        }
+        .slide-label {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #C9A84C;
+            margin-bottom: 32px;
+        }
+        .main-statement {
+            font-family: 'Playfair Display', serif;
+            font-size: 50px;
+            font-weight: 900;
+            color: #F5F0E8;
+            line-height: 1.05;
+            margin-bottom: 32px;
+        }
+        .main-statement em {
+            font-style: italic;
+            color: #C9A84C;
+        }
+        .divider {
+            width: 48px;
+            height: 2px;
+            background: #C9A84C;
+            margin-bottom: 28px;
+        }
+        .supporting-text {
+            font-size: 15px;
+            font-weight: 300;
+            color: #F5F0E8;
+            opacity: 0.6;
+            line-height: 1.75;
+        }
+        .supporting-text strong {
+            font-weight: 500;
+            color: #F5F0E8;
+            opacity: 0.9;
+        }
+        .right-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .right-header {
+            padding: 40px 64px 28px;
+            border-bottom: 1px solid #1E1E1E;
+        }
+        .right-header-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #F5F0E8;
+            opacity: 0.2;
+        }
+        .protocol-rows {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .protocol-row {
+            flex: 1;
+            display: flex;
+            align-items: stretch;
+            border-bottom: 1px solid #1E1E1E;
+        }
+        .protocol-row:last-child {
+            border-bottom: none;
+        }
+        .time-badge-col {
+            width: 120px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-right: 1px solid #1E1E1E;
+            padding: 24px 16px;
+        }
+        .time-label {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 900;
+            color: #C9A84C;
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+        .time-unit {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #F5F0E8;
+            opacity: 0.3;
+        }
+        .protocol-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 24px 64px 24px 32px;
+        }
+        .protocol-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: #F5F0E8;
+            line-height: 1.2;
+            margin-bottom: 10px;
+        }
+        .protocol-description {
+            font-size: 14px;
+            font-weight: 300;
+            color: #F5F0E8;
+            opacity: 0.55;
+            line-height: 1.65;
+        }
+        .protocol-description strong {
+            font-weight: 500;
+            color: #F5F0E8;
+            opacity: 0.85;
+        }
+        .bottom-strip {
+            background: #C9A84C;
+            padding: 18px 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-shrink: 0;
+        }
+        .strip-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 700;
+            font-style: italic;
+            color: #0A0A0A;
+        }
+        .strip-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #0A0A0A;
+            opacity: 0.55;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+    <div class="left-bar"></div>
+    <div class="left-panel">
+        <div class="slide-label">Call Four · The Integration</div>
+        <div class="main-statement">How to make<br>the shift<br><em>permanent.</em></div>
+        <div class="divider"></div>
+        <div class="supporting-text">
+            The women who lose the shift are the ones who treat it like a feeling.<br><br>
+            The women who keep it are the ones who build it into <strong>how they operate.</strong><br><br>
+            This is not a wellness practice. This is infrastructure.
+        </div>
+    </div>
+    <div class="right-panel">
+        <div class="right-header">
+            <div class="right-header-label">The Integration Protocol</div>
+        </div>
+        <div class="protocol-rows">
+            <div class="protocol-row">
+                <div class="time-badge-col">
+                    <div class="time-label">5</div>
+                    <div class="time-unit">min daily</div>
+                </div>
+                <div class="protocol-content">
+                    <div class="protocol-title">The Regulation Check</div>
+                    <div class="protocol-description">Before any important decision, piece of content, or conversation. Three breaths. One question: <strong>"Am I operating from fear or from worth?"</strong> That is the whole practice.</div>
+                </div>
+            </div>
+            <div class="protocol-row">
+                <div class="time-badge-col">
+                    <div class="time-label">15</div>
+                    <div class="time-unit">min weekly</div>
+                </div>
+                <div class="protocol-content">
+                    <div class="protocol-title">The File Audit</div>
+                    <div class="protocol-description">Review one decision you made this week. Was it from the old file or the updated one? <strong>What would the updated file have done differently?</strong> Write it down. Do not judge it. Just notice.</div>
+                </div>
+            </div>
+            <div class="protocol-row">
+                <div class="time-badge-col">
+                    <div class="time-label">1x</div>
+                    <div class="time-unit">quarterly</div>
+                </div>
+                <div class="protocol-content">
+                    <div class="protocol-title">The Rooms Audit</div>
+                    <div class="protocol-description">Which rooms are still yours? Which ones have you been staying in past their time? <strong>Which new rooms are you ready to enter?</strong> Rich people leave the party first. Do the audit.</div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-strip">
+            <div class="strip-text">Not a practice. An operating system.</div>
+            <div class="strip-label">The Integration Protocol</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

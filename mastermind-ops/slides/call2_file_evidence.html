@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #0A0A0A;
+            display: flex;
+            flex-direction: column;
+            font-family: 'DM Sans', sans-serif;
+        }
+        .header {
+            padding: 52px 80px 40px;
+            border-bottom: 1px solid #1E1E1E;
+        }
+        .slide-label {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #C9A84C;
+            margin-bottom: 18px;
+        }
+        .main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 52px;
+            font-weight: 900;
+            color: #F5F0E8;
+            line-height: 1.05;
+        }
+        .main-title em {
+            font-style: italic;
+            color: #C9A84C;
+        }
+        .sub-line {
+            font-size: 16px;
+            font-weight: 300;
+            color: #F5F0E8;
+            opacity: 0.5;
+            margin-top: 14px;
+            line-height: 1.5;
+        }
+        .behaviors-row {
+            flex: 1;
+            display: flex;
+        }
+        .behavior-item {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px 36px;
+            border-right: 1px solid #1E1E1E;
+        }
+        .behavior-item:last-child {
+            border-right: none;
+        }
+        .behavior-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 64px;
+            font-weight: 900;
+            color: #C9A84C;
+            opacity: 0.1;
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+        .behavior-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: #F5F0E8;
+            line-height: 1.2;
+            margin-bottom: 14px;
+        }
+        .behavior-desc {
+            font-size: 13px;
+            font-weight: 300;
+            color: #F5F0E8;
+            opacity: 0.5;
+            line-height: 1.65;
+        }
+        .bottom-strip {
+            background: #111;
+            padding: 20px 80px;
+            border-top: 1px solid #1E1E1E;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .bottom-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 17px;
+            font-style: italic;
+            color: #F5F0E8;
+            opacity: 0.55;
+        }
+        .bottom-text em {
+            color: #C9A84C;
+            opacity: 1;
+        }
+        .bottom-brand {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #F5F0E8;
+            opacity: 0.2;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+    <div class="header">
+        <div class="slide-label">Call Two · The Internal Update</div>
+        <div class="main-title">How the <em>File</em> Shows Up</div>
+        <div class="sub-line">You will recognize yourself in at least one of these. Probably more than one.</div>
+    </div>
+    <div class="behaviors-row">
+        <div class="behavior-item">
+            <div class="behavior-num">01</div>
+            <div class="behavior-name">Undercharging</div>
+            <div class="behavior-desc">You quote a number and immediately feel like it is too much. So you lower it before they even respond.</div>
+        </div>
+        <div class="behavior-item">
+            <div class="behavior-num">02</div>
+            <div class="behavior-name">Over-delivering</div>
+            <div class="behavior-desc">You give three times what you promised because you are still trying to prove you were worth the price.</div>
+        </div>
+        <div class="behavior-item">
+            <div class="behavior-num">03</div>
+            <div class="behavior-name">Apologizing for prices</div>
+            <div class="behavior-desc">"I know it is a lot." "I can work with your budget." You said it before they said anything.</div>
+        </div>
+        <div class="behavior-item">
+            <div class="behavior-num">04</div>
+            <div class="behavior-name">Waiting to raise rates</div>
+            <div class="behavior-desc">When you have more testimonials. When the economy is better. When you feel more ready. The file keeps moving the goalposts.</div>
+        </div>
+        <div class="behavior-item">
+            <div class="behavior-num">05</div>
+            <div class="behavior-name">Uninvited discounts</div>
+            <div class="behavior-desc">They did not ask. You offered anyway. Because some part of you was not sure they would say yes at full price.</div>
+        </div>
+    </div>
+    <div class="bottom-strip">
+        <div class="bottom-text">None of this is a strategy problem. It is a <em>file</em> problem.</div>
+        <div class="bottom-brand">Shania Khan</div>
+    </div>
+</div>
+</body>
+</html>

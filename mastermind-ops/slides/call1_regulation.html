@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #0A0A0A;
+            display: flex;
+            font-family: 'DM Sans', sans-serif;
+        }
+        .left-panel {
+            width: 560px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 80px 60px 80px 80px;
+            border-right: 1px solid #1E1E1E;
+        }
+        .slide-label {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #C9A84C;
+            margin-bottom: 36px;
+        }
+        .misconception-label {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #F5F0E8;
+            opacity: 0.3;
+            margin-bottom: 12px;
+        }
+        .misconception {
+            font-family: 'Playfair Display', serif;
+            font-size: 44px;
+            font-weight: 900;
+            color: #F5F0E8;
+            opacity: 0.2;
+            line-height: 1.1;
+            text-decoration: line-through;
+            text-decoration-color: #C9A84C;
+            text-decoration-thickness: 3px;
+            margin-bottom: 48px;
+        }
+        .truth-label {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #C9A84C;
+            margin-bottom: 12px;
+        }
+        .truth-statement {
+            font-family: 'Playfair Display', serif;
+            font-size: 44px;
+            font-weight: 900;
+            color: #F5F0E8;
+            line-height: 1.1;
+        }
+        .truth-statement em {
+            font-style: italic;
+            color: #C9A84C;
+        }
+        .right-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 80px 80px;
+        }
+        .distinction {
+            margin-bottom: 40px;
+        }
+        .distinction-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 12px;
+        }
+        .distinction-dot {
+            width: 8px;
+            height: 8px;
+            background: #C9A84C;
+            flex-shrink: 0;
+        }
+        .distinction-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: #F5F0E8;
+        }
+        .distinction-body {
+            font-size: 15px;
+            font-weight: 300;
+            color: #F5F0E8;
+            opacity: 0.65;
+            line-height: 1.65;
+            padding-left: 24px;
+        }
+        .divider-line {
+            width: 100%;
+            height: 1px;
+            background: #1E1E1E;
+            margin-bottom: 40px;
+        }
+        .bottom-quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 17px;
+            font-style: italic;
+            color: #C9A84C;
+            line-height: 1.6;
+            opacity: 0.85;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+    <div class="left-panel">
+        <div class="slide-label">The Reframe</div>
+        <div class="misconception-label">What people think it means</div>
+        <div class="misconception">Being calm.<br>Feeling nothing.</div>
+        <div class="truth-label">What it actually means</div>
+        <div class="truth-statement">Not being<br><em>run</em> by<br>what you feel.</div>
+    </div>
+    <div class="right-panel">
+        <div class="distinction">
+            <div class="distinction-header">
+                <div class="distinction-dot"></div>
+                <div class="distinction-title">Reacting</div>
+            </div>
+            <div class="distinction-body">Your nervous system is in charge. The feeling arrives and you act from it immediately. You undercharge because the number felt scary. You soften the post because the comment section felt dangerous.</div>
+        </div>
+        <div class="divider-line"></div>
+        <div class="distinction">
+            <div class="distinction-header">
+                <div class="distinction-dot"></div>
+                <div class="distinction-title">Responding</div>
+            </div>
+            <div class="distinction-body">You feel the feeling and you choose what to do with it. The fear is still there. The price goes up anyway. The post goes out anyway. The room gets left anyway.</div>
+        </div>
+        <div class="divider-line"></div>
+        <div class="bottom-quote">"Regulation is not the absence of feeling.<br>It is the presence of choice."</div>
+    </div>
+</div>
+</body>
+</html>

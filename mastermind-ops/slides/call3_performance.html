@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: #0A0A0A;
+            display: flex;
+            font-family: 'DM Sans', sans-serif;
+        }
+        .left-bar {
+            width: 6px;
+            background: #C9A84C;
+            flex-shrink: 0;
+        }
+        .left-panel {
+            width: 520px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 64px 56px 64px 72px;
+            border-right: 1px solid #1E1E1E;
+        }
+        .slide-label {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #C9A84C;
+            margin-bottom: 32px;
+        }
+        .main-statement {
+            font-family: 'Playfair Display', serif;
+            font-size: 50px;
+            font-weight: 900;
+            color: #F5F0E8;
+            line-height: 1.05;
+            margin-bottom: 32px;
+        }
+        .main-statement em {
+            font-style: italic;
+            color: #C9A84C;
+        }
+        .divider {
+            width: 60px;
+            height: 2px;
+            background: #C9A84C;
+            margin-bottom: 28px;
+        }
+        .supporting-text {
+            font-size: 16px;
+            font-weight: 300;
+            color: #F5F0E8;
+            opacity: 0.6;
+            line-height: 1.7;
+        }
+        .supporting-text strong {
+            font-weight: 500;
+            color: #F5F0E8;
+            opacity: 1;
+        }
+        .right-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 64px 72px 64px 56px;
+        }
+        .comparison-header {
+            display: flex;
+            gap: 0;
+            margin-bottom: 28px;
+            border-bottom: 1px solid #1E1E1E;
+            padding-bottom: 16px;
+        }
+        .col-header {
+            flex: 1;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        .col-header.performed { color: #F5F0E8; opacity: 0.25; }
+        .col-header.real { color: #C9A84C; padding-left: 32px; }
+        .comparison-rows {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+        .comp-row {
+            display: flex;
+            border-bottom: 1px solid #1E1E1E;
+            padding: 18px 0;
+        }
+        .comp-row:last-child {
+            border-bottom: none;
+        }
+        .comp-cell {
+            flex: 1;
+            font-size: 15px;
+            font-weight: 300;
+            line-height: 1.5;
+        }
+        .comp-cell.performed {
+            color: #F5F0E8;
+            opacity: 0.28;
+            font-style: italic;
+        }
+        .comp-cell.real {
+            color: #F5F0E8;
+            opacity: 0.85;
+            padding-left: 32px;
+            border-left: 1px solid #1E1E1E;
+        }
+        .comp-cell.real strong {
+            font-weight: 500;
+            color: #C9A84C;
+        }
+        .bottom-strip {
+            margin-top: 32px;
+            background: #111;
+            border-top: 1px solid #1E1E1E;
+            padding: 18px 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .strip-bar {
+            width: 32px;
+            height: 2px;
+            background: #C9A84C;
+            flex-shrink: 0;
+        }
+        .strip-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            font-style: italic;
+            color: #F5F0E8;
+            opacity: 0.55;
+        }
+        .strip-text em {
+            color: #C9A84C;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+    <div class="left-bar"></div>
+    <div class="left-panel">
+        <div class="slide-label">Call 3 · Visibility Without Performance</div>
+        <div class="main-statement">You have been<br>creating content<br>for a version of<br>yourself that does<br>not <em>exist yet.</em></div>
+        <div class="divider"></div>
+        <div class="supporting-text">
+            Polished. Arrived. Safe.<br><br>
+            That version does not convert.<br>
+            <strong>The real one does.</strong>
+        </div>
+    </div>
+    <div class="right-panel">
+        <div class="comparison-header">
+            <div class="col-header performed">The Performed Version</div>
+            <div class="col-header real">The Real Version</div>
+        </div>
+        <div class="comparison-rows">
+            <div class="comp-row">
+                <div class="comp-cell performed">Captions that explain everything before anyone can misunderstand</div>
+                <div class="comp-cell real">The thing you actually think, said plainly</div>
+            </div>
+            <div class="comp-row">
+                <div class="comp-cell performed">The angle that makes you look most credible</div>
+                <div class="comp-cell real"><strong>The observation that made you stop in your tracks</strong></div>
+            </div>
+            <div class="comp-row">
+                <div class="comp-cell performed">Content checked twelve times before posting</div>
+                <div class="comp-cell real">The video you almost did not post</div>
+            </div>
+            <div class="comp-row">
+                <div class="comp-cell performed">The disclaimer before the controversial opinion</div>
+                <div class="comp-cell real"><strong>The controversial opinion, without the disclaimer</strong></div>
+            </div>
+            <div class="comp-row">
+                <div class="comp-cell performed">The version of the story where you look okay</div>
+                <div class="comp-cell real">The version where you are honest about what it cost you</div>
+            </div>
+        </div>
+        <div class="bottom-strip">
+            <div class="strip-bar"></div>
+            <div class="strip-text">The robe theory. The goodbye theory. Both <em>controversial.</em> Both viral. Not a coincidence.</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
