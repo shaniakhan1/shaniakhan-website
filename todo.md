@@ -30,6 +30,6 @@
 - [x] Rebuild the homepage as a four-chapter visual journey: founder point of view, ambient pause, clear entry paths, and collection-plus-content discovery.
 - [x] Keep all existing homepage, Soft60, shop, book, Substack, media, and advisory destinations live through the redesign.
 - [x] Fix the homepage founder-image panel so it fills the full right-hand hero rather than rendering as a narrow strip on desktop.
-- [ ] Rebuild the Advisory page with accessible contrast, plainspoken consultation language, and one restrained ocean visual treatment.
-- [ ] Preserve the existing consultation inquiry form, contact route, and all high-intent conversion paths through the Advisory redesign.
-- [ ] Create a candid full-site conversion review with a prioritized post-redesign roadmap.
+- [x] Rebuild the Advisory page with accessible contrast, plainspoken consultation language, and one restrained ocean visual treatment.
+- [x] Preserve the existing consultation inquiry form, contact route, and all high-intent conversion paths through the Advisory redesign.
+- [x] Create a candid full-site conversion review with a prioritized post-redesign roadmap.
