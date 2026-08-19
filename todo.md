@@ -24,4 +24,4 @@
 - [x] Recover original Shopify product descriptions, feature language, and usable owner-controlled product media for the migrated catalog.
 - [ ] Apply a coherent visual, motion, and conversion-system edit across the homepage, shop, Soft60, journal, media kit, legacy support, privacy, and consultation pages.
 - [ ] Add restrained ambient video and optional sound controls only where they elevate the experience without harming accessibility or load performance.
-- [ ] Update the media-kit monthly-views metric to 7 million and make every platform card, handle, stat block, and contact reference a live social link.
+- [x] Update the media-kit monthly-views metric to 7 million and make every platform card, handle, stat block, and contact reference a live social link.

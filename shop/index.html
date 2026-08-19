@@ -785,6 +785,18 @@
   </div>
 </div>
 
+<section class="ambient-break" aria-label="Tuscan hillside in a light breeze">
+  <video id="tuscanyAmbient" autoplay muted loop playsinline preload="metadata" poster="/hero.jpg">
+    <source src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663380647277/qdvNcoKmVAOdNLDt.mp4" type="video/mp4">
+  </video>
+  <div class="ambient-copy">
+    <p class="kicker" style="color:rgba(247,243,236,.78)">A slower kind of richness</p>
+    <h2>Make room for a life<br>that feels like yours.</h2>
+    <p>Some rituals belong on a screen. Some want paper, a pen, and a table in the sunlight.</p>
+    <button class="sound-toggle" id="tuscanySound" type="button" aria-pressed="false">Play Tuscany sound</button>
+  </div>
+</section>
+
 <!-- PRINT PLANNERS -->
 <div id="print">
   <div class="section-head">
@@ -867,6 +879,17 @@
       oceanSound.textContent = isPlaying ? 'Mute ocean sound' : 'Play ocean sound';
       oceanSound.setAttribute('aria-pressed', String(isPlaying));
       if (isPlaying) oceanAmbient.play().catch(() => {});
+    });
+  }
+  const tuscanyAmbient = document.getElementById('tuscanyAmbient');
+  const tuscanySound = document.getElementById('tuscanySound');
+  if (tuscanyAmbient && tuscanySound) {
+    tuscanySound.addEventListener('click', () => {
+      tuscanyAmbient.muted = !tuscanyAmbient.muted;
+      const isPlaying = !tuscanyAmbient.muted;
+      tuscanySound.textContent = isPlaying ? 'Mute Tuscany sound' : 'Play Tuscany sound';
+      tuscanySound.setAttribute('aria-pressed', String(isPlaying));
+      if (isPlaying) tuscanyAmbient.play().catch(() => {});
     });
   }
 </script>
