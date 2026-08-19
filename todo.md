@@ -36,8 +36,8 @@
 - [ ] Audit every public page for brand coherence, clarity, visual hierarchy, accessibility, proof, and conversion friction.
 - [x] Audit every public page for brand coherence, clarity, visual hierarchy, accessibility, proof, and conversion friction.
 - [x] Prioritize the full-site creative and conversion roadmap from the audit findings.
-- [ ] Implement the highest-impact remaining site-wide improvements from the creative-director audit.
-- [ ] Remove outdated public Mastermind and Frequency Planner funnel links from Journal navigation, article calls to action, and footers; replace them with current Shop, Soft60, Substack, and Advisory routes.
-- [ ] Add concise, topic-aware next-step modules to Journal articles so readers have a relevant route into the collection or Soft60 practice.
-- [ ] Align the Legacy Support and Privacy utility pages with the current navigation and accessible cool-neutral visual system without changing their legal or support content.
-- [ ] Publish a final creative verdict with the completed improvements and next-stage recommendations.
+- [x] Implement the highest-impact remaining site-wide improvements from the creative-director audit.
+- [x] Remove outdated public Mastermind and Frequency Planner funnel links from Journal navigation, article calls to action, and footers; replace them with current Shop, Soft60, Substack, and Advisory routes.
+- [x] Add concise, topic-aware next-step modules to Journal articles so readers have a relevant route into the collection or Soft60 practice.
+- [x] Align the Legacy Support and Privacy utility pages with the current navigation and accessible cool-neutral visual system without changing their legal or support content.
+- [x] Publish the final creative verdict with the completed improvements and next-stage recommendations.
