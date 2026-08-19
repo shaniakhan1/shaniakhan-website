@@ -196,13 +196,13 @@
     /* FEATURED CARD */
     .featured-card {
       display: grid;
-      grid-template-columns: 1fr 1.3fr;
+      grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
       border-bottom: 1px solid var(--rule);
       background: var(--ivory);
       transition: background .25s;
     }
     .featured-card:hover { background: var(--ivory2); }
-    .featured-img { overflow: hidden; }
+    .featured-img { overflow: hidden; display:block; }
     .featured-img img {
       width: 100%;
       height: 100%;
@@ -210,7 +210,7 @@
       min-height: 460px;
     }
     .featured-copy {
-      padding: 4.5rem 4rem;
+      padding: clamp(2.5rem,5vw,5.5rem);
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -239,6 +239,24 @@
     }
     .featured-note a { color: var(--gold); border-bottom: 1px solid rgba(154,116,64,.3); }
     .featured-note a:hover { border-color: var(--gold); }
+
+    .ambient-break {
+      position:relative;
+      min-height:430px;
+      overflow:hidden;
+      border-bottom:1px solid var(--rule);
+      background:var(--ink);
+      color:var(--ivory);
+      display:flex;
+      align-items:flex-end;
+    }
+    .ambient-break video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:.78; }
+    .ambient-break::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,rgba(21,18,15,.56),rgba(21,18,15,.08)); }
+    .ambient-copy { position:relative; z-index:1; max-width:44rem; padding:3rem 4vw; }
+    .ambient-copy h2 { font-family:'Italiana',serif; font-size:clamp(2.4rem,5vw,4.8rem); font-weight:400; line-height:.95; margin:.7rem 0 1rem; }
+    .ambient-copy p { font-size:1.16rem; line-height:1.65; max-width:34rem; color:rgba(247,243,236,.88); }
+    .sound-toggle { margin-top:1.4rem; appearance:none; background:transparent; color:var(--ivory); border:1px solid rgba(247,243,236,.65); padding:.65rem 1rem; font:500 .57rem Inter,sans-serif; letter-spacing:.18em; text-transform:uppercase; cursor:pointer; }
+    .sound-toggle:hover { background:rgba(247,243,236,.12); }
 
     /* PRODUCT GRID */
     .product-grid {
@@ -295,6 +313,7 @@
       color: var(--soft);
       flex: 1;
     }
+    .card-contents { font:400 .86rem/1.55 Inter,sans-serif; color:var(--muted); margin-top:.15rem; }
     .card-foot {
       display: flex;
       align-items: center;
@@ -314,12 +333,18 @@
       font-size: .58rem;
       letter-spacing: .2em;
       text-transform: uppercase;
-      color: var(--gold);
-      border-bottom: 1px solid rgba(154,116,64,.3);
-      padding-bottom: .15rem;
-      transition: border-color .2s;
+      color: var(--ivory);
+      background:var(--ink);
+      padding:.62rem .8rem;
+      transition: background .2s;
     }
-    .product-card:hover .card-cta { border-color: var(--gold); }
+    .product-card:hover .card-cta { background:var(--gold); }
+
+    .preview-gallery { display:grid; grid-template-columns:repeat(3,1fr); border-bottom:1px solid var(--rule); }
+    .preview-gallery figure { border-right:1px solid var(--rule); background:var(--ivory2); }
+    .preview-gallery figure:last-child { border-right:none; }
+    .preview-gallery img { width:100%; aspect-ratio:4/3; object-fit:cover; }
+    .preview-gallery figcaption { padding:1rem 1.3rem; font:500 .58rem Inter,sans-serif; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); }
 
     /* BOOKS */
     .books-grid {
@@ -339,7 +364,7 @@
     }
     .book-card:last-child { border-right: none; }
     .book-card:hover { background: var(--ivory2); }
-    .book-card a { display: contents; }
+    .book-cover-link { display:block; align-self:start; }
     .book-cover {
       width: 120px;
       aspect-ratio: 2/3;
@@ -486,6 +511,7 @@
       .books-grid { grid-template-columns: 1fr; }
       .book-card { border-right: none; border-bottom: 1px solid var(--rule); }
       .print-grid { grid-template-columns: 1fr 1fr; }
+      .preview-gallery { grid-template-columns:1fr 1fr; }
       .navlinks { display: none; }
     }
     @media (max-width: 600px) {
@@ -495,6 +521,8 @@
       .product-card { border-right: none; border-bottom: 1px solid var(--rule); }
       .print-grid { grid-template-columns: 1fr; }
       .print-card { border-right: none; border-bottom: 1px solid var(--rule); }
+      .preview-gallery { grid-template-columns:1fr; }
+      .preview-gallery figure { border-right:none; border-bottom:1px solid var(--rule); }
       .book-card { grid-template-columns: 1fr; }
       .book-cover { width: 100%; max-width: 160px; }
       .support-strip { flex-direction: column; align-items: flex-start; }
@@ -549,21 +577,22 @@
     <p class="kicker">Start here</p>
     <h2>The Soft60 <em>Guide</em></h2>
   </div>
-  <a class="featured-card" href="https://payhip.com/b/yxfnl" target="_blank" rel="noopener">
-    <div class="featured-img">
+  <article class="featured-card">
+    <a class="featured-img" href="https://payhip.com/b/yxfnl" target="_blank" rel="noopener" aria-label="Buy the Soft60 Guide">
       <img src="https://pe56d.s3.amazonaws.com/o_1k0bbhfik18q7163n1nft56r1br21a.png" alt="Soft60 Guide cover">
-    </div>
+    </a>
     <div class="featured-copy">
       <p class="kicker">Digital Download · PDF</p>
       <h3>Soft60 Guide</h3>
-      <p>A practical companion guide for building a softer, more intentional daily rhythm. The philosophy, the structure, and the daily framework in one place. One-time digital download.</p>
+      <p>A practical companion for the woman who is ready to stop white-knuckling her way through a good life. The guide brings the Soft60 philosophy, daily structure, and gentle accountability into one place.</p>
+      <p class="card-contents">Inside: 60 days of nervous-system-aware rhythm, identity prompts, daily reset practices, and a clear bridge into the Soft60 app.</p>
       <div class="featured-actions">
-        <span class="btn-dark">Get the Guide &mdash; $33</span>
-        <a class="btn-outline" href="https://app.frequencyplanner.com/frequency" target="_blank" rel="noopener" onclick="event.stopPropagation()">Take the Assessment</a>
+        <a class="btn-dark" href="https://payhip.com/b/yxfnl" target="_blank" rel="noopener">Buy Digital Guide &mdash; $33</a>
+        <a class="btn-outline" href="https://app.frequencyplanner.com/frequency" target="_blank" rel="noopener">Take the Assessment</a>
       </div>
-      <p class="featured-note">Also available in print: <a href="https://a.co/d/02DMl1Il" target="_blank" rel="noopener" onclick="event.stopPropagation()">Buy on Amazon</a></p>
+      <p class="featured-note">Also available in print: <a href="https://a.co/d/02DMl1Il" target="_blank" rel="noopener">Buy on Amazon</a></p>
     </div>
-  </a>
+  </article>
 </div>
 
 <!-- RITUAL TOOLKITS -->
@@ -582,7 +611,8 @@
         <div class="card-body">
           <span class="card-label">Beauty · ZIP Download</span>
           <h3 class="card-title">Beauty Is a Frequency</h3>
-          <p class="card-desc">A practical digital ritual set for inhabiting your body and space with self-respect and intention. Includes the Ritual Checklist Bonus and 7 Days of Frequency Activations.</p>
+          <p class="card-desc">A ritual space for returning to your most radiant self, without turning beauty into another performance. Use it when you want routines to feel like self-respect instead of another list.</p>
+          <p class="card-contents">Includes: Ritual Checklist, Mirror Mantras, and 7 Days of Frequency Activations.</p>
         </div>
         <div class="card-foot">
           <span class="card-price">$22</span>
@@ -599,7 +629,8 @@
         <div class="card-body">
           <span class="card-label">Wealth · ZIP Download</span>
           <h3 class="card-title">Wealth Is a Frequency</h3>
-          <p class="card-desc">A practical digital ritual set for reshaping your relationship with money, abundance, and receiving. Includes wealth frequency audio rituals, mirror mantra cards, and the Frequency Ritual Tracker.</p>
+          <p class="card-desc">A daily energetic hygiene system for the woman building a safer, more spacious relationship with money, receiving, and her own standards.</p>
+          <p class="card-contents">Includes: 7-Day Wealth Frequency Reset, Mirror Mantras, Ritual Tracker, and Luxury Language Shifts.</p>
         </div>
         <div class="card-foot">
           <span class="card-price">$33</span>
@@ -616,7 +647,8 @@
         <div class="card-body">
           <span class="card-label">Health · ZIP Download</span>
           <h3 class="card-title">Health Is a Frequency</h3>
-          <p class="card-desc">A practical digital ritual set for building a steadier relationship with your body, healing, and daily wellbeing. Includes mirror mantra cards, healing language shifts, and the body rest guide.</p>
+          <p class="card-desc">A softer framework for rebuilding trust with your body, your pace, and the rituals that make wellbeing feel possible again.</p>
+          <p class="card-contents">Includes: Mirror Mantras, Healing Language Shifts, and a restorative Body Rest guide.</p>
         </div>
         <div class="card-foot">
           <span class="card-price">$33</span>
@@ -627,6 +659,19 @@
 
   </div>
 </div>
+
+<!-- A QUIET PAUSE -->
+<section class="ambient-break" aria-label="A quiet ocean at first light">
+  <video id="oceanAmbient" autoplay muted loop playsinline preload="metadata" poster="/hero.jpg">
+    <source src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663380647277/pqIbvckMlMXTOUOQ.mp4" type="video/mp4">
+  </video>
+  <div class="ambient-copy">
+    <p class="kicker" style="color:rgba(247,243,236,.78)">A moment to exhale</p>
+    <h2>There is another way<br>to move through a life.</h2>
+    <p>The planners below are not about doing more. They are a place to come back to yourself, one page at a time.</p>
+    <button class="sound-toggle" id="oceanSound" type="button" aria-pressed="false">Play ocean sound</button>
+  </div>
+</section>
 
 <!-- DIGITAL PLANNERS -->
 <div id="planners">
@@ -644,7 +689,8 @@
         <div class="card-body">
           <span class="card-label">Beauty · 45 pages · PDF</span>
           <h3 class="card-title">Beauty Is a Frequency</h3>
-          <p class="card-desc">A 45-page digital planner for beauty rituals, self-concept, and the standards that shape your everyday life.</p>
+          <p class="card-desc">A 45-page digital ritual space for beauty, self-concept, and the standards that shape your everyday life. Made for printing at home or using on a tablet.</p>
+          <p class="card-contents">Inside: daily ritual pages, Mirror Mantras, reflection prompts, weekly Soft Power check-ins, and bonus activations.</p>
         </div>
         <div class="card-foot">
           <span class="card-price">$44</span>
@@ -661,7 +707,8 @@
         <div class="card-body">
           <span class="card-label">Wealth · 30 pages · PDF</span>
           <h3 class="card-title">Wealth Is a Frequency</h3>
-          <p class="card-desc">A 30-day digital planner for practices around money, receiving, standards, and your wealth identity.</p>
+          <p class="card-desc">A 30-day ritual planner for the version of you who receives with ease. Built to make wealth feel like a daily practice, not a thing you chase.</p>
+          <p class="card-contents">Inside: 30 guided wealth rituals, daily frequency prompts, weekly energy check-ins, and a bonus wealth ritual toolkit.</p>
         </div>
         <div class="card-foot">
           <span class="card-price">$44</span>
@@ -678,7 +725,8 @@
         <div class="card-body">
           <span class="card-label">Health · 86 pages · PDF</span>
           <h3 class="card-title">Health Is a Frequency</h3>
-          <p class="card-desc">An 86-page digital planner for grounded self-care, body-rest practices, and building a life that supports your health.</p>
+          <p class="card-desc">An 86-page guided reset for body trust, nervous-system safety, and the kind of healing rhythm your life can actually hold.</p>
+          <p class="card-contents">Inside: morning and evening check-ins, Mirror Mantras, healing prompts, weekly reflections, and a flexible tablet-or-print format.</p>
         </div>
         <div class="card-foot">
           <span class="card-price">$44</span>
@@ -690,6 +738,12 @@
   </div>
 </div>
 
+<section class="preview-gallery" aria-label="Planner previews">
+  <figure><img src="https://cdn.shopify.com/s/files/1/0654/3664/7633/files/Digital_Beauty_Planner.png?v=1760134815" alt="Beauty Is a Frequency digital planner preview"><figcaption>Beauty ritual pages</figcaption></figure>
+  <figure><img src="https://cdn.shopify.com/s/files/1/0654/3664/7633/files/Wealth_Planner_Digital.png?v=1760134815" alt="Wealth Is a Frequency digital planner preview"><figcaption>Wealth frequency prompts</figcaption></figure>
+  <figure><img src="https://cdn.shopify.com/s/files/1/0654/3664/7633/files/DigitalFlatlay.png?v=1750894807" alt="Health Is a Frequency digital planner preview"><figcaption>Health ritual pages</figcaption></figure>
+</section>
+
 <!-- BOOKS -->
 <div id="books">
   <div class="section-head">
@@ -698,35 +752,35 @@
   </div>
   <div class="books-grid">
 
-    <div class="book-card">
-      <a href="https://payhip.com/b/nutLQ" target="_blank" rel="noopener">
+    <article class="book-card">
+      <a class="book-cover-link" href="https://payhip.com/b/nutLQ" target="_blank" rel="noopener" aria-label="Buy Rich Grandma Energy digital edition">
         <img class="book-cover" src="https://pe56d.s3.amazonaws.com/o_1k0bd16jj17dd18dg69j1ff51q1l1a.png" alt="Rich Grandma Energy book cover">
-        <div class="book-info">
-          <span class="card-label">Rich Grandma Energy</span>
-          <h3 class="book-title">Rich Grandma Energy</h3>
-          <p class="book-desc">The book about standards, identity, money, softness, and building a life that feels as good as it looks.</p>
-          <div class="book-actions">
-            <a class="btn-sm primary" href="https://payhip.com/b/nutLQ" target="_blank" rel="noopener" onclick="event.stopPropagation()">Digital PDF &mdash; $9.99</a>
-            <a class="btn-sm" href="https://www.amazon.com/Rich-Grandma-Energy-Death-Girl/dp/B0GKP22M1R/" target="_blank" rel="noopener" onclick="event.stopPropagation()">Print on Amazon</a>
-          </div>
-        </div>
       </a>
-    </div>
+      <div class="book-info">
+        <span class="card-label">Rich Grandma Energy</span>
+        <h3 class="book-title">Rich Grandma Energy</h3>
+        <p class="book-desc">The book about standards, identity, money, softness, and building a life that feels as good as it looks.</p>
+        <div class="book-actions">
+          <a class="btn-sm primary" href="https://payhip.com/b/nutLQ" target="_blank" rel="noopener">Buy Digital PDF &mdash; $9.99</a>
+          <a class="btn-sm" href="https://www.amazon.com/Rich-Grandma-Energy-Death-Girl/dp/B0GKP22M1R/" target="_blank" rel="noopener">Print on Amazon</a>
+        </div>
+      </div>
+    </article>
 
-    <div class="book-card">
-      <a href="https://payhip.com/b/shZLD" target="_blank" rel="noopener">
+    <article class="book-card">
+      <a class="book-cover-link" href="https://payhip.com/b/shZLD" target="_blank" rel="noopener" aria-label="Buy The Goodbye Theory digital edition">
         <img class="book-cover" src="https://pe56d.s3.amazonaws.com/o_1k0bb6s3bcib175l2ln1gq41cmg1a.jpg" alt="The Goodbye Theory book cover">
-        <div class="book-info">
-          <span class="card-label">The Goodbye Theory</span>
-          <h3 class="book-title">The Goodbye Theory</h3>
-          <p class="book-desc">19 theories for building a beautiful life. On endings, identity, timing, and the lives that become available when you stop dragging expired versions of yourself forward.</p>
-          <div class="book-actions">
-            <a class="btn-sm primary" href="https://payhip.com/b/shZLD" target="_blank" rel="noopener" onclick="event.stopPropagation()">Digital EPUB &mdash; $9.99</a>
-            <a class="btn-sm" href="https://a.co/d/09XJFa2G" target="_blank" rel="noopener" onclick="event.stopPropagation()">Print on Amazon</a>
-          </div>
-        </div>
       </a>
-    </div>
+      <div class="book-info">
+        <span class="card-label">The Goodbye Theory</span>
+        <h3 class="book-title">The Goodbye Theory</h3>
+        <p class="book-desc">19 theories for building a beautiful life. On endings, identity, timing, and the lives that become available when you stop dragging expired versions of yourself forward.</p>
+        <div class="book-actions">
+          <a class="btn-sm primary" href="https://payhip.com/b/shZLD" target="_blank" rel="noopener">Buy Digital EPUB &mdash; $9.99</a>
+          <a class="btn-sm" href="https://a.co/d/09XJFa2G" target="_blank" rel="noopener">Print on Amazon</a>
+        </div>
+      </div>
+    </article>
 
   </div>
 </div>
@@ -802,6 +856,20 @@
   </div>
   <div class="copyright">&copy; 2026 Shania Khan &middot; All Rights Reserved</div>
 </footer>
+
+<script>
+  const oceanAmbient = document.getElementById('oceanAmbient');
+  const oceanSound = document.getElementById('oceanSound');
+  if (oceanAmbient && oceanSound) {
+    oceanSound.addEventListener('click', () => {
+      oceanAmbient.muted = !oceanAmbient.muted;
+      const isPlaying = !oceanAmbient.muted;
+      oceanSound.textContent = isPlaying ? 'Mute ocean sound' : 'Play ocean sound';
+      oceanSound.setAttribute('aria-pressed', String(isPlaying));
+      if (isPlaying) oceanAmbient.play().catch(() => {});
+    });
+  }
+</script>
 
 </body>
 </html>

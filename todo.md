@@ -16,3 +16,11 @@
 - [ ] Preserve every live Payhip, Lulu, Soft60 assessment, Soft60 sign-in, legacy-support, privacy, and consultation destination.
 - [ ] Verify redesigned public pages on desktop and mobile, including every sale link.
 - [ ] Publish the user-owned GitHub Pages redesign and document the final design choices.
+- [ ] Correct the Soft60 featured-card layout so the cover and content columns are balanced with no blank panel or uncontrolled whitespace.
+- [ ] Ensure every digital-buy action uses high-contrast, readable text and remains visibly actionable on desktop and mobile.
+- [ ] Add product-preview galleries using available owner-controlled planner images, pages, and existing Shopify assets where available.
+- [ ] Expand product descriptions with specific benefits, contents, formats, and use cases without inventing claims or reviews.
+- [ ] Add calm, owner-controlled ambient video section breaks that support the shop journey without slowing core product discovery.
+- [x] Recover original Shopify product descriptions, feature language, and usable owner-controlled product media for the migrated catalog.
+- [ ] Apply a coherent visual, motion, and conversion-system edit across the homepage, shop, Soft60, journal, media kit, legacy support, privacy, and consultation pages.
+- [ ] Add restrained ambient video and optional sound controls only where they elevate the experience without harming accessibility or load performance.
