@@ -16,27 +16,27 @@
   <meta property="og:image" content="https://shaniakhan.com/hero.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Italiana&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --ink: #151329;
-      --uv: #5A33C6;
-      --lime: #C8FF3D;
-      --coral: #FF6B60;
-      --blue: #79A8FF;
-      --white: #F8F7F2;
-      --mid: #2B2847;
-      --muted: rgba(248,247,242,0.55);
-      --line: rgba(248,247,242,0.14);
+      --ivory:  #F7F3EC;
+      --ivory2: #EDE8DF;
+      --stone:  #D9D2C5;
+      --ink:    #1A1714;
+      --soft:   #4A4540;
+      --muted:  #8A8278;
+      --gold:   #9A7440;
+      --gold2:  #B89966;
+      --rule:   rgba(26,23,20,.1);
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
       font-family: 'Cormorant Garamond', Georgia, serif;
-      background: var(--ink);
-      color: var(--white);
+      background: var(--ivory);
+      color: var(--ink);
       -webkit-font-smoothing: antialiased;
-      line-height: 1.5;
+      line-height: 1.55;
     }
     a { color: inherit; text-decoration: none; }
     img { display: block; max-width: 100%; }
@@ -46,375 +46,386 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 1.3rem 4vw;
-      border-bottom: 1px solid var(--line);
+      padding: 1.4rem 4vw;
+      border-bottom: 1px solid var(--rule);
       font-family: Inter, sans-serif;
       font-size: .63rem;
       letter-spacing: .22em;
       text-transform: uppercase;
+      background: var(--ivory);
       position: sticky;
       top: 0;
       z-index: 100;
-      background: var(--ink);
     }
     .brand { display: flex; align-items: center; gap: .7rem; }
     .brand img { width: 38px; height: 38px; }
     .brand span { font-size: .85rem; letter-spacing: .2em; }
-    .navlinks { display: flex; gap: 1.5rem; flex-wrap: wrap; }
-    .navlinks a { color: var(--muted); transition: color .2s; }
-    .navlinks a:hover, .navlinks a.active { color: var(--lime); }
+    .navlinks { display: flex; gap: 1.8rem; flex-wrap: wrap; }
+    .navlinks a { color: var(--soft); transition: color .2s; }
+    .navlinks a:hover, .navlinks a.active { color: var(--gold); }
     .nav-cta {
-      background: var(--lime);
-      color: var(--ink);
-      padding: .55rem 1.1rem;
+      background: var(--ink);
+      color: var(--ivory);
+      padding: .6rem 1.2rem;
       font-family: Inter, sans-serif;
       font-size: .6rem;
       letter-spacing: .2em;
       text-transform: uppercase;
-      font-weight: 600;
-      transition: opacity .2s;
+      font-weight: 500;
+      transition: background .2s;
     }
-    .nav-cta:hover { opacity: .85; }
+    .nav-cta:hover { background: var(--gold); }
 
     /* HERO */
-    .shop-hero {
-      background: var(--uv);
+    .hero {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      min-height: 72vh;
-      overflow: hidden;
+      min-height: 80vh;
+      background: var(--ivory2);
     }
     .hero-copy {
-      padding: 7vw 4vw;
+      padding: 8vw 5vw;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      gap: 1.6rem;
     }
     .kicker {
       font-family: Inter, sans-serif;
-      font-size: .63rem;
+      font-size: .62rem;
       letter-spacing: .3em;
       text-transform: uppercase;
-      color: var(--lime);
-      margin-bottom: 1.4rem;
+      color: var(--gold);
     }
     .hero-copy h1 {
-      font-size: clamp(3.5rem, 8vw, 7.5rem);
+      font-family: 'Italiana', serif;
+      font-size: clamp(3.5rem, 7vw, 6.5rem);
       font-weight: 400;
-      line-height: .88;
-      letter-spacing: -.03em;
-      margin-bottom: 1.8rem;
+      line-height: .92;
+      letter-spacing: -.01em;
     }
-    .hero-copy h1 em { font-weight: 300; color: var(--lime); }
+    .hero-copy h1 em {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--gold);
+    }
     .hero-copy p {
-      font-size: 1.25rem;
-      line-height: 1.65;
-      color: rgba(248,247,242,.8);
+      font-size: 1.2rem;
+      line-height: 1.7;
+      color: var(--soft);
       max-width: 32rem;
-      margin-bottom: 2rem;
     }
+    .hero-actions { display: flex; gap: .8rem; flex-wrap: wrap; }
+    .btn-dark {
+      display: inline-block;
+      background: var(--ink);
+      color: var(--ivory);
+      padding: .9rem 1.5rem;
+      font-family: Inter, sans-serif;
+      font-size: .62rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      transition: background .2s;
+    }
+    .btn-dark:hover { background: var(--gold); }
+    .btn-outline {
+      display: inline-block;
+      border: 1px solid var(--ink);
+      color: var(--ink);
+      padding: .9rem 1.5rem;
+      font-family: Inter, sans-serif;
+      font-size: .62rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      transition: border-color .2s, color .2s;
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
     .hero-photo {
-      position: relative;
       overflow: hidden;
+      min-height: 560px;
     }
     .hero-photo img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center top;
-      filter: saturate(1.1) contrast(1.05);
-    }
-    .hero-photo::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to right, var(--uv) 0%, transparent 30%);
-      pointer-events: none;
     }
 
-    /* COLLECTION JUMP NAV */
+    /* JUMP NAV */
     .jump-nav {
       display: flex;
-      gap: 0;
-      border-bottom: 1px solid var(--line);
+      border-bottom: 1px solid var(--rule);
       overflow-x: auto;
       scrollbar-width: none;
+      background: var(--ivory);
     }
     .jump-nav::-webkit-scrollbar { display: none; }
     .jump-nav a {
-      padding: 1.2rem 2.2rem;
+      padding: 1.1rem 2rem;
       font-family: Inter, sans-serif;
-      font-size: .62rem;
+      font-size: .6rem;
       letter-spacing: .22em;
       text-transform: uppercase;
       color: var(--muted);
-      border-right: 1px solid var(--line);
+      border-right: 1px solid var(--rule);
       white-space: nowrap;
       transition: color .2s, background .2s;
     }
-    .jump-nav a:hover { color: var(--lime); background: rgba(90,51,198,.18); }
+    .jump-nav a:hover { color: var(--gold); background: var(--ivory2); }
 
-    /* SECTION HEADERS */
+    /* SECTION HEADER */
     .section-head {
       padding: 5rem 4vw 2.5rem;
-      display: flex;
-      align-items: baseline;
-      gap: 2rem;
-      border-bottom: 1px solid var(--line);
+      border-bottom: 1px solid var(--rule);
     }
+    .section-head .kicker { margin-bottom: .8rem; }
     .section-head h2 {
+      font-family: 'Italiana', serif;
       font-size: clamp(2.5rem, 5vw, 4.5rem);
       font-weight: 400;
       line-height: .9;
-      letter-spacing: -.025em;
     }
-    .section-head h2 em { font-weight: 300; }
-    .section-label {
+    .section-head h2 em {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--gold);
+    }
+
+    /* FEATURED CARD */
+    .featured-card {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      border-bottom: 1px solid var(--rule);
+      background: var(--ivory);
+      transition: background .25s;
+    }
+    .featured-card:hover { background: var(--ivory2); }
+    .featured-img { overflow: hidden; }
+    .featured-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      min-height: 460px;
+    }
+    .featured-copy {
+      padding: 4.5rem 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1.4rem;
+    }
+    .featured-copy h3 {
+      font-family: 'Italiana', serif;
+      font-size: clamp(2rem, 3.5vw, 3.2rem);
+      font-weight: 400;
+      line-height: .95;
+    }
+    .featured-copy p {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: var(--soft);
+      max-width: 34rem;
+    }
+    .featured-actions { display: flex; gap: .7rem; flex-wrap: wrap; }
+    .featured-note {
       font-family: Inter, sans-serif;
-      font-size: .6rem;
-      letter-spacing: .28em;
+      font-size: .58rem;
+      letter-spacing: .15em;
       text-transform: uppercase;
       color: var(--muted);
+      margin-top: .2rem;
     }
+    .featured-note a { color: var(--gold); border-bottom: 1px solid rgba(154,116,64,.3); }
+    .featured-note a:hover { border-color: var(--gold); }
 
     /* PRODUCT GRID */
     .product-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1px;
-      background: var(--line);
+      grid-template-columns: repeat(3, 1fr);
+      border-bottom: 1px solid var(--rule);
     }
     .product-card {
-      background: var(--ink);
-      display: flex;
-      flex-direction: column;
+      border-right: 1px solid var(--rule);
+      background: var(--ivory);
       transition: background .25s;
-      cursor: pointer;
     }
-    .product-card:hover { background: var(--mid); }
-    .product-card a.card-link {
+    .product-card:last-child { border-right: none; }
+    .product-card:hover { background: var(--ivory2); }
+    .product-card a {
       display: flex;
       flex-direction: column;
-      flex: 1;
-      padding: 2rem;
-      gap: 1.2rem;
+      height: 100%;
     }
-    .card-cover {
+    .card-cover-wrap {
+      overflow: hidden;
+      background: var(--ivory2);
+    }
+    .card-cover-wrap img {
       width: 100%;
       aspect-ratio: 3/4;
       object-fit: cover;
-      background: var(--mid);
+      transition: transform .4s ease;
+    }
+    .product-card:hover .card-cover-wrap img { transform: scale(1.03); }
+    .card-body {
+      padding: 1.8rem 1.8rem 0;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: .7rem;
     }
     .card-label {
       font-family: Inter, sans-serif;
-      font-size: .58rem;
+      font-size: .57rem;
       letter-spacing: .25em;
       text-transform: uppercase;
       color: var(--muted);
     }
     .card-title {
-      font-size: 1.75rem;
+      font-family: 'Italiana', serif;
+      font-size: 1.8rem;
       font-weight: 400;
-      line-height: 1.05;
-      letter-spacing: -.01em;
+      line-height: 1;
     }
     .card-desc {
       font-size: 1.05rem;
       line-height: 1.65;
-      color: rgba(248,247,242,.7);
+      color: var(--soft);
       flex: 1;
     }
-    .card-footer {
+    .card-foot {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 1.2rem 2rem;
-      border-top: 1px solid var(--line);
-      background: inherit;
+      padding: 1.2rem 1.8rem;
+      border-top: 1px solid var(--rule);
+      margin-top: 1.4rem;
     }
     .card-price {
       font-family: Inter, sans-serif;
       font-size: .9rem;
-      font-weight: 600;
+      font-weight: 500;
       letter-spacing: .04em;
     }
-    .card-buy {
+    .card-cta {
       font-family: Inter, sans-serif;
-      font-size: .6rem;
-      letter-spacing: .22em;
-      text-transform: uppercase;
-      padding: .65rem 1.2rem;
-      border: 1px solid var(--lime);
-      color: var(--lime);
-      transition: background .2s, color .2s;
-    }
-    .product-card:hover .card-buy {
-      background: var(--lime);
-      color: var(--ink);
-    }
-
-    /* FEATURED WIDE CARD */
-    .featured-card {
-      display: grid;
-      grid-template-columns: 1fr 1.4fr;
-      background: var(--mid);
-      border-bottom: 1px solid var(--line);
-      transition: background .25s;
-      cursor: pointer;
-    }
-    .featured-card:hover { background: #352f5e; }
-    .featured-card a.card-link {
-      display: contents;
-    }
-    .featured-img {
-      overflow: hidden;
-    }
-    .featured-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      min-height: 420px;
-    }
-    .featured-copy {
-      padding: 4rem 3.5rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 1.5rem;
-    }
-    .featured-copy .card-title {
-      font-size: clamp(2rem, 3.5vw, 3.2rem);
-    }
-    .featured-copy .card-desc {
-      font-size: 1.18rem;
-      max-width: 34rem;
-    }
-    .featured-actions {
-      display: flex;
-      gap: .8rem;
-      flex-wrap: wrap;
-      margin-top: .5rem;
-    }
-    .btn-primary {
-      display: inline-block;
-      background: var(--lime);
-      color: var(--ink);
-      padding: .9rem 1.6rem;
-      font-family: Inter, sans-serif;
-      font-size: .63rem;
+      font-size: .58rem;
       letter-spacing: .2em;
       text-transform: uppercase;
-      font-weight: 600;
-      transition: opacity .2s;
-    }
-    .btn-primary:hover { opacity: .85; }
-    .btn-outline {
-      display: inline-block;
-      border: 1px solid rgba(248,247,242,.4);
-      color: var(--white);
-      padding: .9rem 1.6rem;
-      font-family: Inter, sans-serif;
-      font-size: .63rem;
-      letter-spacing: .2em;
-      text-transform: uppercase;
+      color: var(--gold);
+      border-bottom: 1px solid rgba(154,116,64,.3);
+      padding-bottom: .15rem;
       transition: border-color .2s;
     }
-    .btn-outline:hover { border-color: var(--white); }
+    .product-card:hover .card-cta { border-color: var(--gold); }
 
-    /* BOOKS SECTION */
+    /* BOOKS */
     .books-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1px;
-      background: var(--line);
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid var(--rule);
     }
     .book-card {
-      background: var(--ink);
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 2rem;
-      padding: 2.5rem;
+      border-right: 1px solid var(--rule);
+      background: var(--ivory);
       transition: background .25s;
-      cursor: pointer;
+      padding: 3rem;
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 2rem;
+      align-items: start;
     }
-    .book-card:hover { background: var(--mid); }
-    .book-card a.card-link {
-      display: contents;
-    }
+    .book-card:last-child { border-right: none; }
+    .book-card:hover { background: var(--ivory2); }
+    .book-card a { display: contents; }
     .book-cover {
       width: 120px;
       aspect-ratio: 2/3;
       object-fit: cover;
-      flex-shrink: 0;
     }
-    .book-info { display: flex; flex-direction: column; gap: .8rem; justify-content: center; }
-    .book-actions { display: flex; gap: .6rem; flex-wrap: wrap; margin-top: .5rem; }
+    .book-info { display: flex; flex-direction: column; gap: .8rem; }
+    .book-title {
+      font-family: 'Italiana', serif;
+      font-size: 1.9rem;
+      font-weight: 400;
+      line-height: 1;
+    }
+    .book-desc {
+      font-size: 1.05rem;
+      line-height: 1.65;
+      color: var(--soft);
+    }
+    .book-actions { display: flex; gap: .6rem; flex-wrap: wrap; margin-top: .4rem; }
     .btn-sm {
       display: inline-block;
       padding: .55rem 1rem;
       font-family: Inter, sans-serif;
-      font-size: .58rem;
+      font-size: .57rem;
       letter-spacing: .18em;
       text-transform: uppercase;
-      border: 1px solid var(--line);
-      color: var(--muted);
+      border: 1px solid var(--rule);
+      color: var(--soft);
       transition: border-color .2s, color .2s;
     }
-    .btn-sm:hover { border-color: var(--white); color: var(--white); }
+    .btn-sm:hover { border-color: var(--ink); color: var(--ink); }
     .btn-sm.primary {
-      border-color: var(--lime);
-      color: var(--lime);
+      background: var(--ink);
+      color: var(--ivory);
+      border-color: var(--ink);
     }
-    .btn-sm.primary:hover {
-      background: var(--lime);
-      color: var(--ink);
-    }
+    .btn-sm.primary:hover { background: var(--gold); border-color: var(--gold); }
 
-    /* PRINT SECTION */
+    /* PRINT */
     .print-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--line);
+      border-bottom: 1px solid var(--rule);
     }
     .print-card {
-      background: var(--ink);
-      padding: 2.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1.2rem;
+      border-right: 1px solid var(--rule);
+      background: var(--ivory);
       transition: background .25s;
-      cursor: pointer;
     }
-    .print-card:hover { background: var(--mid); }
-    .print-card a.card-link {
+    .print-card:last-child { border-right: none; }
+    .print-card:hover { background: var(--ivory2); }
+    .print-card a {
       display: flex;
       flex-direction: column;
-      flex: 1;
-      gap: 1.2rem;
+      height: 100%;
+      padding: 2.5rem;
+      gap: 1rem;
     }
     .print-badge {
       display: inline-block;
-      background: var(--coral);
-      color: var(--white);
+      background: var(--stone);
+      color: var(--soft);
       padding: .3rem .8rem;
       font-family: Inter, sans-serif;
-      font-size: .55rem;
+      font-size: .54rem;
       letter-spacing: .2em;
       text-transform: uppercase;
-      font-weight: 600;
       width: max-content;
     }
+    .print-foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--rule);
+    }
 
-    /* SUPPORT FOOTER */
+    /* SUPPORT STRIP */
     .support-strip {
-      padding: 3.5rem 4vw;
-      border-top: 1px solid var(--line);
+      padding: 3rem 4vw;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 2rem;
       flex-wrap: wrap;
+      border-bottom: 1px solid var(--rule);
     }
     .support-strip p {
       font-size: 1.1rem;
@@ -422,21 +433,21 @@
     }
     .support-strip a {
       font-family: Inter, sans-serif;
-      font-size: .6rem;
+      font-size: .58rem;
       letter-spacing: .2em;
       text-transform: uppercase;
       color: var(--muted);
-      border-bottom: 1px solid rgba(248,247,242,.2);
+      border-bottom: 1px solid rgba(138,130,120,.3);
       padding-bottom: .15rem;
       transition: color .2s;
     }
-    .support-strip a:hover { color: var(--white); }
+    .support-strip a:hover { color: var(--ink); }
 
-    /* SITE FOOTER */
+    /* FOOTER */
     footer {
-      background: #0d0b1e;
+      background: var(--ink);
+      color: var(--ivory);
       padding: 3rem 4vw;
-      border-top: 1px solid var(--line);
     }
     .footer-row {
       display: flex;
@@ -451,37 +462,41 @@
       gap: 1.4rem;
       flex-wrap: wrap;
       font-family: Inter, sans-serif;
-      font-size: .58rem;
+      font-size: .57rem;
       letter-spacing: .18em;
       text-transform: uppercase;
     }
-    .footer-links a { color: rgba(248,247,242,.55); transition: color .2s; }
-    .footer-links a:hover { color: var(--white); }
+    .footer-links a { color: rgba(247,243,236,.55); transition: color .2s; }
+    .footer-links a:hover { color: var(--ivory); }
     .copyright {
       margin-top: 1.5rem;
       font-family: Inter, sans-serif;
       font-size: .52rem;
       letter-spacing: .16em;
       text-transform: uppercase;
-      color: rgba(248,247,242,.28);
+      color: rgba(247,243,236,.28);
     }
 
-    @media (max-width: 900px) {
-      .shop-hero { grid-template-columns: 1fr; }
-      .hero-photo { min-height: 55vw; }
+    @media (max-width: 960px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-photo { min-height: 50vw; }
       .featured-card { grid-template-columns: 1fr; }
-      .featured-img img { min-height: 280px; }
+      .featured-img img { min-height: 300px; }
+      .product-grid { grid-template-columns: 1fr 1fr; }
       .books-grid { grid-template-columns: 1fr; }
+      .book-card { border-right: none; border-bottom: 1px solid var(--rule); }
       .print-grid { grid-template-columns: 1fr 1fr; }
       .navlinks { display: none; }
     }
     @media (max-width: 600px) {
-      .hero-copy { padding: 3rem 6vw; }
-      .section-head { padding: 3.5rem 6vw 2rem; flex-direction: column; gap: .5rem; }
+      .hero-copy { padding: 4rem 6vw; }
+      .section-head { padding: 3.5rem 6vw 2rem; }
       .product-grid { grid-template-columns: 1fr; }
+      .product-card { border-right: none; border-bottom: 1px solid var(--rule); }
       .print-grid { grid-template-columns: 1fr; }
+      .print-card { border-right: none; border-bottom: 1px solid var(--rule); }
       .book-card { grid-template-columns: 1fr; }
-      .book-cover { width: 100%; max-width: 180px; }
+      .book-cover { width: 100%; max-width: 160px; }
       .support-strip { flex-direction: column; align-items: flex-start; }
     }
   </style>
@@ -504,13 +519,13 @@
 </nav>
 
 <!-- HERO -->
-<section class="shop-hero">
+<section class="hero">
   <div class="hero-copy">
     <p class="kicker">The Frequency Collection</p>
     <h1>Tools for the life<br>you are <em>building.</em></h1>
     <p>Digital planners, ritual toolkits, and books built around nervous system regulation, wealth identity, and the standards you are raising for yourself.</p>
-    <div style="display:flex;gap:.8rem;flex-wrap:wrap;">
-      <a class="btn-primary" href="#planners">Shop Planners</a>
+    <div class="hero-actions">
+      <a class="btn-dark" href="#planners">Shop Planners</a>
       <a class="btn-outline" href="#books">Shop Books</a>
     </div>
   </div>
@@ -519,7 +534,7 @@
   </div>
 </section>
 
-<!-- COLLECTION JUMP NAV -->
+<!-- JUMP NAV -->
 <nav class="jump-nav" aria-label="Collection categories">
   <a href="#soft60-guide">Soft60 Guide</a>
   <a href="#toolkits">Ritual Toolkits</a>
@@ -528,27 +543,25 @@
   <a href="#print">Print Planners</a>
 </nav>
 
-<!-- SOFT60 GUIDE FEATURED -->
+<!-- SOFT60 GUIDE -->
 <div id="soft60-guide">
   <div class="section-head">
-    <span class="section-label">Start here</span>
+    <p class="kicker">Start here</p>
     <h2>The Soft60 <em>Guide</em></h2>
   </div>
   <a class="featured-card" href="https://payhip.com/b/yxfnl" target="_blank" rel="noopener">
-    <div class="card-link" style="display:contents;">
-      <div class="featured-img">
-        <img src="https://pe56d.s3.amazonaws.com/o_1k0bbhfik18q7163n1nft56r1br21a.png" alt="Soft60 Guide cover">
+    <div class="featured-img">
+      <img src="https://pe56d.s3.amazonaws.com/o_1k0bbhfik18q7163n1nft56r1br21a.png" alt="Soft60 Guide cover">
+    </div>
+    <div class="featured-copy">
+      <p class="kicker">Digital Download · PDF</p>
+      <h3>Soft60 Guide</h3>
+      <p>A practical companion guide for building a softer, more intentional daily rhythm. The philosophy, the structure, and the daily framework in one place. One-time digital download.</p>
+      <div class="featured-actions">
+        <span class="btn-dark">Get the Guide &mdash; $33</span>
+        <a class="btn-outline" href="https://app.frequencyplanner.com/frequency" target="_blank" rel="noopener" onclick="event.stopPropagation()">Take the Assessment</a>
       </div>
-      <div class="featured-copy">
-        <p class="kicker">Digital Download · PDF</p>
-        <h2 class="card-title">Soft60 Guide</h2>
-        <p class="card-desc">A practical companion guide for building a softer, more intentional daily rhythm. This is the written companion to the Soft60 practice: the philosophy, the structure, and the daily framework in one place. One-time digital download.</p>
-        <div class="featured-actions">
-          <span class="btn-primary">Get the Guide — $33</span>
-          <a class="btn-outline" href="https://app.frequencyplanner.com/frequency" target="_blank" rel="noopener" onclick="event.stopPropagation()">Take the Assessment</a>
-        </div>
-        <p style="font-family:Inter,sans-serif;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(248,247,242,.45);margin-top:.5rem">Also available in print: <a href="https://a.co/d/02DMl1Il" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="color:rgba(248,247,242,.65);border-bottom:1px solid rgba(248,247,242,.25)">Buy on Amazon</a></p>
-      </div>
+      <p class="featured-note">Also available in print: <a href="https://a.co/d/02DMl1Il" target="_blank" rel="noopener" onclick="event.stopPropagation()">Buy on Amazon</a></p>
     </div>
   </a>
 </div>
@@ -556,48 +569,60 @@
 <!-- RITUAL TOOLKITS -->
 <div id="toolkits">
   <div class="section-head">
-    <span class="section-label">Digital toolkits</span>
+    <p class="kicker">Digital toolkits</p>
     <h2>Ritual <em>Toolkits</em></h2>
   </div>
   <div class="product-grid">
 
     <div class="product-card">
-      <a class="card-link" href="https://payhip.com/b/3Qr8S" target="_blank" rel="noopener">
-        <img class="card-cover" src="https://pe56d.s3.amazonaws.com/o_1k0bbv3rpof117qn10sc1lct3m1a.png" alt="Beauty Is a Frequency Ritual Toolkit cover">
-        <span class="card-label">Beauty · ZIP Download</span>
-        <h3 class="card-title">Beauty Is a Frequency</h3>
-        <p class="card-desc">A practical digital ritual set for inhabiting your body and space with self-respect and intention. Includes the Ritual Checklist Bonus and 7 Days of Frequency Activations.</p>
+      <a href="https://payhip.com/b/3Qr8S" target="_blank" rel="noopener">
+        <div class="card-cover-wrap">
+          <img src="https://pe56d.s3.amazonaws.com/o_1k0bbv3rpof117qn10sc1lct3m1a.png" alt="Beauty Is a Frequency Ritual Toolkit">
+        </div>
+        <div class="card-body">
+          <span class="card-label">Beauty · ZIP Download</span>
+          <h3 class="card-title">Beauty Is a Frequency</h3>
+          <p class="card-desc">A practical digital ritual set for inhabiting your body and space with self-respect and intention. Includes the Ritual Checklist Bonus and 7 Days of Frequency Activations.</p>
+        </div>
+        <div class="card-foot">
+          <span class="card-price">$22</span>
+          <span class="card-cta">Get Toolkit</span>
+        </div>
       </a>
-      <div class="card-footer">
-        <span class="card-price">$22</span>
-        <a class="card-buy" href="https://payhip.com/b/3Qr8S" target="_blank" rel="noopener">Get Toolkit</a>
-      </div>
     </div>
 
     <div class="product-card">
-      <a class="card-link" href="https://payhip.com/b/dpsFR" target="_blank" rel="noopener">
-        <img class="card-cover" src="https://pe56d.s3.amazonaws.com/o_1k0bbpght16mugg9jqbttfejh1a.png" alt="Wealth Is a Frequency Ritual Toolkit cover">
-        <span class="card-label">Wealth · ZIP Download</span>
-        <h3 class="card-title">Wealth Is a Frequency</h3>
-        <p class="card-desc">A practical digital ritual set for reshaping your relationship with money, abundance, and receiving. Includes wealth frequency audio rituals, mirror mantra cards, and the Frequency Ritual Tracker.</p>
+      <a href="https://payhip.com/b/dpsFR" target="_blank" rel="noopener">
+        <div class="card-cover-wrap">
+          <img src="https://pe56d.s3.amazonaws.com/o_1k0bbpght16mugg9jqbttfejh1a.png" alt="Wealth Is a Frequency Ritual Toolkit">
+        </div>
+        <div class="card-body">
+          <span class="card-label">Wealth · ZIP Download</span>
+          <h3 class="card-title">Wealth Is a Frequency</h3>
+          <p class="card-desc">A practical digital ritual set for reshaping your relationship with money, abundance, and receiving. Includes wealth frequency audio rituals, mirror mantra cards, and the Frequency Ritual Tracker.</p>
+        </div>
+        <div class="card-foot">
+          <span class="card-price">$33</span>
+          <span class="card-cta">Get Toolkit</span>
+        </div>
       </a>
-      <div class="card-footer">
-        <span class="card-price">$33</span>
-        <a class="card-buy" href="https://payhip.com/b/dpsFR" target="_blank" rel="noopener">Get Toolkit</a>
-      </div>
     </div>
 
     <div class="product-card">
-      <a class="card-link" href="https://payhip.com/b/pX3Rg" target="_blank" rel="noopener">
-        <img class="card-cover" src="https://pe56d.s3.amazonaws.com/o_1k0bc5vurce51svtd8gald1q281a.png" alt="Health Is a Frequency Ritual Toolkit cover">
-        <span class="card-label">Health · ZIP Download</span>
-        <h3 class="card-title">Health Is a Frequency</h3>
-        <p class="card-desc">A practical digital ritual set for building a steadier relationship with your body, healing, and daily wellbeing. Includes mirror mantra cards, healing language shifts, and the body rest guide.</p>
+      <a href="https://payhip.com/b/pX3Rg" target="_blank" rel="noopener">
+        <div class="card-cover-wrap">
+          <img src="https://pe56d.s3.amazonaws.com/o_1k0bc5vurce51svtd8gald1q281a.png" alt="Health Is a Frequency Ritual Toolkit">
+        </div>
+        <div class="card-body">
+          <span class="card-label">Health · ZIP Download</span>
+          <h3 class="card-title">Health Is a Frequency</h3>
+          <p class="card-desc">A practical digital ritual set for building a steadier relationship with your body, healing, and daily wellbeing. Includes mirror mantra cards, healing language shifts, and the body rest guide.</p>
+        </div>
+        <div class="card-foot">
+          <span class="card-price">$33</span>
+          <span class="card-cta">Get Toolkit</span>
+        </div>
       </a>
-      <div class="card-footer">
-        <span class="card-price">$33</span>
-        <a class="card-buy" href="https://payhip.com/b/pX3Rg" target="_blank" rel="noopener">Get Toolkit</a>
-      </div>
     </div>
 
   </div>
@@ -606,48 +631,60 @@
 <!-- DIGITAL PLANNERS -->
 <div id="planners">
   <div class="section-head">
-    <span class="section-label">Digital planners · PDF</span>
+    <p class="kicker">Digital planners · PDF</p>
     <h2>The Frequency <em>Planner</em></h2>
   </div>
   <div class="product-grid">
 
     <div class="product-card">
-      <a class="card-link" href="https://payhip.com/b/ZeVcT" target="_blank" rel="noopener">
-        <img class="card-cover" src="https://pe56d.s3.amazonaws.com/o_1k0bdkrit1khjkgjsa11ehf19s61a.png" alt="Beauty Is a Frequency Digital Planner cover">
-        <span class="card-label">Beauty · 45 pages · PDF</span>
-        <h3 class="card-title">Beauty Is a Frequency</h3>
-        <p class="card-desc">A 45-page digital planner for beauty rituals, self-concept, and the standards that shape your everyday life.</p>
+      <a href="https://payhip.com/b/ZeVcT" target="_blank" rel="noopener">
+        <div class="card-cover-wrap">
+          <img src="https://pe56d.s3.amazonaws.com/o_1k0bdkrit1khjkgjsa11ehf19s61a.png" alt="Beauty Is a Frequency Digital Planner">
+        </div>
+        <div class="card-body">
+          <span class="card-label">Beauty · 45 pages · PDF</span>
+          <h3 class="card-title">Beauty Is a Frequency</h3>
+          <p class="card-desc">A 45-page digital planner for beauty rituals, self-concept, and the standards that shape your everyday life.</p>
+        </div>
+        <div class="card-foot">
+          <span class="card-price">$44</span>
+          <span class="card-cta">Buy Planner</span>
+        </div>
       </a>
-      <div class="card-footer">
-        <span class="card-price">$44</span>
-        <a class="card-buy" href="https://payhip.com/b/ZeVcT" target="_blank" rel="noopener">Buy Planner</a>
-      </div>
     </div>
 
     <div class="product-card">
-      <a class="card-link" href="https://payhip.com/b/xlAZk" target="_blank" rel="noopener">
-        <img class="card-cover" src="https://pe56d.s3.amazonaws.com/o_1k0bd6a10b431e5e1tmf1jqm13u11a.png" alt="Wealth Is a Frequency Digital Planner cover">
-        <span class="card-label">Wealth · 30 pages · PDF</span>
-        <h3 class="card-title">Wealth Is a Frequency</h3>
-        <p class="card-desc">A 30-day digital planner for practices around money, receiving, standards, and your wealth identity.</p>
+      <a href="https://payhip.com/b/xlAZk" target="_blank" rel="noopener">
+        <div class="card-cover-wrap">
+          <img src="https://pe56d.s3.amazonaws.com/o_1k0bd6a10b431e5e1tmf1jqm13u11a.png" alt="Wealth Is a Frequency Digital Planner">
+        </div>
+        <div class="card-body">
+          <span class="card-label">Wealth · 30 pages · PDF</span>
+          <h3 class="card-title">Wealth Is a Frequency</h3>
+          <p class="card-desc">A 30-day digital planner for practices around money, receiving, standards, and your wealth identity.</p>
+        </div>
+        <div class="card-foot">
+          <span class="card-price">$44</span>
+          <span class="card-cta">Buy Planner</span>
+        </div>
       </a>
-      <div class="card-footer">
-        <span class="card-price">$44</span>
-        <a class="card-buy" href="https://payhip.com/b/xlAZk" target="_blank" rel="noopener">Buy Planner</a>
-      </div>
     </div>
 
     <div class="product-card">
-      <a class="card-link" href="https://payhip.com/b/cpN5C" target="_blank" rel="noopener">
-        <img class="card-cover" src="https://pe56d.s3.amazonaws.com/o_1k0bd9aci11qi12kij841nlbfit1a.png" alt="Health Is a Frequency Digital Planner cover">
-        <span class="card-label">Health · 86 pages · PDF</span>
-        <h3 class="card-title">Health Is a Frequency</h3>
-        <p class="card-desc">An 86-page digital planner for grounded self-care, body-rest practices, and building a life that supports your health.</p>
+      <a href="https://payhip.com/b/cpN5C" target="_blank" rel="noopener">
+        <div class="card-cover-wrap">
+          <img src="https://pe56d.s3.amazonaws.com/o_1k0bd9aci11qi12kij841nlbfit1a.png" alt="Health Is a Frequency Digital Planner">
+        </div>
+        <div class="card-body">
+          <span class="card-label">Health · 86 pages · PDF</span>
+          <h3 class="card-title">Health Is a Frequency</h3>
+          <p class="card-desc">An 86-page digital planner for grounded self-care, body-rest practices, and building a life that supports your health.</p>
+        </div>
+        <div class="card-foot">
+          <span class="card-price">$44</span>
+          <span class="card-cta">Buy Planner</span>
+        </div>
       </a>
-      <div class="card-footer">
-        <span class="card-price">$44</span>
-        <a class="card-buy" href="https://payhip.com/b/cpN5C" target="_blank" rel="noopener">Buy Planner</a>
-      </div>
     </div>
 
   </div>
@@ -656,36 +693,36 @@
 <!-- BOOKS -->
 <div id="books">
   <div class="section-head">
-    <span class="section-label">Books</span>
+    <p class="kicker">Books</p>
     <h2>The <em>Writing</em></h2>
   </div>
   <div class="books-grid">
 
     <div class="book-card">
-      <a class="card-link" href="https://payhip.com/b/nutLQ" target="_blank" rel="noopener">
+      <a href="https://payhip.com/b/nutLQ" target="_blank" rel="noopener">
         <img class="book-cover" src="https://pe56d.s3.amazonaws.com/o_1k0bd16jj17dd18dg69j1ff51q1l1a.png" alt="Rich Grandma Energy book cover">
         <div class="book-info">
           <span class="card-label">Rich Grandma Energy</span>
-          <h3 class="card-title" style="font-size:1.9rem;">Rich Grandma Energy</h3>
-          <p class="card-desc">The book about standards, identity, money, softness, and building a life that feels as good as it looks.</p>
+          <h3 class="book-title">Rich Grandma Energy</h3>
+          <p class="book-desc">The book about standards, identity, money, softness, and building a life that feels as good as it looks.</p>
           <div class="book-actions">
-            <a class="btn-sm primary" href="https://payhip.com/b/nutLQ" target="_blank" rel="noopener">Digital PDF — $9.99</a>
-            <a class="btn-sm" href="https://www.amazon.com/Rich-Grandma-Energy-Death-Girl/dp/B0GKP22M1R/" target="_blank" rel="noopener">Print on Amazon</a>
+            <a class="btn-sm primary" href="https://payhip.com/b/nutLQ" target="_blank" rel="noopener" onclick="event.stopPropagation()">Digital PDF &mdash; $9.99</a>
+            <a class="btn-sm" href="https://www.amazon.com/Rich-Grandma-Energy-Death-Girl/dp/B0GKP22M1R/" target="_blank" rel="noopener" onclick="event.stopPropagation()">Print on Amazon</a>
           </div>
         </div>
       </a>
     </div>
 
     <div class="book-card">
-      <a class="card-link" href="https://payhip.com/b/shZLD" target="_blank" rel="noopener">
+      <a href="https://payhip.com/b/shZLD" target="_blank" rel="noopener">
         <img class="book-cover" src="https://pe56d.s3.amazonaws.com/o_1k0bb6s3bcib175l2ln1gq41cmg1a.jpg" alt="The Goodbye Theory book cover">
         <div class="book-info">
           <span class="card-label">The Goodbye Theory</span>
-          <h3 class="card-title" style="font-size:1.9rem;">The Goodbye Theory</h3>
-          <p class="card-desc">19 theories for building a beautiful life. On endings, identity, timing, and the lives that become available when you stop dragging expired versions of yourself forward.</p>
+          <h3 class="book-title">The Goodbye Theory</h3>
+          <p class="book-desc">19 theories for building a beautiful life. On endings, identity, timing, and the lives that become available when you stop dragging expired versions of yourself forward.</p>
           <div class="book-actions">
-            <a class="btn-sm primary" href="https://payhip.com/b/shZLD" target="_blank" rel="noopener">Digital EPUB — $9.99</a>
-            <a class="btn-sm" href="https://a.co/d/09XJFa2G" target="_blank" rel="noopener">Print on Amazon</a>
+            <a class="btn-sm primary" href="https://payhip.com/b/shZLD" target="_blank" rel="noopener" onclick="event.stopPropagation()">Digital EPUB &mdash; $9.99</a>
+            <a class="btn-sm" href="https://a.co/d/09XJFa2G" target="_blank" rel="noopener" onclick="event.stopPropagation()">Print on Amazon</a>
           </div>
         </div>
       </a>
@@ -697,46 +734,46 @@
 <!-- PRINT PLANNERS -->
 <div id="print">
   <div class="section-head">
-    <span class="section-label">Print editions · Lulu fulfilled</span>
+    <p class="kicker">Print editions · Lulu fulfilled</p>
     <h2>Print <em>Planners</em></h2>
   </div>
   <div class="print-grid">
 
     <div class="print-card">
-      <a class="card-link" href="https://svc.lulu.com/?items=ca30c198-eb83-4f50-9420-707b30c3bca3" target="_blank" rel="noopener">
+      <a href="https://svc.lulu.com/?items=ca30c198-eb83-4f50-9420-707b30c3bca3" target="_blank" rel="noopener">
         <span class="print-badge">Print Edition</span>
         <span class="card-label">Beauty · Lulu Fulfilled</span>
         <h3 class="card-title">Beauty Is a Frequency</h3>
-        <p class="card-desc" style="flex:1;">The printed Frequency Planner for beauty rituals, self-concept, and the standards that shape your everyday life. Ships direct from Lulu.</p>
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:1.5rem;border-top:1px solid var(--line);">
+        <p class="card-desc">The printed Frequency Planner for beauty rituals, self-concept, and the standards that shape your everyday life. Ships direct from Lulu.</p>
+        <div class="print-foot">
           <span class="card-price">$55</span>
-          <span class="card-buy" style="border-color:var(--coral);color:var(--coral);">Order Print</span>
+          <span class="card-cta">Order Print</span>
         </div>
       </a>
     </div>
 
     <div class="print-card">
-      <a class="card-link" href="https://svc.lulu.com/?items=47159506-9877-4726-9170-5408e4049424" target="_blank" rel="noopener">
+      <a href="https://svc.lulu.com/?items=47159506-9877-4726-9170-5408e4049424" target="_blank" rel="noopener">
         <span class="print-badge">Print Edition</span>
         <span class="card-label">Wealth · Lulu Fulfilled</span>
         <h3 class="card-title">Wealth Is a Frequency</h3>
-        <p class="card-desc" style="flex:1;">The printed Frequency Planner for practices around money, receiving, standards, and your wealth identity. Ships direct from Lulu.</p>
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:1.5rem;border-top:1px solid var(--line);">
+        <p class="card-desc">The printed Frequency Planner for practices around money, receiving, standards, and your wealth identity. Ships direct from Lulu.</p>
+        <div class="print-foot">
           <span class="card-price">$66</span>
-          <span class="card-buy" style="border-color:var(--coral);color:var(--coral);">Order Print</span>
+          <span class="card-cta">Order Print</span>
         </div>
       </a>
     </div>
 
     <div class="print-card">
-      <a class="card-link" href="https://svc.lulu.com/?items=6f5c073e-f8d8-4bcd-b44a-d79ad6959772" target="_blank" rel="noopener">
+      <a href="https://svc.lulu.com/?items=6f5c073e-f8d8-4bcd-b44a-d79ad6959772" target="_blank" rel="noopener">
         <span class="print-badge">Print Edition</span>
         <span class="card-label">Health · Lulu Fulfilled</span>
         <h3 class="card-title">Health Is a Frequency</h3>
-        <p class="card-desc" style="flex:1;">The printed Frequency Planner for grounded self-care, body-rest practices, and building a life that supports your health. Ships direct from Lulu.</p>
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:1.5rem;border-top:1px solid var(--line);">
+        <p class="card-desc">The printed Frequency Planner for grounded self-care, body-rest practices, and building a life that supports your health. Ships direct from Lulu.</p>
+        <div class="print-foot">
           <span class="card-price">$66</span>
-          <span class="card-buy" style="border-color:var(--coral);color:var(--coral);">Order Print</span>
+          <span class="card-cta">Order Print</span>
         </div>
       </a>
     </div>
@@ -763,7 +800,7 @@
       <a href="/privacy/">Privacy</a>
     </div>
   </div>
-  <div class="copyright">© 2026 Shania Khan · All Rights Reserved</div>
+  <div class="copyright">&copy; 2026 Shania Khan &middot; All Rights Reserved</div>
 </footer>
 
 </body>
