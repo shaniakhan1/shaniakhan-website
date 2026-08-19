@@ -29,3 +29,4 @@
 - [ ] Replace the shop’s abstract ambient headline with direct, natural customer-facing language.
 - [ ] Rebuild the homepage as a four-chapter visual journey: founder point of view, ambient pause, clear entry paths, and collection-plus-content discovery.
 - [ ] Keep all existing homepage, Soft60, shop, book, Substack, media, and advisory destinations live through the redesign.
+- [ ] Fix the homepage founder-image panel so it fills the full right-hand hero rather than rendering as a narrow strip on desktop.
