@@ -26,7 +26,7 @@
 - [x] Add restrained ambient video and optional sound controls only where they elevate the experience without harming accessibility or load performance.
 - [x] Update the media-kit monthly-views metric to 7 million and make every platform card, handle, stat block, and contact reference a live social link.
 - [x] Mirror every active Shopify CDN planner-preview image into the user-owned website repository before Shopify is canceled.
-- [ ] Replace the shop’s abstract ambient headline with direct, natural customer-facing language.
-- [ ] Rebuild the homepage as a four-chapter visual journey: founder point of view, ambient pause, clear entry paths, and collection-plus-content discovery.
-- [ ] Keep all existing homepage, Soft60, shop, book, Substack, media, and advisory destinations live through the redesign.
-- [ ] Fix the homepage founder-image panel so it fills the full right-hand hero rather than rendering as a narrow strip on desktop.
+- [x] Replace the shop’s abstract ambient headline with direct, natural customer-facing language.
+- [x] Rebuild the homepage as a four-chapter visual journey: founder point of view, ambient pause, clear entry paths, and collection-plus-content discovery.
+- [x] Keep all existing homepage, Soft60, shop, book, Substack, media, and advisory destinations live through the redesign.
+- [x] Fix the homepage founder-image panel so it fills the full right-hand hero rather than rendering as a narrow strip on desktop.

@@ -37,3 +37,9 @@ The TikTok card and audience section both show **7M monthly views**. The combine
 ## Accessibility and interaction notes
 
 All new video motion uses `autoplay muted loop playsinline`; sound is never started automatically. New card and media-kit links retain visible text and accessible destination labels. The mobile rules in the shop and Soft60 templates collapse grid layouts to one column at the specified breakpoints.
+
+## Homepage redesign verification
+
+The homepage now uses four connected chapters: the founder hero, a muted ocean pause, three clear entry paths, and collection-plus-content discovery. The founder photo fills the entire right-hand desktop hero panel. The revised ambient line reads, **“There is a gentler way to move through your day,”** and the associated support sentence uses direct customer-facing language.
+
+The homepage’s Shop, Soft60 assessment, Journal, Substack, media-kit, advisory, and three featured product destinations all returned HTTP 200 during the post-publish check.
