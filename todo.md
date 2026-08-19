@@ -14,7 +14,7 @@
 - [ ] Update the blog index page to surface the new posts with a consistent editorial design.
 - [ ] Create a reusable visual system for the shop, Soft60, legacy-support, and privacy pages so the customer journey feels intentional across the site.
 - [ ] Preserve every live Payhip, Lulu, Soft60 assessment, Soft60 sign-in, legacy-support, privacy, and consultation destination.
-- [ ] Verify redesigned public pages on desktop and mobile, including every sale link.
+- [x] Verify redesigned public pages on desktop and mobile, including every sale link.
 - [ ] Publish the user-owned GitHub Pages redesign and document the final design choices.
 - [x] Correct the Soft60 featured-card layout so the cover and content columns are balanced with no blank panel or uncontrolled whitespace.
 - [x] Ensure every digital-buy action uses high-contrast, readable text and remains visibly actionable on desktop and mobile.
