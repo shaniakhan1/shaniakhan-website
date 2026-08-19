@@ -33,3 +33,11 @@
 - [x] Rebuild the Advisory page with accessible contrast, plainspoken consultation language, and one restrained ocean visual treatment.
 - [x] Preserve the existing consultation inquiry form, contact route, and all high-intent conversion paths through the Advisory redesign.
 - [x] Create a candid full-site conversion review with a prioritized post-redesign roadmap.
+- [ ] Audit every public page for brand coherence, clarity, visual hierarchy, accessibility, proof, and conversion friction.
+- [x] Audit every public page for brand coherence, clarity, visual hierarchy, accessibility, proof, and conversion friction.
+- [x] Prioritize the full-site creative and conversion roadmap from the audit findings.
+- [ ] Implement the highest-impact remaining site-wide improvements from the creative-director audit.
+- [ ] Remove outdated public Mastermind and Frequency Planner funnel links from Journal navigation, article calls to action, and footers; replace them with current Shop, Soft60, Substack, and Advisory routes.
+- [ ] Add concise, topic-aware next-step modules to Journal articles so readers have a relevant route into the collection or Soft60 practice.
+- [ ] Align the Legacy Support and Privacy utility pages with the current navigation and accessible cool-neutral visual system without changing their legal or support content.
+- [ ] Publish a final creative verdict with the completed improvements and next-stage recommendations.

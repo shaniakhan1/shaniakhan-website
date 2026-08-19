@@ -1,0 +1,20 @@
+:root{--utility-paper:#f6f8f7;--utility-mist:#e7eeef;--utility-ink:#16242d;--utility-ink-soft:#43545b;--utility-blue:#1e627b;--utility-rule:#c6d3d5}
+body.utility-page{background:var(--utility-paper)!important;color:var(--utility-ink)!important}
+body.utility-page nav,body.utility-page footer{background:rgba(246,248,247,.96)!important;border-color:var(--utility-rule)!important}
+body.utility-page nav{position:sticky;top:0;z-index:20;backdrop-filter:blur(12px)}
+body.utility-page .brand,body.utility-page .navlinks a,body.utility-page footer a{color:var(--utility-ink)!important}
+body.utility-page .navlinks{display:flex;gap:1.25rem;align-items:center}
+body.utility-page .navlinks a{font:500 .67rem/1 Inter,Arial,sans-serif!important;letter-spacing:.18em;text-transform:uppercase;text-decoration:none}
+body.utility-page .navlinks a:hover,body.utility-page a:hover{color:var(--utility-blue)!important}
+body.utility-page .hero,body.utility-page .panel,body.utility-page .request{background:var(--utility-mist)!important}
+body.utility-page .hero h1,body.utility-page h1,body.utility-page h2{color:var(--utility-ink)!important}
+body.utility-page .hero em,body.utility-page h1 em,body.utility-page h2 em,body.utility-page .kicker{color:var(--utility-blue)!important}
+body.utility-page .lead,body.utility-page p,body.utility-page .content p{color:var(--utility-ink-soft)!important}
+body.utility-page .btn,body.utility-page .btn-dark{background:var(--utility-ink)!important;color:#fff!important;border-color:var(--utility-ink)!important}
+body.utility-page .btn:hover,body.utility-page .btn-dark:hover{background:var(--utility-blue)!important;border-color:var(--utility-blue)!important}
+body.utility-page .item,body.utility-page .toc a{border-color:var(--utility-rule)!important;color:var(--utility-ink)!important}
+body.utility-page .ink{background:var(--utility-ink)!important;color:#fff!important}
+body.utility-page .ink h2,body.utility-page .ink p,body.utility-page .ink .kicker{color:#fff!important}
+body.utility-page .soft60,body.utility-page .privacy,body.utility-page .contact{background:#dbe8ea!important;color:var(--utility-ink)!important}
+body.utility-page .soft60 a,body.utility-page .privacy a,body.utility-page .contact a{color:var(--utility-blue)!important}
+@media(max-width:720px){body.utility-page nav{padding:1rem 5vw!important}body.utility-page .brand span{font-size:.82rem!important}body.utility-page .navlinks{gap:.75rem}body.utility-page .navlinks a{font-size:.56rem!important;letter-spacing:.12em}}
