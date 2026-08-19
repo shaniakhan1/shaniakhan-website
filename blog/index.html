@@ -197,6 +197,21 @@
     width: 3.5rem;
   }
 
+  .journal-pause {
+    position: relative;
+    min-height: 390px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    color: var(--cream);
+  }
+  .journal-pause video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+  .journal-pause::after { content:''; position:absolute; inset:0; background:linear-gradient(90deg,rgba(21,18,15,.64),rgba(21,18,15,.08)); }
+  .journal-pause-copy { position:relative; z-index:1; max-width:46rem; padding:3rem 4vw; }
+  .journal-pause-copy h2 { font-family:'Italiana',serif; font-size:clamp(2.6rem,5vw,4.8rem); font-weight:400; line-height:.95; margin:.8rem 0; }
+  .journal-pause-copy p { font-size:1.16rem; line-height:1.65; max-width:34rem; color:rgba(244,237,226,.9); }
+  .sound-toggle { margin-top:1.4rem; background:transparent; border:1px solid rgba(244,237,226,.7); color:var(--cream); padding:.65rem .9rem; font:500 .56rem 'Inter',sans-serif; letter-spacing:.17em; text-transform:uppercase; cursor:pointer; }
+
   /* FOOTER */
   footer {
     border-top: 1px solid var(--rule);
@@ -245,6 +260,11 @@
   <h1>Writings on<br><em style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gold);">Soft Power</em></h1>
   <p>On nervous system regulation, building from a different internal state, and the work behind the work.</p>
 </div>
+
+<section class="journal-pause" aria-label="Ocean at first light">
+  <video id="journalOcean" autoplay muted loop playsinline preload="metadata" poster="/hero.jpg"><source src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663380647277/pqIbvckMlMXTOUOQ.mp4" type="video/mp4"></video>
+  <div class="journal-pause-copy"><p class="eyebrow" style="color:rgba(244,237,226,.85)">Read slowly</p><h2>Good ideas land differently when you are not rushing.</h2><p>Essays on building a life, a body of work, and a point of view worth returning to.</p><button id="journalOceanSound" class="sound-toggle" type="button" aria-pressed="false">Play ocean sound</button></div>
+</section>
 
 <div class="posts-section">
   <div class="posts-grid">
@@ -326,6 +346,11 @@
   <span>&copy; 2026 Shania Khan</span>
   <span><a href="/shop/">Shop</a> &nbsp;·&nbsp; <a href="https://soft60.app" target="_blank">Soft60 App</a> &nbsp;·&nbsp; <a href="https://substack.com/@iamshaniakhan" target="_blank" rel="noopener">Substack</a> &nbsp;·&nbsp; <a href="/">ShaniaKhan.com</a></span>
 </footer>
+
+<script>
+  const journalOcean=document.getElementById('journalOcean'),journalOceanSound=document.getElementById('journalOceanSound');
+  if(journalOcean&&journalOceanSound)journalOceanSound.addEventListener('click',()=>{journalOcean.muted=!journalOcean.muted;const on=!journalOcean.muted;journalOceanSound.textContent=on?'Mute ocean sound':'Play ocean sound';journalOceanSound.setAttribute('aria-pressed',String(on));if(on)journalOcean.play().catch(()=>{});});
+</script>
 
 </body>
 </html>

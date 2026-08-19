@@ -214,6 +214,9 @@
     border-right: 1px solid rgba(168,132,60,0.2);
   }
   .stat-item:last-child { border-right: none; }
+  .stat-link { text-decoration:none; display:block; color:inherit; transition:background .2s ease; }
+  .stat-link:hover { background:rgba(168,132,60,.11); }
+  .stat-link:focus-visible,.platform-card:focus-visible { outline:2px solid var(--gold-bright); outline-offset:-3px; }
   .stat-number {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(2rem, 3.5vw, 3rem);
@@ -275,6 +278,12 @@
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    text-decoration:none;
+    transition:background .2s ease, transform .2s ease;
+  }
+  a.platform-card:hover {
+    background:#f2eadc;
+    transform:translateY(-2px);
   }
   .audience-profile-card { grid-column: 1 / -1; }
   .platform-name {
@@ -700,26 +709,26 @@
 <!-- STATS BAND -->
 <div class="stats-band">
   <div class="stats-inner">
-    <div class="stat-item">
+    <a class="stat-item stat-link" href="https://instagram.com/iamshaniakhan" target="_blank" rel="noopener" aria-label="Visit Shania Khan on Instagram">
       <div class="stat-number">481<em>K+</em></div>
       <div class="stat-label">Combined Community</div>
-    </div>
-    <div class="stat-item">
+    </a>
+    <a class="stat-item stat-link" href="https://instagram.com/iamshaniakhan" target="_blank" rel="noopener" aria-label="Visit Shania Khan on Instagram">
       <div class="stat-number">228<em>K</em></div>
       <div class="stat-label">Instagram Followers</div>
-    </div>
-    <div class="stat-item">
+    </a>
+    <a class="stat-item stat-link" href="https://tiktok.com/@iamshaniakhan" target="_blank" rel="noopener" aria-label="Visit Shania Khan on TikTok">
       <div class="stat-number">206<em>K</em></div>
       <div class="stat-label">TikTok Followers</div>
-    </div>
-    <div class="stat-item">
+    </a>
+    <a class="stat-item stat-link" href="https://www.facebook.com/Iamshaniakhan" target="_blank" rel="noopener" aria-label="Visit Shania Khan on Facebook">
       <div class="stat-number">45<em>K</em></div>
       <div class="stat-label">Facebook Followers</div>
-    </div>
-    <div class="stat-item">
+    </a>
+    <a class="stat-item stat-link" href="https://www.youtube.com/@iamshaniakhan" target="_blank" rel="noopener" aria-label="Visit Shania Khan on YouTube">
       <div class="stat-number">2.2<em>K</em></div>
       <div class="stat-label">YouTube Subscribers</div>
-    </div>
+    </a>
   </div>
 </div>
 
@@ -727,7 +736,7 @@
 <div class="section">
   <p class="section-label">Platforms</p>
   <div class="platforms-grid">
-    <div class="platform-card">
+    <a class="platform-card" href="https://instagram.com/iamshaniakhan" target="_blank" rel="noopener" aria-label="Visit @iamshaniakhan on Instagram">
       <p class="platform-name">Instagram</p>
       <p class="platform-handle">@iamshaniakhan</p>
       <div class="platform-stat-row">
@@ -740,8 +749,8 @@
           <div class="platform-stat-lbl">Monthly Engagements</div>
         </div>
       </div>
-    </div>
-    <div class="platform-card">
+    </a>
+    <a class="platform-card" href="https://tiktok.com/@iamshaniakhan" target="_blank" rel="noopener" aria-label="Visit @iamshaniakhan on TikTok">
       <p class="platform-name">TikTok</p>
       <p class="platform-handle">@iamshaniakhan</p>
       <div class="platform-stat-row">
@@ -750,12 +759,12 @@
           <div class="platform-stat-lbl">Followers</div>
         </div>
         <div>
-          <div class="platform-stat-val">3.8M</div>
+          <div class="platform-stat-val">7M</div>
           <div class="platform-stat-lbl">Monthly Views</div>
         </div>
       </div>
-    </div>
-    <div class="platform-card">
+    </a>
+    <a class="platform-card" href="https://www.facebook.com/Iamshaniakhan" target="_blank" rel="noopener" aria-label="Visit Shania Khan on Facebook">
       <p class="platform-name">Facebook</p>
       <p class="platform-handle">Shania Khan</p>
       <div class="platform-stat-row">
@@ -764,8 +773,8 @@
           <div class="platform-stat-lbl">Followers</div>
         </div>
       </div>
-    </div>
-    <div class="platform-card">
+    </a>
+    <a class="platform-card" href="https://www.youtube.com/@iamshaniakhan" target="_blank" rel="noopener" aria-label="Visit Shania Khan on YouTube">
       <p class="platform-name">YouTube</p>
       <p class="platform-handle">Shania Khan</p>
       <div class="platform-stat-row">
@@ -774,7 +783,7 @@
           <div class="platform-stat-lbl">Subscribers</div>
         </div>
       </div>
-    </div>
+    </a>
     <div class="platform-card audience-profile-card">
       <p class="platform-name">Audience Profile</p>
       <p class="platform-handle" style="font-style:normal; font-size:1.1rem; color:var(--taupe);">Primary Demographic</p>
@@ -856,7 +865,7 @@
         </div>
       </div>
       <div class="audience-stat-row">
-        <div class="audience-pct">3.8M</div>
+        <div class="audience-pct">7M</div>
         <div class="audience-desc">
           <strong>Monthly Views</strong>
           Consistent organic reach without paid amplification
