@@ -25,4 +25,4 @@
 - [ ] Apply a coherent visual, motion, and conversion-system edit across the homepage, shop, Soft60, journal, media kit, legacy support, privacy, and consultation pages.
 - [x] Add restrained ambient video and optional sound controls only where they elevate the experience without harming accessibility or load performance.
 - [x] Update the media-kit monthly-views metric to 7 million and make every platform card, handle, stat block, and contact reference a live social link.
-- [ ] Mirror every active Shopify CDN planner-preview image into the user-owned website repository before Shopify is canceled.
+- [x] Mirror every active Shopify CDN planner-preview image into the user-owned website repository before Shopify is canceled.

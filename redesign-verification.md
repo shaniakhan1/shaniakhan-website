@@ -26,6 +26,7 @@
 | Books | Digital Payhip and print Amazon buttons render independently; no nested links remain. |
 | Print planners | Beauty, Wealth, and Health Lulu links remain unchanged. |
 | Planner previews | Three recovered Shopify preview images render in a dedicated gallery. |
+| Preview-asset independence | The three active planner preview files now return HTTP 200 from `shaniakhan.com/images/catalog/`; the shop no longer references Shopify CDN assets for these gallery images. |
 | Ambient media | Ocean and Tuscany MP4 files returned HTTP 200. Each starts muted, loops visually, and exposes an explicit visitor sound control. |
 | Soft60 routes | Protected assessment and sign-in URLs returned HTTP 200. |
 
