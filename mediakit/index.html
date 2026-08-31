@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Media Kit 2026 | Shania Khan</title>
-<meta name="description" content="Shania Khan media kit. 481K+ combined community. No. 1 Amazon bestselling author, creator of the Soft60 app, luxury lifestyle and soft power content creator.">
+<meta name="description" content="Shania Khan media kit. Featured in Vogue France. 481K+ combined community, No. 1 Amazon bestselling author, and creator of the Soft60 app.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://shaniakhan.com/mediakit/">
 
@@ -12,7 +12,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://shaniakhan.com/mediakit/">
 <meta property="og:title" content="Media Kit 2026 | Shania Khan">
-<meta property="og:description" content="481K+ combined community. No. 1 Amazon bestselling author, creator of the Soft60 app. Luxury lifestyle, editorial fashion, and soft power content.">
+<meta property="og:description" content="Featured in Vogue France. 481K+ combined community. No. 1 Amazon bestselling author and creator of the Soft60 app.">
 <meta property="og:image" content="https://shaniakhan.com/mastermind/images/shania-hero.webp">
 <meta property="og:site_name" content="Shania Khan">
 
@@ -238,6 +238,84 @@
     text-transform: uppercase;
     color: rgba(249,245,238,0.4);
   }
+
+  /* ── SELECTED PRESS ── */
+  .press-section {
+    padding: clamp(4rem, 8vw, 7rem) 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .press-feature {
+    display: grid;
+    grid-template-columns: minmax(220px, .72fr) 1.28fr;
+    border: 1px solid var(--rule);
+    background: var(--cream-dark);
+  }
+  .press-publication {
+    background: var(--navy);
+    color: var(--cream);
+    padding: clamp(2rem, 5vw, 4rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 290px;
+  }
+  .press-date {
+    font-size: .62rem;
+    font-weight: 500;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--gold-bright);
+  }
+  .press-name {
+    font-family: 'Italiana', serif;
+    font-size: clamp(2.2rem, 4vw, 4rem);
+    line-height: .95;
+    letter-spacing: .02em;
+  }
+  .press-copy {
+    padding: clamp(2rem, 5vw, 4rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .press-kicker {
+    font-size: .62rem;
+    font-weight: 600;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .press-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3.7vw, 3.3rem);
+    font-weight: 300;
+    line-height: 1.08;
+    color: var(--navy);
+    margin-bottom: 1.2rem;
+  }
+  .press-description {
+    font-family: 'DM Sans', sans-serif;
+    font-size: .88rem;
+    line-height: 1.75;
+    color: var(--taupe);
+    max-width: 52ch;
+  }
+  .press-cta {
+    display: inline-block;
+    margin-top: 1.6rem;
+    color: var(--navy);
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: .2rem;
+    text-decoration: none;
+    font-size: .65rem;
+    font-weight: 600;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+  }
+  .press-cta:hover { color: var(--gold); }
 
   /* ── SECTION WRAPPER ── */
   .section {
@@ -647,6 +725,8 @@
     .cred-item { border-right: none; border-bottom: 1px solid var(--rule); padding: 0 0 1.5rem; }
     .cred-item:last-child { border-bottom: none; padding-bottom: 0; }
     .contact-section { grid-template-columns: 1fr; gap: 2.5rem; }
+    .press-feature { grid-template-columns: 1fr; }
+    .press-publication { min-height: 210px; }
   }
   @media (max-width: 600px) {
     .pillars-grid { grid-template-columns: 1fr; }
@@ -682,6 +762,10 @@
       Shania Khan creates cinematic lifestyle content at the intersection of luxury living, editorial fashion, and nervous system regulation. Her work invites women to treat luxury as a way of living rather than a symbol to display.
     </p>
     <div class="hero-credentials">
+      <a class="credential-item" href="https://www.vogue.fr/article/mode-manifestation-shabiller-pour-reussir-sa-rentree" target="_blank" rel="noopener" style="text-decoration:none;">
+        <span class="credential-dot"></span>
+        Featured expert in Vogue France
+      </a>
       <div class="credential-item">
         <span class="credential-dot"></span>
         No. 1 Amazon Bestselling Author &mdash; <em>Rich Grandma Energy</em>
@@ -731,6 +815,23 @@
     </a>
   </div>
 </div>
+
+<!-- SELECTED PRESS -->
+<section class="press-section">
+  <p class="section-label">Selected Press</p>
+  <article class="press-feature">
+    <div class="press-publication">
+      <span class="press-date">August 31, 2026</span>
+      <span class="press-name">VOGUE<br>FRANCE</span>
+    </div>
+    <div class="press-copy">
+      <p class="press-kicker">Fashion &middot; Identity &middot; Work</p>
+      <h2 class="press-heading">Fashion manifestation: dressing for the future you are building</h2>
+      <p class="press-description">Vogue France speaks with Shania Khan about the projective power of clothing, memorable personal style, and the difference between dressing for approval and dressing from self-possession.</p>
+      <a class="press-cta" href="https://www.vogue.fr/article/mode-manifestation-shabiller-pour-reussir-sa-rentree" target="_blank" rel="noopener">Read the Vogue France feature</a>
+    </div>
+  </article>
+</section>
 
 <!-- PLATFORMS -->
 <div class="section">
