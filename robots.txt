@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# OpenAI search crawler. Explicitly allowed for ChatGPT search visibility.
+User-agent: OAI-SearchBot
+Allow: /
+
+# OpenAI model crawler. Explicitly allowed by the site owner.
+User-agent: GPTBot
+Allow: /
+
+Sitemap: https://shaniakhan.com/sitemap.xml
+
