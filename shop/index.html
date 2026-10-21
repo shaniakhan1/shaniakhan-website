@@ -193,7 +193,7 @@
     }
     .jump-nav::-webkit-scrollbar { display: none; }
     .jump-nav a {
-      padding: 1.1rem 2rem;
+      padding: .85rem 1.5rem;
       font-family: Inter, sans-serif;
       font-size: .6rem;
       letter-spacing: .22em;
@@ -207,7 +207,7 @@
 
     /* SECTION HEADER */
     .section-head {
-      padding: 5rem 4vw 2.5rem;
+      padding: 3.6rem 4vw 1.8rem;
       border-bottom: 1px solid var(--rule);
     }
     .section-head .kicker { margin-bottom: .8rem; }
@@ -227,35 +227,47 @@
     /* FEATURED CARD */
     .featured-card {
       display: grid;
-      grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
-      border-bottom: 1px solid var(--rule);
-      background: var(--ivory);
-      transition: background .25s;
+      grid-template-columns: minmax(280px,.72fr) minmax(0,1.28fr);
+      gap: 0;
+      max-width: 1180px;
+      margin: 0 auto 4rem;
+      border: 1px solid var(--rule);
+      background: #fbf8f2;
+      transition: box-shadow .25s, transform .25s;
+      overflow: hidden;
     }
-    .featured-card:hover { background: var(--ivory2); }
-    .featured-img { overflow: hidden; display:block; }
+    .featured-card:hover { box-shadow:0 16px 40px rgba(26,23,20,.07); transform:translateY(-2px); }
+    .featured-img {
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:2rem;
+      background:#efe9df;
+      overflow:hidden;
+    }
     .featured-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      min-height: 460px;
+      width:auto;
+      max-width:100%;
+      height:360px;
+      object-fit:contain;
+      box-shadow:0 14px 34px rgba(26,23,20,.12);
     }
     .featured-copy {
-      padding: clamp(2.5rem,5vw,5.5rem);
+      padding: 2.4rem 2.7rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      gap: 1.4rem;
+      gap: 1rem;
     }
     .featured-copy h3 {
       font-family: 'Italiana', serif;
-      font-size: clamp(2rem, 3.5vw, 3.2rem);
+      font-size: clamp(2rem, 3vw, 2.8rem);
       font-weight: 400;
       line-height: .95;
     }
     .featured-copy p {
-      font-size: 1.15rem;
-      line-height: 1.7;
+      font-size: 1.05rem;
+      line-height: 1.55;
       color: var(--soft);
       max-width: 34rem;
     }
@@ -550,8 +562,10 @@
     @media (max-width: 960px) {
       .hero { grid-template-columns: 1fr; }
       .hero-photo { min-height: 50vw; }
-      .featured-card { grid-template-columns: 1fr; }
-      .featured-img img { min-height: 300px; }
+      .featured-card { grid-template-columns: 1fr; margin:0 4vw 3rem; }
+      .featured-img { padding:1.5rem; }
+      .featured-img img { height:320px; min-height:0; }
+      .featured-copy { padding:2rem; }
       .product-grid { grid-template-columns: 1fr 1fr; }
       .books-grid { grid-template-columns: 1fr; }
       .book-card { border-right: none; border-bottom: 1px solid var(--rule); }
@@ -631,13 +645,12 @@
     <div class="featured-copy">
       <p class="kicker">Digital Download · PDF</p>
       <h3>Soft60 Guide</h3>
-      <p>A 93-page, 60-day practice for the woman who is ready to stop using force as proof that she wants her life badly enough. Regulate, subtract chaos, move gently, eat with presence, create identity proof, and reflect.</p>
-      <p class="card-contents">Inside: the 6 Laws of Soft60, daily framework, tracking, ritual examples, 60 daily reflection pages, weekly reflections, Soft Space pages, and completion integration.</p>
+      <p>A 93-page, 60-day practice for nervous system regulation, reducing everyday urgency, and proving that gentle can still create real change.</p>
       <div class="featured-actions">
-        <a class="btn-dark" href="/shop/soft60-guide/">Explore the Soft60 Guide &mdash; $33</a>
-        <a class="btn-outline" href="https://app.frequencyplanner.com/frequency" target="_blank" rel="noopener">Take the Assessment</a>
+        <a class="btn-dark" href="/shop/soft60-guide/">Explore the Guide &mdash; $33</a>
+        <a class="btn-outline" href="/nervous-system-reset/">Read the Method</a>
       </div>
-      <p class="featured-note">Also available in print: <a href="https://a.co/d/02DMl1Il" target="_blank" rel="noopener">Buy on Amazon</a></p>
+      <p class="featured-note"><a href="https://a.co/d/02DMl1Il" target="_blank" rel="noopener">Prefer print? Buy on Amazon</a></p>
     </div>
   </article>
 </div>
