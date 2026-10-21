@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="1400" viewBox="0 0 1120 1400">
+<rect width="1120" height="1400" fill="#f6f0e7"/>
+<text x="560" y="110" text-anchor="middle" font-family="Georgia,serif" font-size="58" fill="#6f5236">Daily + Weekly Reflections</text>
+<text x="560" y="165" text-anchor="middle" font-family="Georgia,serif" font-size="23" fill="#8a735d">60 days of gentle structure, reflection, and integration.</text>
+<rect x="100" y="280" width="420" height="720" rx="4" fill="#fffdfa" stroke="#ded4c8"/>
+<text x="310" y="350" text-anchor="middle" font-family="Georgia,serif" font-size="36" fill="#4e4034">Daily Reflection</text>
+<g font-family="Georgia,serif" font-size="22" fill="#4e4034"><text x="145" y="435">1. Regulation Check</text><text x="145" y="520">2. Chaos Subtracted</text><text x="145" y="605">3. Gentle Movement</text><text x="145" y="690">4. Eating With Presence</text><text x="145" y="775">5. Identity Proof</text><text x="145" y="860">6. Reflection</text></g>
+<rect x="600" y="255" width="420" height="690" rx="4" fill="#fffdfa" stroke="#ded4c8"/>
+<text x="810" y="325" text-anchor="middle" font-family="Georgia,serif" font-size="36" fill="#4e4034">Weekly Reflection</text>
+<g font-family="Georgia,serif" font-size="21" fill="#4e4034"><text x="645" y="410">1. Biggest win this week</text><text x="645" y="490">2. Where I noticed resistance</text><text x="645" y="570">3. Chaos I cleared</text><text x="645" y="650">4. How my body felt</text><text x="645" y="730">5. Proof I’m becoming her</text><text x="645" y="810">6. Focus for next week</text></g>
+<rect x="345" y="1010" width="430" height="250" rx="4" fill="#fffdf7" stroke="#ded4c8"/>
+<text x="560" y="1080" text-anchor="middle" font-family="Georgia,serif" font-size="36" fill="#4e4034">Soft Space</text>
+<text x="560" y="1125" text-anchor="middle" font-family="Georgia,serif" font-size="18" font-style="italic" fill="#735f4c">An open page for whatever needs to land here.</text>
+<g stroke="#d9cfbf"><line x1="390" y1="1175" x2="730" y2="1175"/><line x1="390" y1="1215" x2="730" y2="1215"/></g>
+</svg>
