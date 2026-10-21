@@ -1,15 +1,38 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1120" height="1400" viewBox="0 0 1120 1400">
-<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fbf7ef"/><stop offset=".58" stop-color="#f5edcf"/><stop offset="1" stop-color="#f2d99c"/></linearGradient><filter id="s"><feDropShadow dx="0" dy="24" stdDeviation="24" flood-opacity=".16"/></filter></defs>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#fbf8f1"/><stop offset=".58" stop-color="#f4edcf"/><stop offset="1" stop-color="#f1d79a"/>
+  </linearGradient>
+  <linearGradient id="cover" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#fbfbf8"/><stop offset=".5" stop-color="#f6eac8"/><stop offset="1" stop-color="#efc987"/>
+  </linearGradient>
+  <filter id="shadow"><feDropShadow dx="0" dy="24" stdDeviation="24" flood-color="#2b2118" flood-opacity=".16"/></filter>
+</defs>
 <rect width="1120" height="1400" fill="url(#bg)"/>
-<text x="560" y="120" text-anchor="middle" font-family="Georgia,serif" font-size="54" fill="#6f5236">SOFT60 METHOD™</text>
-<text x="560" y="185" text-anchor="middle" font-family="Georgia,serif" font-size="24" fill="#876d55">93 pages · 60 days · gentle structure</text>
-<g filter="url(#s)">
-<rect x="160" y="280" width="520" height="760" rx="5" fill="#fffdfa"/>
-<image href="https://pe56d.s3.amazonaws.com/o_1k0bbhfik18q7163n1nft56r1br21a.png" x="160" y="280" width="520" height="760" preserveAspectRatio="xMidYMid slice"/>
-<rect x="610" y="380" width="350" height="520" rx="4" fill="#fffdfa" stroke="#dfd4c4"/>
-<text x="785" y="450" text-anchor="middle" font-family="Georgia,serif" font-size="34" fill="#493b30">Daily Reflection</text>
-<g font-family="Georgia,serif" font-size="22" fill="#6a5847"><text x="650" y="520">1. Regulation Check</text><text x="650" y="590">2. Chaos Subtracted</text><text x="650" y="660">3. Gentle Movement</text><text x="650" y="730">4. Eating With Presence</text><text x="650" y="800">5. Identity Proof</text><text x="650" y="870">6. Reflection</text></g>
+<text x="560" y="118" text-anchor="middle" font-family="Georgia,serif" font-size="58" fill="#6d5036">Soft60 Guide</text>
+<text x="560" y="172" text-anchor="middle" font-family="Georgia,serif" font-size="24" fill="#856d57">93 pages · 60 days · gentle structure</text>
+
+<g filter="url(#shadow)">
+  <rect x="150" y="285" width="500" height="760" rx="6" fill="url(#cover)"/>
+  <text x="400" y="515" text-anchor="middle" font-family="Georgia,serif" font-size="58" fill="#684c34">SOFT60</text>
+  <text x="400" y="578" text-anchor="middle" font-family="Georgia,serif" font-size="58" fill="#684c34">METHOD™</text>
+  <text x="400" y="665" text-anchor="middle" font-family="Georgia,serif" font-size="24" fill="#765d49">60 Days to reset your</text>
+  <text x="400" y="700" text-anchor="middle" font-family="Georgia,serif" font-size="24" fill="#765d49">nervous system, rewire your</text>
+  <text x="400" y="735" text-anchor="middle" font-family="Georgia,serif" font-size="24" fill="#765d49">identity, and prove gentle works.</text>
+  <text x="400" y="960" text-anchor="middle" font-family="Georgia,serif" font-size="18" fill="#846d59">By Shania Khan</text>
+
+  <rect x="610" y="400" width="350" height="520" rx="4" fill="#fffdfa" stroke="#dfd4c4"/>
+  <text x="785" y="470" text-anchor="middle" font-family="Georgia,serif" font-size="34" fill="#493b30">Daily Reflection</text>
+  <g font-family="Georgia,serif" font-size="22" fill="#6a5847">
+    <text x="650" y="540">1. Regulation Check</text>
+    <text x="650" y="610">2. Chaos Subtracted</text>
+    <text x="650" y="680">3. Gentle Movement</text>
+    <text x="650" y="750">4. Eating With Presence</text>
+    <text x="650" y="820">5. Identity Proof</text>
+    <text x="650" y="890">6. Reflection</text>
+  </g>
 </g>
-<text x="560" y="1215" text-anchor="middle" font-family="Georgia,serif" font-size="42" fill="#4a3b30">A softer way to change.</text>
-<text x="560" y="1270" text-anchor="middle" font-family="Georgia,serif" font-size="24" fill="#7b6652">Reset your nervous system. Rewire your identity. Prove gentle works.</text>
+
+<text x="560" y="1205" text-anchor="middle" font-family="Georgia,serif" font-size="42" fill="#4a3b30">A softer way to change.</text>
+<text x="560" y="1260" text-anchor="middle" font-family="Georgia,serif" font-size="24" fill="#7b6652">Reset your nervous system. Rewire your identity. Prove gentle works.</text>
 </svg>
