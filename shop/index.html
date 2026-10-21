@@ -292,15 +292,21 @@
     /* PRODUCT GRID */
     .product-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.4rem;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 2.2rem 4vw 4.5rem;
       border-bottom: 1px solid var(--rule);
     }
     .product-card {
-      border-right: 1px solid var(--rule);
-      background: var(--ivory);
-      transition: background .25s;
+      background: #fbf8f2;
+      border: 1px solid var(--rule);
+      transition: background .25s, transform .25s, box-shadow .25s;
+      overflow: hidden;
     }
-    .product-card:last-child { border-right: none; }
+    .product-card:last-child { border-right: 1px solid var(--rule); }
+    .product-card:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(26,23,20,.08); }
     .product-card:hover { background: var(--ivory2); }
     .product-card a {
       display: flex;
@@ -309,17 +315,25 @@
     }
     .card-cover-wrap {
       overflow: hidden;
-      background: var(--ivory2);
+      background: #efe9df;
+      min-height: 360px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
     }
     .card-cover-wrap img {
-      width: 100%;
-      aspect-ratio: 3/4;
-      object-fit: cover;
+      width: auto;
+      max-width: 100%;
+      height: 390px;
+      max-height: 48vw;
+      object-fit: contain;
+      box-shadow: 0 14px 34px rgba(26,23,20,.13);
       transition: transform .4s ease;
     }
     .product-card:hover .card-cover-wrap img { transform: scale(1.03); }
     .card-body {
-      padding: 1.8rem 1.8rem 0;
+      padding: 1.45rem 1.45rem 0;
       flex: 1;
       display: flex;
       flex-direction: column;
@@ -334,13 +348,13 @@
     }
     .card-title {
       font-family: 'Italiana', serif;
-      font-size: 1.8rem;
+      font-size: 1.55rem;
       font-weight: 400;
       line-height: 1;
     }
     .card-desc {
-      font-size: 1.05rem;
-      line-height: 1.65;
+      font-size: 1rem;
+      line-height: 1.55;
       color: var(--soft);
       flex: 1;
     }
@@ -349,7 +363,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 1.2rem 1.8rem;
+      padding: 1.05rem 1.45rem;
       border-top: 1px solid var(--rule);
       margin-top: 1.4rem;
     }
@@ -547,6 +561,9 @@
     }
     @media (max-width: 600px) {
       .hero-copy { padding: 4rem 6vw; }
+      .product-grid { padding: 1.25rem 5vw 3rem; gap: 1rem; }
+      .card-cover-wrap { min-height: 300px; padding: 1.25rem; }
+      .card-cover-wrap img { height: 330px; max-height: none; }
       .section-head { padding: 3.5rem 6vw 2rem; }
       .product-grid { grid-template-columns: 1fr; }
       .product-card { border-right: none; border-bottom: 1px solid var(--rule); }
@@ -641,8 +658,7 @@
         <div class="card-body">
           <span class="card-label">Beauty · 45-page planner + bonuses</span>
           <h3 class="card-title">Beauty Is a Frequency</h3>
-          <p class="card-desc">Feel like yourself again. A 45-page digital beauty ritual planner for self-concept, softness, standards, and the version of beauty that starts before the mirror changes.</p>
-          <p class="card-contents">Includes the full planner + Ritual Checklist + Mirror Mantras + 7 Days of Frequency Activations.</p>
+          <p class="card-desc">A 45-page digital planner for beauty, self-concept, softness, and standards.</p>
         </div>
         <div class="card-foot">
           <span class="card-price">$44</span>
@@ -659,8 +675,7 @@
         <div class="card-body">
           <span class="card-label">Wealth · 71-page planner + bonuses</span>
           <h3 class="card-title">Wealth Is a Frequency</h3>
-          <p class="card-desc">Stop making money from panic. A 71-page digital wealth ritual planner for receiving, standards, self-trust, and building more without making your nervous system pay for it.</p>
-          <p class="card-contents">Includes the full planner + Mirror Mantras + Ritual Tracker + Luxury Language Shifts + Wealth Frequency audio rituals.</p>
+          <p class="card-desc">A 71-page digital planner for receiving, wealth identity, standards, and calmer money decisions.</p>
         </div>
         <div class="card-foot">
           <span class="card-price">$44</span>
@@ -677,8 +692,7 @@
         <div class="card-body">
           <span class="card-label">Health · 86-page planner + bonuses</span>
           <h3 class="card-title">Health Is a Frequency</h3>
-          <p class="card-desc">Feel better without turning healing into a full-time job. An 86-page digital health planner for body trust, rest, nervous system support, and sustainable care.</p>
-          <p class="card-contents">Includes the full planner + Health Mirror Mantra Cards + Healing Language Shifts + Body Rest Rituals Guide.</p>
+          <p class="card-desc">An 86-page digital planner for body trust, rest, nervous system support, and sustainable care.</p>
         </div>
         <div class="card-foot">
           <span class="card-price">$44</span>
@@ -689,12 +703,6 @@
 
   </div>
 </div>
-
-<section class="preview-gallery" aria-label="Planner previews">
-  <figure><img src="/images/catalog/beauty-digital-planner-preview.png" alt="Beauty Is a Frequency digital planner preview"><figcaption>Beauty ritual pages</figcaption></figure>
-  <figure><img src="/images/catalog/wealth-digital-planner-preview.png" alt="Wealth Is a Frequency digital planner preview"><figcaption>Wealth frequency prompts</figcaption></figure>
-  <figure><img src="/images/catalog/health-digital-planner-preview.png" alt="Health Is a Frequency digital planner preview"><figcaption>Health ritual pages</figcaption></figure>
-</section>
 
 <!-- BOOKS -->
 <div id="books">
