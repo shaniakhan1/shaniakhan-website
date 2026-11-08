@@ -1,0 +1,3 @@
+# Merge this explicit setting into the project config when deployment is approved.
+[functions.website-inquiry]
+verify_jwt = true
