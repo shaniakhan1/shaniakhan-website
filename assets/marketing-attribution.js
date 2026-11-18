@@ -28,9 +28,12 @@
     try {
       var u = new URL(url, location.href);
       var host = u.hostname.toLowerCase();
+      if (u.protocol !== 'https:' && u.protocol !== 'http:') return 'unknown';
+      // Treat www aliases as the same site before assigning cross-site intent.
+      if (host.replace(/^www\./, '') === location.hostname.toLowerCase().replace(/^www\./, '')) return 'internal';
+      if ((host === 'substack.com' || host === 'www.substack.com') && /^\/@iamshaniakhan(?:\/|$)/.test(u.pathname)) return 'newsletter';
       if (labels[host]) return labels[host];
       if (host === 'shaniakhan.com' || host === 'www.shaniakhan.com') return 'founder_site';
-      if (host === location.hostname) return 'internal';
       return 'external';
     } catch (_) { return 'unknown'; }
   }
@@ -65,11 +68,21 @@
       disable_surveys: true,
       before_send: function (event) {
         if (!event || !event.properties) return event;
-        var p = event.properties;
-        delete p.$referrer; delete p.$referring_domain;
-        delete p.$search_engine; delete p.$search_engine_keyword;
+        // SDK-added session/initial/referrer URLs can contain arbitrary query values.
+        // Only keep explicit marketing fields and anonymous SDK identifiers.
+        var original = event.properties;
+        var p = {};
+        ['distinct_id', '$device_id', '$session_id', '$window_id', '$lib', '$lib_version', '$insert_id', '$time', '$is_identified', '$process_person_profile'].forEach(function (key) {
+          if (Object.prototype.hasOwnProperty.call(original, key)) p[key] = original[key];
+        });
+        Object.assign(p, {site: site, page: page}, campaign);
+        ['cta_kind', 'destination', 'exercise', 'duration_seconds'].forEach(function (key) {
+          if (typeof original[key] === 'number' || (typeof original[key] === 'string' && /^[a-zA-Z0-9_.-]{1,70}$/.test(original[key]))) p[key] = original[key];
+        });
+        if (event.event === 'marketing_landing_viewed') p.referring_domain = referrer || 'direct';
         p.$current_url = location.origin + page;
         p.$pathname = page;
+        event.properties = p;
         return event;
       }
     });
